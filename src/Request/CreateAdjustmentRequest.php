@@ -1,10 +1,8 @@
 <?php
 
-
 namespace AllDigitalRewards\RewardStack\Request;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Response\AdjustmentResponse;
 use AllDigitalRewards\RewardStack\Response\CreateAdjustmentResponse;
 
 class CreateAdjustmentRequest extends AbstractApiRequest

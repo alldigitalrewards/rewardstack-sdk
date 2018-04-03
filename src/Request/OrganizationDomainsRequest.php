@@ -3,17 +3,14 @@
 namespace AllDigitalRewards\RewardStack\Request;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Response\SsoTokenResponse;
+use AllDigitalRewards\RewardStack\Response\OrganizationDomainsResponse;
 
-class SsoTokenRequest extends AbstractApiRequest
+class OrganizationDomainsRequest extends AbstractApiRequest
 {
-
     /**
      * @var string
      */
     private $uniqueId;
-
-    protected $httpMethod = 'POST';
 
     /**
      * GetParticipantRequest constructor.
@@ -26,12 +23,12 @@ class SsoTokenRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId . '/sso';
+        return '/api/organization/' . $this->uniqueId. '/domain' ;
     }
 
     public function getResponseObject(): AbstractEntity
     {
-        return new SsoTokenResponse();
+        return new OrganizationDomainsResponse();
     }
 
     public function jsonSerialize()

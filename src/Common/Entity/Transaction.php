@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Transaction extends AbstractEntity
@@ -14,7 +13,6 @@ class Transaction extends AbstractEntity
     private $id;
     private $created_at;
     private $updated_at;
-
 
     /**
      * @return mixed
