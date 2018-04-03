@@ -65,7 +65,7 @@ class AuthProxy
     private function addAuthHeaderToRequest(RequestInterface $request): RequestInterface
     {
         // Check if the JWT Token is valid.
-        if ($this->JwtTokenIsValid() === false) {
+        if ($this->jwtTokenIsValid() === false) {
             // If it's not then renew it.
             $this->updateJwtToken();
         }
@@ -76,7 +76,7 @@ class AuthProxy
         );
     }
 
-    private function JwtTokenIsValid()
+    private function jwtTokenIsValid()
     {
         if (!$this->jwtToken instanceof JwtToken) {
             return false;
