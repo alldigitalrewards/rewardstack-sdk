@@ -14,8 +14,6 @@ class Adjustment extends AbstractEntity
     private $created_at;
     private $updated_at;
 
-
-
     /**
      * @return mixed
      */

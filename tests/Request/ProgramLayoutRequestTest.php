@@ -1,0 +1,33 @@
+<?php
+
+namespace AllDigitalRewards\Tests;
+
+use AllDigitalRewards\RewardStack\Request\ProgramLayoutRequest;
+use AllDigitalRewards\RewardStack\Response\ProgramLayoutResponse;
+use PHPUnit\Framework\TestCase;
+
+class ProgramLayoutRequestTest extends TestCase
+{
+    protected $uniqueId;
+    protected $programLayoutRequest;
+
+    protected function setUp()
+    {
+        $this->uniqueId = uniqid();
+        $this->programLayoutRequest = new ProgramLayoutRequest($this->uniqueId);
+    }
+
+    public function testGetHttpEndpoint()
+    {
+        $expectedUrl = '/api/program/'. $this->uniqueId .'/layout';
+        $this->assertEquals($expectedUrl, $this->programLayoutRequest->getHttpEndpoint());
+    }
+
+    public function testGetResponseObject()
+    {
+        $this->assertInstanceOf(
+            ProgramLayoutResponse::class,
+            $this->programLayoutRequest->getResponseObject()
+        );
+    }
+}

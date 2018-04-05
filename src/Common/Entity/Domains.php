@@ -4,7 +4,6 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Domains extends AbstractEntity
 {
-
     private $id;
     private $organization_id;
     private $url;
