@@ -2,7 +2,9 @@
 
 namespace AllDigitalRewards\RewardStack\Response;
 
-class CreateSweepstakesEntryResponse extends AbstractApiResponse
+use AllDigitalRewards\RewardStack\Common\Entity\Participant;
+
+class CreateSweepstakesEntryResponse extends Participant
 {
 
 }

@@ -3,9 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Request;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-
-use AllDigitalRewards\RewardStack\Response\SingleUserTransactionResponse;
-use AllDigitalRewards\RewardStack\Response\TransactionResponse;
+use AllDigitalRewards\RewardStack\Response\CreateTransactionResponse;
 
 class CreateTransactionRequest extends AbstractApiRequest
 {
@@ -34,7 +32,7 @@ class CreateTransactionRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new SingleUserTransactionResponse();
+        return new CreateTransactionResponse();
     }
 
     public function jsonSerialize()

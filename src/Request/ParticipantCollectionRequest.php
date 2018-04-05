@@ -2,14 +2,14 @@
 
 namespace AllDigitalRewards\RewardStack\Request;
 
-use AllDigitalRewards\RewardStack\Response\AbstractApiResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Response\ParticipantCollectionResponse;
 
 class ParticipantCollectionRequest extends AbstractApiRequest
 {
     protected $httpEndpoint = '/api/user';
 
-    public function getResponseObject(): AbstractApiResponse
+    public function getResponseObject(): AbstractEntity
     {
         return new ParticipantCollectionResponse();
     }

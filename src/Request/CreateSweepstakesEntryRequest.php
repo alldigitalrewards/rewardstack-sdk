@@ -3,6 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Request;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
+use AllDigitalRewards\RewardStack\Response\CreateSweepstakesEntryResponse;
 use AllDigitalRewards\RewardStack\Response\ParticipantResponse;
 
 class CreateSweepstakesEntryRequest extends AbstractApiRequest
@@ -33,7 +34,7 @@ class CreateSweepstakesEntryRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new ParticipantResponse();
+        return new CreateSweepstakesEntryResponse();
     }
 
     public function jsonSerialize()
