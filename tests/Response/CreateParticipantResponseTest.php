@@ -4,8 +4,8 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Response\CreateParticipantResponse;
-use \AllDigitalRewards\RewardStack\Request;
+use AllDigitalRewards\RewardStack\Participant\CreateParticipantResponse;
+use \AllDigitalRewards\RewardStack\Participant;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ class CreateParticipantResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/CreateParticipantResponse.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_participant_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -27,7 +27,7 @@ class CreateParticipantResponseTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
 
-        $createParticipantRequest = new Request\CreateParticipantRequest('sharecare', 'TESTPARTICIPANT1', 'John', 'Smith', 'zech+sweepstake1@alldigitalrewards.com');
+        $createParticipantRequest = new Participant\CreateParticipantRequest('sharecare', 'TESTPARTICIPANT1', 'John', 'Smith', 'zech+sweepstake1@alldigitalrewards.com');
         $response = $client->request($createParticipantRequest);
 
         $expectedResponse = new CreateParticipantResponse(json_decode($jsonData));

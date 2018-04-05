@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\OrganizationReteriveRequest;
-use AllDigitalRewards\RewardStack\Response\OrganizationReteriveResponse;
+use AllDigitalRewards\RewardStack\Organization\OrganizationReteriveRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationReteriveResponse;
 use PHPUnit\Framework\TestCase;
 
 class OrganizationRetrieveRequestTest extends TestCase

@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\ProgramLayoutRequest;
-use AllDigitalRewards\RewardStack\Response\ProgramLayoutResponse;
+use AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest;
+use AllDigitalRewards\RewardStack\Program\ProgramLayoutResponse;
 use PHPUnit\Framework\TestCase;
 
 class ProgramLayoutRequestTest extends TestCase

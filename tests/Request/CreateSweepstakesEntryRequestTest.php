@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\CreateSweepstakesEntryRequest;
-use AllDigitalRewards\RewardStack\Response\CreateSweepstakesEntryResponse;
+use AllDigitalRewards\RewardStack\Participant\CreateSweepstakesEntryRequest;
+use AllDigitalRewards\RewardStack\Participant\CreateSweepstakesEntryResponse;
 use PHPUnit\Framework\TestCase;
 
 class CreateSweepstakesEntryRequestTest extends TestCase

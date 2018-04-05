@@ -1,10 +1,10 @@
 <?php
 require 'bootstrap.php';
 
-$participantCollectionRequest = new \AllDigitalRewards\RewardStack\Request\ParticipantCollectionRequest();
+$participantCollectionRequest = new \AllDigitalRewards\RewardStack\Participant\ParticipantCollectionRequest();
 
 /**
- * @var \AllDigitalRewards\RewardStack\Response\AbstractCollectionApiResponse $participantCollection
+ * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $participantCollection
  */
 $participantCollection = $client->request($participantCollectionRequest);
 

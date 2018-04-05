@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\ProgramListRequest;
-use AllDigitalRewards\RewardStack\Response\ProgramListResponse;
+use AllDigitalRewards\RewardStack\Program\ProgramListRequest;
+use AllDigitalRewards\RewardStack\Program\ProgramListResponse;
 use PHPUnit\Framework\TestCase;
 
 class ProgramListRequestTest extends TestCase

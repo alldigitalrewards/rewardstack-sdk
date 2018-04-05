@@ -4,8 +4,8 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Response\ParticipantCollectionResponse;
-use \AllDigitalRewards\RewardStack\Request;
+use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionResponse;
+use \AllDigitalRewards\RewardStack\Participant;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
@@ -26,7 +26,7 @@ class ParticipantCollectionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $participantCollectionRequest = new Request\ParticipantCollectionRequest();
+        $participantCollectionRequest = new Participant\ParticipantCollectionRequest();
         $response = $client->request($participantCollectionRequest);
 
         $expectedResponse = new ParticipantCollectionResponse(json_decode($jsonData));

@@ -4,8 +4,8 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Response\AdjustmentResponse;
-use \AllDigitalRewards\RewardStack\Request;
+use AllDigitalRewards\RewardStack\Adjustment\AdjustmentResponse;
+use \AllDigitalRewards\RewardStack\Adjustment;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ class AdjustmentResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/Adjustment.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/adjustment.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -26,7 +26,7 @@ class AdjustmentResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $adjustmentRequest = new Request\AdjustmentRequest('TESTPARTICIPANT1');
+        $adjustmentRequest = new Adjustment\AdjustmentRequest('TESTPARTICIPANT1');
         $response = $client->request($adjustmentRequest);
 
         $expectedResponse = new AdjustmentResponse(json_decode($jsonData));
