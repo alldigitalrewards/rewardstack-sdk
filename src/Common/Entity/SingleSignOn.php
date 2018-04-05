@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class SingleSignOn extends AbstractEntity

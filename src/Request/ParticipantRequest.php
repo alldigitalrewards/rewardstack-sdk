@@ -3,7 +3,6 @@
 namespace AllDigitalRewards\RewardStack\Request;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Response\AbstractApiResponse;
 use AllDigitalRewards\RewardStack\Response\ParticipantResponse;
 
 class ParticipantRequest extends AbstractApiRequest
@@ -13,10 +12,6 @@ class ParticipantRequest extends AbstractApiRequest
      */
     private $uniqueId;
 
-    /**
-     * GetParticipantRequest constructor.
-     * @param string $uniqueId
-     */
     public function __construct(string $uniqueId)
     {
         $this->uniqueId = $uniqueId;
