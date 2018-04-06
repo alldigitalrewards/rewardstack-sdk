@@ -4,8 +4,8 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Response\CreateAdjustmentResponse;
-use \AllDigitalRewards\RewardStack\Request;
+use AllDigitalRewards\RewardStack\Adjustment\CreateAdjustmentResponse;
+use \AllDigitalRewards\RewardStack\Adjustment;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
@@ -13,7 +13,7 @@ class CreateAdjustmentTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/CreateAdjustment.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_adjustment.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -27,7 +27,7 @@ class CreateAdjustmentTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
 
-        $createAdjustmentRequest = new Request\CreateAdjustmentRequest('TESTPARTICIPANT1', 'credit', '100');
+        $createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest('TESTPARTICIPANT1', 'credit', '100');
         $response = $client->request($createAdjustmentRequest);
 
         $expectedResponse = new CreateAdjustmentResponse(json_decode($jsonData));

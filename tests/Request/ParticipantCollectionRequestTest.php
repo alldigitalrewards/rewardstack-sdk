@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\ParticipantCollectionRequest;
-use AllDigitalRewards\RewardStack\Response\ParticipantCollectionResponse;
+use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionRequest;
+use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionResponse;
 use PHPUnit\Framework\TestCase;
 
 class ParticipantCollectionRequestTest extends TestCase

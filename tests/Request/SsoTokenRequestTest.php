@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\SsoTokenRequest;
-use AllDigitalRewards\RewardStack\Response\SsoTokenResponse;
+use AllDigitalRewards\RewardStack\Sso\SsoTokenRequest;
+use AllDigitalRewards\RewardStack\Sso\SsoTokenResponse;
 use PHPUnit\Framework\TestCase;
 
 class SsoTokenRequestTest extends TestCase

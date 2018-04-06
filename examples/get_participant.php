@@ -2,7 +2,7 @@
 
 require 'bootstrap.php';
 
-$participantRequest = new \AllDigitalRewards\RewardStack\Request\ParticipantRequest('TESTPARTICIPANT1');
+$participantRequest = new \AllDigitalRewards\RewardStack\Participant\ParticipantRequest('TESTPARTICIPANT1');
 
 $participant = $client->request($participantRequest);
 

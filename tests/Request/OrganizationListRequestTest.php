@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\OrganizationListRequest;
-use AllDigitalRewards\RewardStack\Response\OrganizationListResponse;
+use AllDigitalRewards\RewardStack\Organization\OrganizationListRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationListResponse;
 use PHPUnit\Framework\TestCase;
 
 class OrganizationListRequestTest extends TestCase

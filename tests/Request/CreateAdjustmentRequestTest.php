@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\CreateAdjustmentRequest;
-use AllDigitalRewards\RewardStack\Response\CreateAdjustmentResponse;
+use AllDigitalRewards\RewardStack\Adjustment;
+
 use PHPUnit\Framework\TestCase;
 
 class CreateAdjustmentRequestTest extends TestCase
@@ -18,7 +18,7 @@ class CreateAdjustmentRequestTest extends TestCase
         $this->uniqueId = uniqid();
         $this->type = 'credit';
         $this->amount = 200;
-        $this->createAdjustmentRequest = new CreateAdjustmentRequest($this->uniqueId, $this->type, $this->amount);
+        $this->createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest($this->uniqueId, $this->type, $this->amount);
     }
 
     public function testGetHttpEndpoint()
@@ -31,7 +31,7 @@ class CreateAdjustmentRequestTest extends TestCase
     public function testGetResponseObject()
     {
         $this->assertInstanceOf(
-            CreateAdjustmentResponse::class,
+            Adjustment\CreateAdjustmentResponse::class,
             $this
                 ->createAdjustmentRequest
             ->getResponseObject()

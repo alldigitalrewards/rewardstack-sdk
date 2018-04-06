@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\CreateParticipantRequest;
-use AllDigitalRewards\RewardStack\Response\CreateParticipantResponse;
+use AllDigitalRewards\RewardStack\Participant\CreateParticipantRequest;
+use AllDigitalRewards\RewardStack\Participant\CreateParticipantResponse;
 use PHPUnit\Framework\TestCase;
 
 class CreateParticipantRequestTest extends TestCase

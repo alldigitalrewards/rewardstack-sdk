@@ -3,7 +3,7 @@
 namespace AllDigitalRewards\RewardStack;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
-use AllDigitalRewards\RewardStack\Request\AbstractApiRequest;
+use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 

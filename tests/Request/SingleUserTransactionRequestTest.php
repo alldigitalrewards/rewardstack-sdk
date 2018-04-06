@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Request\SingleUserTransactionRequest;
-use AllDigitalRewards\RewardStack\Response\SingleUserTransactionResponse;
+use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionRequest;
+use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionResponse;
 use PHPUnit\Framework\TestCase;
 
 class SingleUserTransactionRequestTest extends TestCase
