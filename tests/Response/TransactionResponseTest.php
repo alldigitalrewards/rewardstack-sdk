@@ -13,7 +13,7 @@ class TransactionResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/transaction.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/transaction_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -39,6 +39,44 @@ class TransactionResponseTest extends TestCase
         $this->assertEquals(
             $expectedResponse->count(),
             $response->count()
+        );
+
+        $this->assertEquals(
+            $expectedResponse->getItem(1)->getUniqueId(),
+            $response->getItem(1)->getUniqueId()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(2)->getWholesale(),
+            $response->getItem(2)->getWholesale()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(3)->getSubtotal(),
+            $response->getItem(3)->getSubtotal()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(4)->gettotal(),
+            $response->getItem(4)->gettotal()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(5)->getEmailAddress(),
+            $response->getItem(5)->getEmailAddress()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(6)->getType(),
+            $response->getItem(6)->getType()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(7)->getId(),
+            $response->getItem(7)->getId()
+        );
+
+        $this->assertEquals(
+            $expectedResponse->getItem(8)->getCreatedAt(),
+            $response->getItem(8)->getCreatedAt()
+        );
+        $this->assertEquals(
+            $expectedResponse->getItem(9)->getUpdatedAt(),
+            $response->getItem(9)->getUpdatedAt()
         );
     }
 }

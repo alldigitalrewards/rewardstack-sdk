@@ -1,0 +1,41 @@
+{
+  "name": "Sharecare",
+  "unique_id": "sharecare",
+  "active": 1,
+  "created_at": "2018-01-02 17:06:30",
+  "updated_at": "2018-04-03 20:18:15",
+  "parent": null,
+  "domains": [
+    "mydigitalrewards.com"
+  ],
+  "company_contact": {
+    "firstname": "Josh",
+    "lastname": "Houghtelin",
+    "phone": "719-422-5010",
+    "email": "jhoughtelin@alldigitalrewards.com",
+    "address1": "8407 E Chaparral Rd",
+    "address2": "",
+    "city": "Scottsdale",
+    "state": "AZ",
+    "zip": "85250",
+    "id": 439,
+    "reference_id": "b13d5c04556458e447e99448e26d3c630f979274",
+    "created_at": "2018-01-03 20:10:16",
+    "updated_at": "2018-04-03 20:18:15"
+  },
+  "accounts_payable_contact": {
+    "firstname": "Josh",
+    "lastname": "Houghtelin",
+    "phone": "719-422-5010",
+    "email": "jhoughtelin@alldigitalrewards.com",
+    "address1": "8407 E Chaparral Rd",
+    "address2": "",
+    "city": "Scottsdale",
+    "state": "AZ",
+    "zip": "85250",
+    "id": 439,
+    "reference_id": "b13d5c04556458e447e99448e26d3c630f979274",
+    "created_at": "2018-01-03 20:10:16",
+    "updated_at": "2018-04-03 20:18:15"
+  }
+}

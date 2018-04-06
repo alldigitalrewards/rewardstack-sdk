@@ -13,7 +13,7 @@ class SingleUserTransactionResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/single_user_transaction.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/single_user_transaction_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
