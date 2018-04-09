@@ -2,12 +2,13 @@
 require 'bootstrap.php';
 
 //do something with $line
-$createSweepstakesEntryRequest = new \AllDigitalRewards\RewardStack\Request\CreateSweepstakesEntryRequest(
+$createSweepstakesEntryRequest = new \AllDigitalRewards\RewardStack\Participant\CreateSweepstakesEntryRequest(
     'TESTPARTICIPANT1',
-    1
+    2
 );
 
 /**
- * @var \AllDigitalRewards\RewardStack\Response\AbstractCollectionApiResponse $createSweepstakesEntryResponse
+ * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $createSweepstakesEntryResponse
  */
 $createSweepstakesEntryResponse = $client->request($createSweepstakesEntryRequest);
+print_r($createSweepstakesEntryResponse);exit;

@@ -26,7 +26,18 @@ class CreateOrganizationResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $createOrganizationRequest = new Organization\CreateOrganizationRequest('TESTABC1', 'TestABC #1', 'Over the Rainbow', '1233211230', '123 Acme St', '', 'Beverly Hills', 'CA', '90210', '');
+        $createOrganizationRequest = new Organization\CreateOrganizationRequest(
+            'TESTABC1',
+            'TestABC #1',
+            'Over the Rainbow',
+            '1233211230',
+            '123 Acme St',
+            '',
+            'Beverly Hills',
+            'CA',
+            '90210',
+            ''
+        );
         $response = $client->request($createOrganizationRequest);
 
         $expectedResponse = new CreateOrganizationResponse(json_decode($jsonData));

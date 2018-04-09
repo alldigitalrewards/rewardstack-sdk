@@ -26,7 +26,16 @@ class OrganizationResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $organizationRequest = new Organization\OrganizationRequest('14213123', 'abc123a123', 'ABC123A123', 'ABC123A123 Name', ["sharecare-1reward-test.com", "sharecarerewards1.com"]);
+        $organizationRequest = new Organization\OrganizationRequest(
+            '14213123',
+            'abc123a123',
+            'ABC123A123',
+            'ABC123A123 Name',
+            [
+                "sharecare-1reward-test.com",
+                "sharecarerewards1.com"
+            ]
+        );
         $response = $client->request($organizationRequest);
 
         $expectedResponse = new OrganizationResponse(json_decode($jsonData));

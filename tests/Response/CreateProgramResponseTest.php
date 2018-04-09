@@ -4,16 +4,16 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Program\ProgramListResponse;
+use AllDigitalRewards\RewardStack\Program\CreateProgramResponse;
 use \AllDigitalRewards\RewardStack\Program;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
-class ProgramListResponseTest extends TestCase
+class CreateProgramResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/program_list_response.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_program_reponse.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -26,13 +26,22 @@ class ProgramListResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $progromListRequest = new Program\ProgramListRequest('sharecare');
-        $response = $client->request($progromListRequest);
+        $createPrograqmRequest = new Program\CreateProgramRequest(
+            'sharecare',
+            'ABC1234567',
+            'A super cool name2',
+            '1000',
+            '902109021',
+            'sharecare-demo.mydigitalrewards.com',
+            '24',
+            'testlogo'
+        );
+        $response = $client->request($createPrograqmRequest);
 
-        $expectedResponse = new ProgramListResponse(json_decode($jsonData));
+        $expectedResponse = new CreateProgramResponse(json_decode($jsonData));
 
         $this->assertInstanceOf(
-            ProgramListResponse::class,
+            CreateProgramResponse::class,
             $response
         );
 
@@ -79,7 +88,9 @@ class ProgramListResponseTest extends TestCase
         $this->assertEquals(
             $expectedResponse->getActive(),
             $response->getActive()
-        );$this->assertEquals(
+        );
+
+        $this->assertEquals(
             $expectedResponse->getLogo(),
             $response->getLogo()
         );

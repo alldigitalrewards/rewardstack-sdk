@@ -4,16 +4,16 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Program\ProgramListResponse;
+use AllDigitalRewards\RewardStack\Program\ProgramResponse;
 use \AllDigitalRewards\RewardStack\Program;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
-class ProgramListResponseTest extends TestCase
+class ProgramResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/program_list_response.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/program_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -26,13 +26,22 @@ class ProgramListResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $progromListRequest = new Program\ProgramListRequest('sharecare');
-        $response = $client->request($progromListRequest);
+        $prograqmRequest = new Program\ProgramRequest(
+            'sharecare',
+            'A super cool name2',
+            '1005',
+            '902109021',
+            'sharecare-demo.mydigitalrewards.com',
+            '24',
+            '/testurl',
+            'testlogo'
+        );
+        $response = $client->request($prograqmRequest);
 
-        $expectedResponse = new ProgramListResponse(json_decode($jsonData));
+        $expectedResponse = new ProgramResponse(json_decode($jsonData));
 
         $this->assertInstanceOf(
-            ProgramListResponse::class,
+            ProgramResponse::class,
             $response
         );
 

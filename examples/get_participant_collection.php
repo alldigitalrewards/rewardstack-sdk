@@ -8,4 +8,4 @@ $participantCollectionRequest = new \AllDigitalRewards\RewardStack\Participant\P
  */
 $participantCollection = $client->request($participantCollectionRequest);
 
-echo count($participantCollection);
+print_r($participantCollection); exit;

@@ -4,16 +4,16 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Participant\CreateParticipantResponse;
+use AllDigitalRewards\RewardStack\Participant\ParticipantRetrieveResponse;
 use \AllDigitalRewards\RewardStack\Participant;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
-class CreateParticipantResponseTest extends TestCase
+class ParticipantRetrieveResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_participant_response.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/participant_retrieve_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 
@@ -26,29 +26,20 @@ class CreateParticipantResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
+        $participantRetrieveRequest = new Participant\ParticipantRetrieveRequest('TESTPARTICIPANT1');
+        $response = $client->request($participantRetrieveRequest);
 
-        $createParticipantRequest = new Participant\CreateParticipantRequest(
-            'sharecare',
-            'TESTPARTICIPANT1',
-            'John',
-            'Smith',
-            'zech+sweepstake1@alldigitalrewards.com'
-        );
-        $response = $client->request($createParticipantRequest);
-
-        $expectedResponse = new CreateParticipantResponse(json_decode($jsonData));
+        $expectedResponse = new ParticipantRetrieveResponse(json_decode($jsonData));
 
         $this->assertInstanceOf(
-            CreateParticipantResponse::class,
+            ParticipantRetrieveResponse::class,
             $response
         );
-
 
         $this->assertEquals(
             $expectedResponse->getEmailAddress(),
             $response->getEmailAddress()
         );
-
         $this->assertEquals(
             $expectedResponse->getUniqueId(),
             $response->getUniqueId()
@@ -61,12 +52,10 @@ class CreateParticipantResponseTest extends TestCase
             $expectedResponse->getFirstname(),
             $response->getFirstname()
         );
-
         $this->assertEquals(
             $expectedResponse->getLastname(),
             $response->getLastname()
         );
-
         $this->assertEquals(
             $expectedResponse->getPhone(),
             $response->getPhone()

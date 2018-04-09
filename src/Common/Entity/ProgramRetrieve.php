@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
-class ProgramList extends AbstractEntity
+class ProgramRetrieve extends AbstractEntity
 {
     private $unique_id;
     private $name;
@@ -16,9 +16,7 @@ class ProgramList extends AbstractEntity
     private $updated_at;
     private $created_at;
     private $organization;
-    private $contact;
-    private $productCriteria;
-    private $featured_products;
+
 
     /**
      * @return mixed
@@ -210,53 +208,5 @@ class ProgramList extends AbstractEntity
     public function setOrganization($organization)
     {
         $this->organization = $organization;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContact()
-    {
-        return $this->contact;
-    }
-
-    /**
-     * @param mixed $contact
-     */
-    public function setContact($contact)
-    {
-        $this->contact = $contact;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getProductCriteria()
-    {
-        return $this->productCriteria;
-    }
-
-    /**
-     * @param mixed $productCriteria
-     */
-    public function setProductCriteria($productCriteria)
-    {
-        $this->productCriteria = $productCriteria;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFeaturedProducts()
-    {
-        return $this->featured_products;
-    }
-
-    /**
-     * @param mixed $featured_products
-     */
-    public function setFeaturedProducts($featured_products)
-    {
-        $this->featured_products = $featured_products;
     }
 }

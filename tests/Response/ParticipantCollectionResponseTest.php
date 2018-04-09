@@ -70,36 +70,28 @@ class ParticipantCollectionResponseTest extends TestCase
         );
 
         $this->assertEquals(
-            $expectedResponse->getItem(7)->getBirthdate(),
-            $response->getItem(7)->getBirthdate()
+            $expectedResponse->getItem(7)->getActive(),
+            $response->getItem(7)->getActive()
         );
         $this->assertEquals(
-            $expectedResponse->getItem(8)->getActive(),
-            $response->getItem(8)->getActive()
+            $expectedResponse->getItem(8)->getCreatedAt(),
+            $response->getItem(8)->getCreatedAt()
         );
         $this->assertEquals(
-            $expectedResponse->getItem(9)->getCreatedAt(),
-            $response->getItem(9)->getCreatedAt()
+            $expectedResponse->getItem(9)->getUpdatedAt(),
+            $response->getItem(9)->getUpdatedAt()
         );
         $this->assertEquals(
-            $expectedResponse->getItem(10)->getUpdatedAt(),
-            $response->getItem(10)->getUpdatedAt()
+            $expectedResponse->getItem(10)->getAddress(),
+            $response->getItem(10)->getAddress()
         );
         $this->assertEquals(
-            $expectedResponse->getItem(11)->getAddress(),
-            $response->getItem(11)->getAddress()
+            $expectedResponse->getItem(11)->getProgram(),
+            $response->getItem(11)->getProgram()
         );
         $this->assertEquals(
-            $expectedResponse->getItem(12)->getProgram(),
-            $response->getItem(12)->getProgram()
-        );
-        $this->assertEquals(
-            $expectedResponse->getItem(13)->getOrganization(),
-            $response->getItem(13)->getOrganization()
-        );
-        $this->assertEquals(
-            $expectedResponse->getItem(14)->getMeta(),
-            $response->getItem(14)->getMeta()
+            $expectedResponse->getItem(12)->getOrganization(),
+            $response->getItem(12)->getOrganization()
         );
     }
 }

@@ -18,7 +18,11 @@ class CreateAdjustmentRequestTest extends TestCase
         $this->uniqueId = uniqid();
         $this->type = 'credit';
         $this->amount = 200;
-        $this->createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest($this->uniqueId, $this->type, $this->amount);
+        $this->createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest(
+            $this->uniqueId,
+            $this->type,
+            $this->amount
+        );
     }
 
     public function testGetHttpEndpoint()

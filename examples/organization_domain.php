@@ -8,4 +8,4 @@ $organizationDomainRequest = new \AllDigitalRewards\RewardStack\Organization\Org
  * @var \AllDigitalRewards\RewardStack\Organization\AbstractCollectionApiResponse $organizationDomainRequest
  */
 $organizationDomainResponse = $client->request($organizationDomainRequest);
-return $organizationDomainResponse;
+print_r($organizationDomainResponse) ; exit;

@@ -4,7 +4,7 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Organization\OrganizationReteriveResponse;
+use AllDigitalRewards\RewardStack\Organization\OrganizationRetreiveResponse;
 use \AllDigitalRewards\RewardStack\Organization;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
@@ -26,13 +26,13 @@ class OrganizationReteriveResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $organizationReteriveRequest = new Organization\OrganizationReteriveRequest('sharecare');
+        $organizationReteriveRequest = new Organization\OrganizationRetrieveRequest('sharecare');
         $response = $client->request($organizationReteriveRequest);
 
-        $expectedResponse = new OrganizationReteriveResponse(json_decode($jsonData));
+        $expectedResponse = new OrganizationRetreiveResponse(json_decode($jsonData));
 
         $this->assertInstanceOf(
-            OrganizationReteriveResponse::class,
+            OrganizationRetreiveResponse::class,
             $response
         );
 

@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
-class OrganizationReterive extends AbstractEntity
+class OrganizationRetrieve extends AbstractEntity
 {
     private $name;
     private $unique_id;
