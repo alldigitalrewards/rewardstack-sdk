@@ -13,7 +13,7 @@ class CreateAdjustmentTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_adjustment.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_adjustment_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 

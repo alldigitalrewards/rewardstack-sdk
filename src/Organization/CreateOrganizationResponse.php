@@ -2,9 +2,9 @@
 
 namespace AllDigitalRewards\RewardStack\Organization;
 
-use AllDigitalRewards\RewardStack\Common\Entity\Organization;
+use AllDigitalRewards\RewardStack\Common\Entity\OrganizationRetrieve;
 
-class CreateOrganizationResponse extends Organization
+class CreateOrganizationResponse extends OrganizationRetrieve
 {
 
 }

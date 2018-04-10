@@ -1,33 +1,32 @@
 <?php
 
-namespace AllDigitalRewards\RewardStack\Organization;
+namespace AllDigitalRewards\RewardStack\Participant;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApirequest;
 
-class OrganizationReteriveRequest extends AbstractApiRequest
+class ParticipantRetrieveRequest extends AbstractApiRequest
 {
     /**
      * @var string
      */
-    private $unique_id;
+    private $uniqueId;
 
+    protected $httpEndpoint = 'GET';
 
-    protected $httpMethod = 'GET';
-
-    public function __construct(string $unique_id)
+    public function __construct(string $uniqueId)
     {
-        $this->unique_id = $unique_id;
+        $this->uniqueId = $uniqueId;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/organization/' . $this->unique_id ;
+        return '/api/user/' . $this->uniqueId;
     }
 
     public function getResponseObject(): AbstractEntity
     {
-        return new  OrganizationReteriveResponse();
+        return new ParticipantRetrieveResponse();
     }
 
     public function jsonSerialize()

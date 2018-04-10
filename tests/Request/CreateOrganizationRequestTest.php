@@ -32,7 +32,18 @@ class CreateOrganizationRequestTest extends TestCase
         $this->state = 'CA';
         $this->zip ='90210';
         $this->parent ='';
-        $this->createOrganizationRequest = new CreateOrganizationRequest($this->uniqueId, $this->username, $this->name, $this->phone, $this->address1, $this->address2, $this->city, $this->state, $this->zip, $this->parent);
+        $this->createOrganizationRequest = new CreateOrganizationRequest(
+            $this->uniqueId,
+            $this->username,
+            $this->name,
+            $this->phone,
+            $this->address1,
+            $this->address2,
+            $this->city,
+            $this->state,
+            $this->zip,
+            $this->parent
+        );
     }
 
 

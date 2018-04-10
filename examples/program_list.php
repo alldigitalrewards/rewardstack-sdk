@@ -2,12 +2,12 @@
 require 'bootstrap.php';
 
 //do something with $line
-$programListrequest = new \AllDigitalRewards\RewardStack\Program\ProgramListRequest(
+$programListRequest = new \AllDigitalRewards\RewardStack\Program\ProgramListRequest(
      'sharecare'
 );
 
 /**
- * @var \AllDigitalRewards\RewardStack\Program\AbstractCollectionApiResponse $createAdjustmentsRequest
+ * @var \AllDigitalRewards\RewardStack\Program\AbstractCollectionApiResponse $programListRequest
  */
-$programListResponse = $client->request($programListrequest);
+$programListResponse = $client->request($programListRequest);
 print_r($programListResponse);exit;

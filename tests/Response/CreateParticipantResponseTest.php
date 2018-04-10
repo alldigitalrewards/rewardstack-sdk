@@ -27,7 +27,13 @@ class CreateParticipantResponseTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
 
-        $createParticipantRequest = new Participant\CreateParticipantRequest('sharecare', 'TESTPARTICIPANT1', 'John', 'Smith', 'zech+sweepstake1@alldigitalrewards.com');
+        $createParticipantRequest = new Participant\CreateParticipantRequest(
+            'sharecare',
+            'TESTPARTICIPANT1',
+            'John',
+            'Smith',
+            'zech+sweepstake1@alldigitalrewards.com'
+        );
         $response = $client->request($createParticipantRequest);
 
         $expectedResponse = new CreateParticipantResponse(json_decode($jsonData));

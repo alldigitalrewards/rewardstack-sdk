@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Organization\OrganizationReteriveRequest;
-use AllDigitalRewards\RewardStack\Organization\OrganizationReteriveResponse;
+use AllDigitalRewards\RewardStack\Organization\OrganizationRetrieveRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationRetreiveResponse;
 use PHPUnit\Framework\TestCase;
 
 class OrganizationRetrieveRequestTest extends TestCase
@@ -14,7 +14,7 @@ class OrganizationRetrieveRequestTest extends TestCase
     protected function setUp()
     {
         $this->uniqueId = uniqid();
-        $this->organizationRetrieveRequest = new OrganizationReteriveRequest($this->uniqueId);
+        $this->organizationRetrieveRequest = new OrganizationRetrieveRequest($this->uniqueId);
     }
 
     public function testGetHttpEndpoint()
@@ -26,7 +26,7 @@ class OrganizationRetrieveRequestTest extends TestCase
     public function testGetResponseObject()
     {
         $this->assertInstanceOf(
-            OrganizationReteriveResponse::class,
+            OrganizationRetreiveResponse::class,
             $this->organizationRetrieveRequest->getResponseObject()
         );
     }

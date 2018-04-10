@@ -6,7 +6,7 @@ use AllDigitalRewards\RewardStack\Participant\ParticipantRequest;
 use AllDigitalRewards\RewardStack\Participant\ParticipantResponse;
 use PHPUnit\Framework\TestCase;
 
-class ParticipantRequestTest extends TestCase
+class ParticipantRetrieveRequestTest extends TestCase
 {
     protected $uniqueId;
     protected $participantRequest;

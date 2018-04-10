@@ -2,9 +2,9 @@
 
 namespace AllDigitalRewards\RewardStack\Program;
 
-use AllDigitalRewards\RewardStack\Common\Entity\ProgramList;
+use AllDigitalRewards\RewardStack\Common\Entity\Program;
 
-class ProgramListResponse extends ProgramList
+class ProgramListResponse extends Program
 {
 
 }

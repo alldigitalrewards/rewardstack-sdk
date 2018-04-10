@@ -7,7 +7,7 @@ $createParticipantRequest = new \AllDigitalRewards\RewardStack\Participant\Creat
 );
 
 /**
- * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $createAdjustmentsRequest
+ * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $createParticipantRequest
  */
 $createParticipantResponse = $client->request($createParticipantRequest);
 print_r($createParticipantResponse);exit;

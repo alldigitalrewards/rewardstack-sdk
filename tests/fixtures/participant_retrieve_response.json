@@ -1,0 +1,25 @@
+{
+  "email_address": "test@alldigitalrewards.com",
+  "unique_id": "TESTPARTICIPANT1",
+  "credit": "97302.00",
+  "firstname": "Test",
+  "lastname": "User",
+  "phone": null,
+  "birthdate": null,
+  "active": 1,
+  "created_at": "2018-01-02 17:06:38",
+  "updated_at": "2018-04-05 17:32:06",
+  "address": {
+    "firstname": "Jason",
+    "lastname": "Bentle",
+    "address1": "3539 W. Aire Libre",
+    "address2": "",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85053",
+    "country": 840
+  },
+  "program": "sharecare",
+  "organization": "sharecare",
+  "meta": []
+}

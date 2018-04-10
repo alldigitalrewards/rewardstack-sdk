@@ -13,7 +13,7 @@ class CreateTransactionResponseTest extends TestCase
 {
     public function testRequest()
     {
-        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_transaction.json");
+        $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_transaction_response.json");
 
         $authProxy = $this->createMock(AuthProxy::class);
 

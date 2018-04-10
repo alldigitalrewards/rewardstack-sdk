@@ -11,6 +11,7 @@ class OrganizationDomainsRequest extends AbstractApiRequest
      * @var string
      */
     private $uniqueId;
+    protected $httpMethod = 'GET';
 
     /**
      * GetParticipantRequest constructor.

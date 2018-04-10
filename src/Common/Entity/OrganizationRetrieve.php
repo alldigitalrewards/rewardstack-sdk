@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
-class OrganizationReterive extends AbstractEntity
+class OrganizationRetrieve extends AbstractEntity
 {
     private $name;
     private $unique_id;
@@ -10,7 +10,7 @@ class OrganizationReterive extends AbstractEntity
     private $created_at;
     private $updated_at;
     private $parent;
-    private $domains;
+    private $domains= [];
     private $company_contact;
     private $accounts_payable_contact;
 
@@ -113,7 +113,7 @@ class OrganizationReterive extends AbstractEntity
     /**
      * @return mixed
      */
-    public function getDomains()
+    public function getDomains() :array
     {
         return $this->domains;
     }
@@ -121,9 +121,8 @@ class OrganizationReterive extends AbstractEntity
     /**
      * @param mixed $domains
      */
-    public function setDomains($domains)
+    public function setDomains(array $domains)
     {
-        $this->domains = $domains;
     }
 
     /**
