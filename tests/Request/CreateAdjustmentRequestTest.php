@@ -11,6 +11,7 @@ class CreateAdjustmentRequestTest extends TestCase
     protected $uniqueId;
     protected $type;
     protected $amount;
+    protected $referenceId;
     protected $createAdjustmentRequest;
 
     protected function setup()
@@ -18,10 +19,13 @@ class CreateAdjustmentRequestTest extends TestCase
         $this->uniqueId = uniqid();
         $this->type = 'credit';
         $this->amount = 200;
+        $this->referenceId = 'test-reference';
+
         $this->createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest(
             $this->uniqueId,
             $this->type,
-            $this->amount
+            $this->amount,
+            $this->referenceId
         );
     }
 
@@ -46,7 +50,8 @@ class CreateAdjustmentRequestTest extends TestCase
     {
         $expectedArray = [
             "type" => $this->type,
-            "amount" => $this->amount
+            "amount" => $this->amount,
+            "reference" => $this->referenceId
         ];
 
         $this->assertEquals(
