@@ -15,7 +15,12 @@ class TransactionResponseTest extends TestCase
     {
         $jsonData = file_get_contents(__DIR__ . "/../fixtures/transaction_response.json");
 
+        $uri = new \GuzzleHttp\Psr7\Uri('http://localhost');
+
         $authProxy = $this->createMock(AuthProxy::class);
+
+        $authProxy->method('getUri')
+            ->willReturn($uri);
 
         $authProxy->method('request')
             ->willReturn(new Response(

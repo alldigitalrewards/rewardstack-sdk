@@ -15,7 +15,12 @@ class OrganizationReteriveResponseTest extends TestCase
     {
         $jsonData = file_get_contents(__DIR__ . "/../fixtures/organization_reterive_response.json");
 
+        $uri = new \GuzzleHttp\Psr7\Uri('http://localhost');
+
         $authProxy = $this->createMock(AuthProxy::class);
+
+        $authProxy->method('getUri')
+            ->willReturn($uri);
 
         $authProxy->method('request')
             ->willReturn(new Response(

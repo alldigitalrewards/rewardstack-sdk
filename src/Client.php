@@ -41,9 +41,10 @@ class Client
     {
         return new Request(
             $apiRequest->getHttpMethod(),
-            $this->authProxy->getUri()->withPath(
-                $apiRequest->getHttpEndpoint()
-            ),
+            $this->authProxy
+                ->getUri()
+                ->withPath($apiRequest->getHttpEndpoint())
+                ->withQuery($apiRequest->getQueryParams()),
             [
                 'cache-control' => 'no-cache',
                 'content-type' => 'application/json',
