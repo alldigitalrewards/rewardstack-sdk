@@ -15,7 +15,12 @@ class ProgramRetrieveResponseTest extends TestCase
     {
         $jsonData = file_get_contents(__DIR__ . "/../fixtures/program_retrieve_response.json");
 
+        $uri = new \GuzzleHttp\Psr7\Uri('http://localhost');
+
         $authProxy = $this->createMock(AuthProxy::class);
+
+        $authProxy->method('getUri')
+            ->willReturn($uri);
 
         $authProxy->method('request')
             ->willReturn(new Response(

@@ -9,6 +9,7 @@ abstract class AbstractApiRequest implements \JsonSerializable
 {
     protected $httpEndpoint = '/';
     protected $httpMethod = 'GET';
+    protected $queryParams = '';
 
     // Endpoint: /api/user
     public function getHttpEndpoint(): string
@@ -20,6 +21,12 @@ abstract class AbstractApiRequest implements \JsonSerializable
     public function getHttpMethod(): string
     {
         return $this->httpMethod;
+    }
+
+    // Params
+    public function getQueryParams(): string
+    {
+        return $this->queryParams;
     }
 
     // Response Object:
