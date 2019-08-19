@@ -32,6 +32,20 @@ class CreateParticipantRequest extends AbstractApiRequest
      */
     private $email_address;
 
+    /**
+     * @var ParticipantAddressRequest|null
+     */
+    private $address;
+
+    /**
+     * @var string|null
+     */
+    private $birthdate;
+
+    /**
+     * @var array|null
+     */
+    private $meta;
 
     protected $httpMethod = 'POST';
 
@@ -40,20 +54,25 @@ class CreateParticipantRequest extends AbstractApiRequest
         string $uniqueId,
         string $firstname,
         string $lastname,
-        string $email_address
-    ) {
-    
-
+        string $email_address,
+        ParticipantAddressRequest $address = null,
+        string $birthdate = null,
+        array $meta = null
+    )
+    {
         $this->program = $program;
         $this->uniqueId = $uniqueId;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email_address = $email_address;
+        $this->address = $address;
+        $this->birthdate = $birthdate;
+        $this->meta = $meta;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user' ;
+        return '/api/user';
     }
 
     public function getResponseObject(): AbstractEntity
@@ -66,9 +85,12 @@ class CreateParticipantRequest extends AbstractApiRequest
         return [
             "program" => $this->program,
             "uniqueId" => $this->uniqueId,
-            "firstname" =>$this->firstname,
-            "lastname"=>$this->lastname,
-            "email_address"=>$this->email_address
+            "firstname" => $this->firstname,
+            "lastname" => $this->lastname,
+            "email_address" => $this->email_address,
+            'address' => $this->address,
+            'birthdate' => $this->birthdate,
+            'meta' => $this->meta
         ];
     }
 }
