@@ -3,7 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Program;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApirequest;
+use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class ProgramListRequest extends AbstractApiRequest
 {

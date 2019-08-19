@@ -3,7 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Sso;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApirequest;
+use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class SsoTokenRequest extends AbstractApiRequest
 {
