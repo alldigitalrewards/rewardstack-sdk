@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Organization;
 
-use AllDigitalRewards\RewardStack\Common\AbstractApirequest;
+use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 
 class CreateOrganizationRequest extends AbstractApiRequest

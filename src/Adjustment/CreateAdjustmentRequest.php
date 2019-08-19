@@ -3,7 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Adjustment;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApirequest;
+use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class CreateAdjustmentRequest extends AbstractApiRequest
 {
