@@ -33,7 +33,7 @@ class CreateParticipantRequest extends AbstractApiRequest
     private $email_address;
 
     /**
-     * @var ParticipantAddressRequest|null
+     * @var AddressRequest|null
      */
     private $address;
 
@@ -55,7 +55,7 @@ class CreateParticipantRequest extends AbstractApiRequest
         string $firstname,
         string $lastname,
         string $email_address,
-        ParticipantAddressRequest $address = null,
+        AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
     )

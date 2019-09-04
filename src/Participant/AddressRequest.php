@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Participant;
 
-class ParticipantAddressRequest
+class AddressRequest
 {
     public $firstname;
 
@@ -19,6 +19,8 @@ class ParticipantAddressRequest
     public $zip;
 
     public $country;
+
+    public $country_code;
 
     /**
      * @return mixed
@@ -141,11 +143,31 @@ class ParticipantAddressRequest
     }
 
     /**
-     * ISO-3 country code
      * @param $country
+     * @throws \Exception
      */
     public function setCountry($country)
     {
-        $this->country = $country;
+        $this->country = $this->getNumericCountryCode($country);
+    }
+
+    /**
+     * @param string $country
+     * @return int
+     * @throws \Exception
+     */
+    private function getNumericCountryCode(string $country)
+    {
+        $this->country_code = $country;
+        switch($country) {
+            case "CA":
+                return 124;
+                break;
+            case "US":
+                return 840;
+                break;
+            default:
+                throw new \Exception('The country provided is not supported currently');
+        }
     }
 }
