@@ -4,25 +4,41 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
+use AllDigitalRewards\RewardStack\Participant\AddressRequest;
 
 class CreateTransactionRequest extends AbstractApiRequest
 {
-
     /**
      * @var string
      */
     private $uniqueId;
 
+    private $productCollection;
+
+    /**
+     * @var array
+     */
+    private $shippingAddress;
 
     protected $httpMethod = 'POST';
 
     /**
      * GetParticipantRequest constructor.
+     * productRequestCollection is an associative array of sku/quantity pairs. HRA01 => 1
+     *
+     * CreateTransactionRequest constructor.
      * @param string $uniqueId
+     * @param array $productRequestCollection
+     * @param AddressRequest $shippingAddress
      */
-    public function __construct(string $uniqueId)
-    {
+    public function __construct(
+        string $uniqueId,
+        array $productRequestCollection,
+        AddressRequest $shippingAddress
+    ) {
         $this->uniqueId = $uniqueId;
+        $this->productCollection = $productRequestCollection;
+        $this->shippingAddress = $shippingAddress;
     }
 
     public function getHttpEndpoint(): string
@@ -37,31 +53,33 @@ class CreateTransactionRequest extends AbstractApiRequest
 
     public function jsonSerialize()
     {
+        if(empty($this->productCollection)) {
+            throw new \Exception('A product list must be supplied to request a transaction');
+        }
+
         return [
-            "products" => [
-                [
-                    "sku" => "HRA01",
-                    "quantity" => 1,
-                    "amount" => 10
-                ],
-                [
-                    "sku" => "PS0000889497-24",
-                    "quantity" => 1
-                ]
-            ],
+            "products" => $this->getMappedProductCollection(),
             "issue_points" => true,
-            "meta" => [
-                ["hello" => "world2"],
-                ["new" => "hello world"]],
-            "shipping" => [
-                "firstname" => "Zech1",
-                "lastname" => "Walden1",
-                "address1" => "123 Acme Dr",
-                "address2" => "",
-                "city" => "Beverly Hills",
-                "state" => "CA",
-                "zip" => "90210"
-            ]
+            "shipping" => $this->shippingAddress
         ];
+    }
+
+    private function getMappedProductCollection()
+    {
+        $productCollection = [];
+        foreach($this->productCollection as $productRequest) {
+            $product = [
+                'sku' => $productRequest['sku'],
+                'quantity' => $productRequest['quantity']
+            ];
+
+            if(!empty($productRequest['amount'])) {
+                $product['amount'] = $productRequest['amount'];
+            }
+
+            $productCollection[] = $product;
+        }
+
+        return $productCollection;
     }
 }
