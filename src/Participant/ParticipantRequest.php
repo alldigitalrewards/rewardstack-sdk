@@ -10,15 +10,63 @@ class ParticipantRequest extends AbstractApiRequest
 {
 
     /**
-      * @var string
+     * @var string
      */
     private $uniqueId;
 
-    protected $httpEndpoint ='PUT';
+    /**
+     * @var string
+     */
+    private $firstname;
 
-    public function __construct(string $uniqueId)
+    /**
+     * @var string
+     */
+    private $lastname;
+
+    /**
+     * @var string
+     */
+    private $email_address;
+
+    /**
+     * @var AddressRequest|null
+     */
+    private $address;
+
+    /**
+     * @var string|null
+     */
+    private $birthdate;
+
+    /**
+     * @var array|null
+     */
+    private $meta;
+
+    /**
+     * @var string
+     */
+    protected $httpMethod ='PUT';
+
+    public function __construct(
+        string $uniqueId,
+        string $firstname,
+        string $lastname,
+        string $email_address,
+        AddressRequest $address = null,
+        string $birthdate = null,
+        array $meta = null
+    )
     {
         $this->uniqueId = $uniqueId;
+        $this->uniqueId = $uniqueId;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+        $this->email_address = $email_address;
+        $this->address = $address;
+        $this->birthdate = $birthdate;
+        $this->meta = $meta;
     }
 
     public function getHttpEndpoint(): string
@@ -34,26 +82,12 @@ class ParticipantRequest extends AbstractApiRequest
     public function jsonSerialize()
     {
         return [
-
-            "program" => "sharecare",
-        "unique_id" => "TESTPARTICIPANT1",
-        "firstname" => "Zech",
-        "lastname"=> "Walden2",
-        "email_address"=> "zech+test@alldigitalrewards.com",
-        "password"=> "password",
-        "active"=> 1,
-        "phone" => "1231235732",
-        "meta" => ["hello" => "world2","new" => "yolo", "new2" => "yolo2"],
-        "address" => [
-                "firstname" => "Zech",
-                "lastname" => "Walden",
-                "address1" => "123 Acme Dr",
-                "address2" => "",
-                "city" => "Beverly Hills",
-                "state" => "CA",
-                "zip"=> "90210"
-        ]
-
+            "firstname" => $this->firstname,
+            "lastname" => $this->lastname,
+            "email_address" => $this->email_address,
+            'address' => $this->address,
+            'birthdate' => $this->birthdate,
+            'meta' => $this->meta
         ];
     }
 }
