@@ -7,7 +7,6 @@ use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class CreateAdjustmentRequest extends AbstractApiRequest
 {
-
     /**
      * @var string
      */
@@ -19,9 +18,9 @@ class CreateAdjustmentRequest extends AbstractApiRequest
     private $type;
 
     /**
-     * @var int
+     * @var string
      */
-    private $amount;
+    private $pointAmount;
 
     private $referenceId = null;
 
@@ -31,14 +30,19 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      * GetParticipantRequest constructor.
      * @param string $uniqueId
      * @param string $type
-     * @param int $amount
+     * @param string $pointAmount
      * @param string $referenceId
      */
-    public function __construct(string $uniqueId, string $type, int $amount, string $referenceId = null)
+    public function __construct(
+        string $uniqueId,
+        string $type,
+        string $pointAmount,
+        string $referenceId = null
+    )
     {
         $this->uniqueId = $uniqueId;
         $this->type = $type;
-        $this->amount = $amount;
+        $this->pointAmount = $pointAmount;
         $this->referenceId = $referenceId;
     }
 
@@ -56,7 +60,7 @@ class CreateAdjustmentRequest extends AbstractApiRequest
     {
         return [
             "type" => $this->type,
-            "amount" => $this->amount,
+            "amount" => $this->pointAmount,
             "reference" => $this->referenceId
         ];
     }
