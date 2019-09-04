@@ -58,8 +58,8 @@ class CreateParticipantRequest extends AbstractApiRequest
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
-    )
-    {
+    ) {
+    
         $this->program = $program;
         $this->uniqueId = $uniqueId;
         $this->firstname = $firstname;

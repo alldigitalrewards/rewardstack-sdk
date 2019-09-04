@@ -159,7 +159,7 @@ class AddressRequest
     private function getNumericCountryCode(string $country)
     {
         $this->country_code = $country;
-        switch($country) {
+        switch ($country) {
             case "CA":
                 return 124;
                 break;

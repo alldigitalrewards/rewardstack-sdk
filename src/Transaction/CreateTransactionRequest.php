@@ -53,7 +53,7 @@ class CreateTransactionRequest extends AbstractApiRequest
 
     public function jsonSerialize()
     {
-        if(empty($this->productCollection)) {
+        if (empty($this->productCollection)) {
             throw new \Exception('A product list must be supplied to request a transaction');
         }
 
@@ -67,13 +67,13 @@ class CreateTransactionRequest extends AbstractApiRequest
     private function getMappedProductCollection()
     {
         $productCollection = [];
-        foreach($this->productCollection as $productRequest) {
+        foreach ($this->productCollection as $productRequest) {
             $product = [
                 'sku' => $productRequest['sku'],
                 'quantity' => $productRequest['quantity']
             ];
 
-            if(!empty($productRequest['amount'])) {
+            if (!empty($productRequest['amount'])) {
                 $product['amount'] = $productRequest['amount'];
             }
 
