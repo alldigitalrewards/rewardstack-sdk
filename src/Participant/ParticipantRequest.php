@@ -12,7 +12,7 @@ class ParticipantRequest extends AbstractApiRequest
     /**
      * @var string
      */
-    private $uniqueId;
+    private $unique_id;
 
     /**
      * @var string
@@ -47,7 +47,7 @@ class ParticipantRequest extends AbstractApiRequest
     /**
      * @var string
      */
-    protected $httpMethod ='PUT';
+    protected $httpMethod = 'PUT';
 
     public function __construct(
         string $uniqueId,
@@ -57,10 +57,9 @@ class ParticipantRequest extends AbstractApiRequest
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
-    ) {
-    
-        $this->uniqueId = $uniqueId;
-        $this->uniqueId = $uniqueId;
+    )
+    {
+        $this->unique_id = $uniqueId;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email_address = $email_address;
@@ -71,7 +70,7 @@ class ParticipantRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId;
+        return '/api/user/' . $this->unique_id;
     }
 
     public function getResponseObject(): AbstractEntity
