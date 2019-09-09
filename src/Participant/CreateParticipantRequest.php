@@ -15,7 +15,7 @@ class CreateParticipantRequest extends AbstractApiRequest
     /**
      * @var string
      */
-    private $uniqueId;
+    private $unique_id;
 
     /**
      * @var string
@@ -58,10 +58,10 @@ class CreateParticipantRequest extends AbstractApiRequest
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
-    ) {
-    
+    )
+    {
         $this->program = $program;
-        $this->uniqueId = $uniqueId;
+        $this->unique_id = $uniqueId;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email_address = $email_address;
@@ -84,7 +84,7 @@ class CreateParticipantRequest extends AbstractApiRequest
     {
         return [
             "program" => $this->program,
-            "uniqueId" => $this->uniqueId,
+            "unique_id" => $this->unique_id,
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
             "email_address" => $this->email_address,
