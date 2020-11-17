@@ -15,14 +15,13 @@ class ProgramLayoutRequest extends AbstractApiRequest
     protected $httpMethod = 'GET';
 
     /**
-     * GetParticipantRequest constructor.
+     * ProgramLayoutRequest constructor.
      * @param string $uniqueId
      */
     public function __construct(string $uniqueId)
     {
         $this->uniqueId = $uniqueId;
     }
-
 
     public function getHttpEndpoint(): string
     {

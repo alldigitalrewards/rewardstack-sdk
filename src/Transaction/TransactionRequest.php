@@ -7,7 +7,10 @@ use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class TransactionRequest extends AbstractApiRequest
 {
-
+    /**
+     * @var string
+     */
+    private $programId;
     /**
      * @var string
      */
@@ -21,12 +24,14 @@ class TransactionRequest extends AbstractApiRequest
     protected $httpMethod = 'GET';
 
     /**
-     * GetParticipantRequest constructor.
+     * TransactionRequest constructor.
+     * @param string $programId
      * @param string $uniqueId
      * @param int $page
      */
-    public function __construct(string $uniqueId, int $page = 1)
+    public function __construct(string $programId, string $uniqueId, int $page = 1)
     {
+        $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->page = $page;
     }

@@ -10,18 +10,23 @@ class ParticipantRetrieveRequest extends AbstractApiRequest
     /**
      * @var string
      */
+    private $programId;
+    /**
+     * @var string
+     */
     private $uniqueId;
 
     protected $httpEndpoint = 'GET';
 
-    public function __construct(string $uniqueId)
+    public function __construct(string $programId, string $uniqueId)
     {
+        $this->programId = $programId;
         $this->uniqueId = $uniqueId;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId;
+        return "/api/program/{$this->programId}/participant/$this->uniqueId";
     }
 
     public function getResponseObject(): AbstractEntity
