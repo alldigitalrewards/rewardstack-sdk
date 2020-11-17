@@ -2,6 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Program;
 
+use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
@@ -14,15 +15,24 @@ class ProgramRetrieveRequest extends AbstractApiRequest
      */
     private $page = 1;
 
+    /**
+     * @var CollectionFilterInterface|null
+     */
+    private $filterCollection;
 
-    public function __construct(int $page = 1)
+    public function __construct(int $page = 1, CollectionFilterInterface $filter = null)
     {
         $this->page = $page;
+        $this->filterCollection = $filter;
     }
 
     public function getQueryParams(): string
     {
-        return "page=" . $this->page;
+        $filterQueryString = '';
+        if($this->filterCollection !== null) {
+            $filterQueryString = '&' . $this->filterCollection->getQueryString();
+        }
+        return "page=" . $this->page . $filterQueryString;
     }
 
     public function getHttpEndpoint(): string
