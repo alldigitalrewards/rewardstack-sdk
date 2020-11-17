@@ -1,12 +1,22 @@
 <?php
-require 'bootstrap.php';
 
-//do something with $line
-$programRequest = new \AllDigitalRewards\RewardStack\Program\ProgramRequest('sharecare','A super cool name','1005','12312312345','sharecare-demo.mydigitalrewards.com','24','/testurl'
-,'sharecare');
+$client = require_once __DIR__ . '/bootstrap.php';
 
-/**
- * @var \AllDigitalRewards\RewardStack\Program\AbstractCollectionApiResponse $programRequest
- */
+// This is for updating a program
+
+/** @var \AllDigitalRewards\RewardStack\Program\ProgramRequest $programRequest */
+$programRequest = new \AllDigitalRewards\RewardStack\Program\ProgramRequest(
+    '565665',
+    'All Digital Rewards Test',
+    '1',
+    '12312312345',
+    'alldigitalrewards-test.mydigitalrewards.com',
+    '24',
+    '/testurl',
+    'alldigitalrewards'
+);
+
+/** @var \AllDigitalRewards\RewardStack\Program\ProgramResponse $programResponse */
 $programResponse = $client->request($programRequest);
-print_r($programResponse);exit;
+print_r($programResponse);
+exit;
