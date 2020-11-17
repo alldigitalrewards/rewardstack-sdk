@@ -11,6 +11,10 @@ class CreateTransactionRequest extends AbstractApiRequest
     /**
      * @var string
      */
+    private $programId;
+    /**
+     * @var string
+     */
     private $uniqueId;
 
     private $productCollection;
@@ -23,19 +27,20 @@ class CreateTransactionRequest extends AbstractApiRequest
     protected $httpMethod = 'POST';
 
     /**
-     * GetParticipantRequest constructor.
      * productRequestCollection is an associative array of sku/quantity pairs. HRA01 => 1
-     *
      * CreateTransactionRequest constructor.
+     * @param string $programId
      * @param string $uniqueId
      * @param array $productRequestCollection
      * @param AddressRequest $shippingAddress
      */
     public function __construct(
+        string $programId,
         string $uniqueId,
         array $productRequestCollection,
         AddressRequest $shippingAddress
     ) {
+        $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->productCollection = $productRequestCollection;
         $this->shippingAddress = $shippingAddress;

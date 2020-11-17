@@ -7,6 +7,10 @@ use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class AdjustmentRequest extends AbstractApiRequest
 {
+    /**
+     * @var string
+     */
+    private $programId;
 
     /**
      * @var string
@@ -21,19 +25,21 @@ class AdjustmentRequest extends AbstractApiRequest
     protected $httpMethod = 'GET';
 
     /**
-     * GetParticipantRequest constructor.
+     * AdjustmentRequest constructor.
+     * @param string $programId
      * @param string $uniqueId
      * @param int $page
      */
-    public function __construct(string $uniqueId, int $page = 1)
+    public function __construct(string $programId, string $uniqueId, int $page = 1)
     {
+        $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->page = $page;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId . '/adjustment';
+        return "/api/program/{$this->programId}/participant/$this->uniqueId/adjustment";
     }
 
     public function getQueryParams(): string

@@ -1,11 +1,15 @@
 <?php
-require 'bootstrap.php';
 
-$participantRequest = new AllDigitalRewards\RewardStack\Participant\ParticipantRequest("TESTPARTICIPANT1");
+$client = require_once __DIR__ . '/bootstrap.php';
 
-/**
- * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $participantRequest
- */
-$participant = $client->request($participantRequest);
+use \AllDigitalRewards\RewardStack\Participant\ParticipantRetrieveRequest;
+use \AllDigitalRewards\RewardStack\Participant\ParticipantRetrieveResponse;
 
-print_r($participant); exit;
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
+$participantRequest = new ParticipantRetrieveRequest($program, $participantUniqueId);
+
+/** @var ParticipantRetrieveResponse $participantResponse */
+$participantResponse = $client->request($participantRequest);
+print_r($participantResponse);
+exit;

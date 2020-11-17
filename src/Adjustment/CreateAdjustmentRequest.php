@@ -10,6 +10,11 @@ class CreateAdjustmentRequest extends AbstractApiRequest
     /**
      * @var string
      */
+    private $programId;
+
+    /**
+     * @var string
+     */
     private $uniqueId;
 
     /**
@@ -27,19 +32,22 @@ class CreateAdjustmentRequest extends AbstractApiRequest
     protected $httpMethod = 'POST';
 
     /**
-     * GetParticipantRequest constructor.
+     * CreateAdjustmentRequest constructor.
+     * @param string $programId
      * @param string $uniqueId
      * @param string $type
      * @param string $pointAmount
-     * @param string $referenceId
+     * @param string|null $referenceId
      */
     public function __construct(
+        string $programId,
         string $uniqueId,
         string $type,
         string $pointAmount,
         string $referenceId = null
     )
     {
+        $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->type = $type;
         $this->pointAmount = $pointAmount;
@@ -48,7 +56,7 @@ class CreateAdjustmentRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId . '/adjustment';
+        return "/api/program/{$this->programId}/participant/$this->uniqueId/adjustment";
     }
 
     public function getResponseObject(): AbstractEntity

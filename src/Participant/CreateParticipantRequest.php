@@ -10,12 +10,12 @@ class CreateParticipantRequest extends AbstractApiRequest
     /**
      * @var string
      */
-    private $program;
+    private $programId;
 
     /**
      * @var string
      */
-    private $unique_id;
+    private $uniqueId;
 
     /**
      * @var string
@@ -30,7 +30,7 @@ class CreateParticipantRequest extends AbstractApiRequest
     /**
      * @var string
      */
-    private $email_address;
+    private $emailAddress;
 
     /**
      * @var AddressRequest|null
@@ -49,22 +49,32 @@ class CreateParticipantRequest extends AbstractApiRequest
 
     protected $httpMethod = 'POST';
 
+    /**
+     * CreateParticipantRequest constructor.
+     * @param string $programId
+     * @param string $uniqueId
+     * @param string $firstname
+     * @param string $lastname
+     * @param string $emailAddress
+     * @param AddressRequest|null $address
+     * @param string|null $birthdate
+     * @param array|null $meta
+     */
     public function __construct(
-        string $program,
+        string $programId,
         string $uniqueId,
         string $firstname,
         string $lastname,
-        string $email_address,
+        string $emailAddress,
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
-    )
-    {
-        $this->program = $program;
-        $this->unique_id = $uniqueId;
+    ) {
+        $this->programId = $programId;
+        $this->uniqueId = $uniqueId;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
-        $this->email_address = $email_address;
+        $this->emailAddress = $emailAddress;
         $this->address = $address;
         $this->birthdate = $birthdate;
         $this->meta = $meta;
@@ -72,7 +82,7 @@ class CreateParticipantRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user';
+        return "/api/program/{$this->programId}/participant";
     }
 
     public function getResponseObject(): AbstractEntity
@@ -83,11 +93,11 @@ class CreateParticipantRequest extends AbstractApiRequest
     public function jsonSerialize()
     {
         return [
-            "program" => $this->program,
-            "unique_id" => $this->unique_id,
+            "program" => $this->programId,
+            "unique_id" => $this->uniqueId,
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
-            "email_address" => $this->email_address,
+            "email_address" => $this->emailAddress,
             'address' => $this->address,
             'birthdate' => $this->birthdate,
             'meta' => $this->meta

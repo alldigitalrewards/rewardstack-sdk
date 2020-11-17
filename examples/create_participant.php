@@ -1,13 +1,21 @@
 <?php
-require 'bootstrap.php';
+$client = require_once __DIR__ . '/bootstrap.php';
 
-//do something with $line
-$createParticipantRequest = new \AllDigitalRewards\RewardStack\Participant\CreateParticipantRequest(
-    'sharecare', 'TRANSACT', 'John', 'Smith', 'zech+sweepstake1@alldigitalrewards.com'
+use AllDigitalRewards\RewardStack\Participant\CreateParticipantRequest;
+use AllDigitalRewards\RewardStack\Participant\CreateParticipantResponse;
+
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
+
+$createParticipantRequest = new CreateParticipantRequest(
+    $program,
+    $participantUniqueId,
+    'John',
+    'Smith',
+    'johnsmith+sdk-test@alldigitalrewards.com'
 );
 
-/**
- * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $createParticipantRequest
- */
+/** @var CreateParticipantResponse $createParticipantResponse */
 $createParticipantResponse = $client->request($createParticipantRequest);
-print_r($createParticipantResponse);exit;
+print_r($createParticipantResponse);
+exit;

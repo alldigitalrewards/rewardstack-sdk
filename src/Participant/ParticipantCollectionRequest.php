@@ -7,16 +7,30 @@ use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
 class ParticipantCollectionRequest extends AbstractApiRequest
 {
-    protected $httpEndpoint = '/api/user';
+    /**
+     * @var string
+     */
+    private $programId;
 
     /**
      * @var int
      */
     private $page = 1;
 
-    public function __construct(int $page = 1)
+    /**
+     * ParticipantCollectionRequest constructor.
+     * @param string $programId
+     * @param int $page
+     */
+    public function __construct(string $programId, int $page = 1)
     {
+        $this->programId = $programId;
         $this->page = $page;
+    }
+
+    public function getHttpEndpoint(): string
+    {
+        return "/api/program/{$this->programId}/participant";
     }
 
     public function getQueryParams(): string

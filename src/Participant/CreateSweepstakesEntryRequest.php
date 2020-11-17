@@ -10,6 +10,11 @@ class CreateSweepstakesEntryRequest extends AbstractApiRequest
     /**
      * @var string
      */
+    private $programId;
+
+    /**
+     * @var string
+     */
     private $uniqueId;
 
     private $entryCount;
@@ -17,18 +22,21 @@ class CreateSweepstakesEntryRequest extends AbstractApiRequest
     protected $httpMethod = 'POST';
 
     /**
-     * GetParticipantRequest constructor.
+     * CreateSweepstakesEntryRequest constructor.
+     * @param string $programId
      * @param string $uniqueId
+     * @param int $entryCount
      */
-    public function __construct(string $uniqueId, int $entryCount)
+    public function __construct(string $programId, string $uniqueId, int $entryCount)
     {
+        $this->programId = $programId;
         $this->uniqueId = trim($uniqueId);
         $this->entryCount = $entryCount;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId . '/sweepstake';
+        return "/api/program/{$this->programId}/participant/$this->uniqueId/sweepstake";
     }
 
     public function getResponseObject(): AbstractEntity

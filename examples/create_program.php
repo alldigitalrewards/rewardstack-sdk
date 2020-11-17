@@ -1,13 +1,20 @@
 <?php
-require 'bootstrap.php';
+$client = require_once __DIR__ . '/bootstrap.php';
 
-//do something with $line
+/** @var \AllDigitalRewards\RewardStack\Program\CreateProgramRequest $createProgramRequest */
 $createProgramRequest = new \AllDigitalRewards\RewardStack\Program\CreateProgramRequest(
-    'sharecare', 'ABC1234567', 'A super cool name2', '1000', '902109021','sharecare-demo.mydigitalrewards.com','24','testlogo'
+    'alldigitalrewards',
+    'ADRTESTPROGRAM',
+    'A Test Program',
+    '1',
+    '1231231234',
+    'somewhere-over-the-rainbow.mydigitalrewards.com',
+    true,
+    'testlogo'
 );
 
-/**
- * @var \AllDigitalRewards\RewardStack\Participant\AbstractCollectionApiResponse $createProgramRequest
- */
-$createProgramresponse = $client->request($createProgramRequest);
-print_r($createProgramresponse);exit;
+
+/** @var \AllDigitalRewards\RewardStack\Program\CreateProgramResponse $createProgramResponse */
+$createProgramResponse = $client->request($createProgramRequest);
+print_r($createProgramResponse);
+exit;
