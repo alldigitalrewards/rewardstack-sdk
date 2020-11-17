@@ -1,15 +1,22 @@
 <?php
+
 require __DIR__ . '/../vendor/autoload.php';
 
-$credentials = new \AllDigitalRewards\RewardStack\Auth\Credentials(
+use AllDigitalRewards\RewardStack\Auth\Credentials;
+use GuzzleHttp\Psr7\Uri;
+use GuzzleHttp\Client;
+use AllDigitalRewards\RewardStack\Auth\AuthProxy;
+use AllDigitalRewards\RewardStack\Client as RewardStackClient;
+
+//@TODO remove credentials..
+$credentials = new Credentials(
     'username',
     'password'
 );
 
-$uri = new \GuzzleHttp\Psr7\Uri('https://admin.qa.alldigitalrewards.com');
+$uri = new Uri('https://admin.adrqa.info');
+$httpClient = new Client();
+$authProxy = new AuthProxy($credentials, $uri, $httpClient);
 
-$httpClient = new \GuzzleHttp\Client();
-
-$authProxy = new \AllDigitalRewards\RewardStack\Auth\AuthProxy($credentials, $uri, $httpClient);
-
-$client = new \AllDigitalRewards\RewardStack\Client($authProxy);
+$client = new RewardStackClient($authProxy);
+return $client;

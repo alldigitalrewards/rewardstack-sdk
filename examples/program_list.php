@@ -1,13 +1,15 @@
 <?php
-require 'bootstrap.php';
 
-//do something with $line
+$client = require_once __DIR__ . '/bootstrap.php';
+
+// This is for fetching a single program
+
+/** @var \AllDigitalRewards\RewardStack\Program\ProgramListRequest $programListRequest */
 $programListRequest = new \AllDigitalRewards\RewardStack\Program\ProgramListRequest(
-     'sharecare'
+    'alldigitalrewards'
 );
 
-/**
- * @var \AllDigitalRewards\RewardStack\Program\AbstractCollectionApiResponse $programListRequest
- */
+/** @var \AllDigitalRewards\RewardStack\Program\ProgramListResponse $programListResponse */
 $programListResponse = $client->request($programListRequest);
-print_r($programListResponse);exit;
+print_r($programListResponse->getUniqueId());
+exit;
