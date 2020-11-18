@@ -2,10 +2,11 @@
 
 namespace AllDigitalRewards\RewardStack\Adjustment;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
+use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class AdjustmentRequest extends AbstractApiRequest
+class AdjustmentListRequest extends AbstractApiCollectionRequest
 {
     /**
      * @var string
@@ -17,24 +18,16 @@ class AdjustmentRequest extends AbstractApiRequest
      */
     private $uniqueId;
 
-    /**
-     * @var int
-     */
-    private $page = 1;
-
-    protected $httpMethod = 'GET';
-
-    /**
-     * AdjustmentRequest constructor.
-     * @param string $programId
-     * @param string $uniqueId
-     * @param int $page
-     */
-    public function __construct(string $programId, string $uniqueId, int $page = 1)
-    {
+    public function __construct(
+        string $programId,
+        string $uniqueId,
+        int $page = 1,
+        int $limit = 30,
+        CollectionFilterInterface $filter = null
+    ) {
+        parent::__construct($page, $limit, $filter);
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
-        $this->page = $page;
     }
 
     public function getHttpEndpoint(): string
@@ -42,14 +35,9 @@ class AdjustmentRequest extends AbstractApiRequest
         return "/api/program/{$this->programId}/participant/$this->uniqueId/adjustment";
     }
 
-    public function getQueryParams(): string
-    {
-        return 'page=' . $this->page;
-    }
-
     public function getResponseObject(): AbstractEntity
     {
-        return new AdjustmentResponse();
+        return new AdjustmentListResponse();
     }
 
     public function jsonSerialize()
