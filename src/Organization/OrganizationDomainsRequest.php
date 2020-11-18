@@ -2,29 +2,37 @@
 
 namespace AllDigitalRewards\RewardStack\Organization;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
+use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class OrganizationDomainsRequest extends AbstractApiRequest
+class OrganizationDomainsRequest extends AbstractApiCollectionRequest
 {
     /**
      * @var string
      */
     private $uniqueId;
-    protected $httpMethod = 'GET';
 
     /**
-     * GetParticipantRequest constructor.
+     * OrganizationDomainsRequest constructor.
      * @param string $uniqueId
+     * @param int $page
+     * @param int $limit
+     * @param CollectionFilterInterface|null $filter
      */
-    public function __construct(string $uniqueId)
-    {
+    public function __construct(
+        string $uniqueId,
+        int $page = 1,
+        int $limit = 30,
+        CollectionFilterInterface $filter = null
+    ) {
+        parent::__construct($page, $limit, $filter);
         $this->uniqueId = $uniqueId;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/organization/' . $this->uniqueId. '/domain' ;
+        return '/api/organization/' . $this->uniqueId . '/domain';
     }
 
     public function getResponseObject(): AbstractEntity

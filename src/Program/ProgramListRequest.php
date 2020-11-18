@@ -2,24 +2,15 @@
 
 namespace AllDigitalRewards\RewardStack\Program;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class ProgramListRequest extends AbstractApiRequest
+class ProgramListRequest extends AbstractApiCollectionRequest
 {
-    protected $httpMethod = 'GET';
-    protected $uniqueId;
-
-    public function __construct($uniqueId)
-    {
-        $this->uniqueId = $uniqueId;
-    }
-
     public function getHttpEndpoint(): string
     {
-        return '/api/program/' . $this->uniqueId;
+        return '/api/program';
     }
-
 
     public function getResponseObject(): AbstractEntity
     {

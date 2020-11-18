@@ -1,16 +1,9 @@
 <?php
 
-
 namespace AllDigitalRewards\RewardStack\Program;
 
-use AllDigitalRewards\RewardStack\Common\Entity\ProgramRetrieve;
-use AllDigitalRewards\RewardStack\Common\AbstractCollectionApiResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\Program;
 
-class ProgramRetrieveResponse extends AbstractCollectionApiResponse
+class ProgramRetrieveResponse extends Program
 {
-
-    protected function getEntityClass(): string
-    {
-        return ProgramRetrieve::class;
-    }
 }

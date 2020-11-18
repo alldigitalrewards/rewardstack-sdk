@@ -35,7 +35,7 @@ class SingleUserTransactionRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/user/' . $this->uniqueId. '/transaction/' . $this->transactionId;
+        return "/api/program/{$this->programId}/participant/$this->uniqueId/transaction/{$this->transactionId}";
     }
 
     public function getResponseObject(): AbstractEntity
