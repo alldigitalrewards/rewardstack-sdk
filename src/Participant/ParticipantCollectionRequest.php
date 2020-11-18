@@ -2,10 +2,11 @@
 
 namespace AllDigitalRewards\RewardStack\Participant;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
+use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class ParticipantCollectionRequest extends AbstractApiRequest
+class ParticipantCollectionRequest extends AbstractApiCollectionRequest
 {
     /**
      * @var string
@@ -13,29 +14,25 @@ class ParticipantCollectionRequest extends AbstractApiRequest
     private $programId;
 
     /**
-     * @var int
-     */
-    private $page = 1;
-
-    /**
      * ParticipantCollectionRequest constructor.
      * @param string $programId
      * @param int $page
+     * @param int $limit
+     * @param CollectionFilterInterface|null $filter
      */
-    public function __construct(string $programId, int $page = 1)
-    {
+    public function __construct(
+        string $programId,
+        int $page = 1,
+        int $limit = 30,
+        CollectionFilterInterface $filter = null
+    ) {
+        parent::__construct($page, $limit, $filter);
         $this->programId = $programId;
-        $this->page = $page;
     }
 
     public function getHttpEndpoint(): string
     {
         return "/api/program/{$this->programId}/participant";
-    }
-
-    public function getQueryParams(): string
-    {
-        return "page=" . $this->page;
     }
 
     public function getResponseObject(): AbstractEntity

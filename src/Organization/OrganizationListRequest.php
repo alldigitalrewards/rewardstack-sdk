@@ -2,31 +2,16 @@
 
 namespace AllDigitalRewards\RewardStack\Organization;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class OrganizationListRequest extends AbstractApiRequest
+class OrganizationListRequest extends AbstractApiCollectionRequest
 {
     protected $httpMethod = 'GET';
-
-    /**
-     * @var int
-     */
-    private $page = 1;
-
-    public function __construct(int $page = 1)
-    {
-        $this->page = $page;
-    }
 
     public function getHttpEndpoint(): string
     {
         return '/api/organization';
-    }
-
-    public function getQueryParams(): string
-    {
-        return "page=" . $this->page;
     }
 
     public function getResponseObject(): AbstractEntity
