@@ -2,14 +2,14 @@
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
-use AllDigitalRewards\RewardStack\Adjustment\AdjustmentRequest;
-use AllDigitalRewards\RewardStack\Adjustment\AdjustmentResponse;
+use AllDigitalRewards\RewardStack\Adjustment\AdjustmentListRequest;
+use AllDigitalRewards\RewardStack\Adjustment\AdjustmentListResponse;
 
 $program = 'alldigitalrewards';
 $participantUniqueId = 'ADRTESTP1';
-$adjustmentRequest = new AdjustmentRequest($program, $participantUniqueId);
+$adjustmentRequest = new AdjustmentListRequest($program, $participantUniqueId);
 
-/** @var AdjustmentResponse $adjustmentResponse */
+/** @var AdjustmentListResponse $adjustmentResponse */
 $adjustmentResponse = $client->request($adjustmentRequest);
 print_r($adjustmentResponse);
 exit;
