@@ -23,6 +23,10 @@ class CreateTransactionRequest extends AbstractApiRequest
      * @var array
      */
     private $shippingAddress;
+    /**
+     * @var array
+     */
+    private $transactionConfig = [];
 
     protected $httpMethod = 'POST';
 
@@ -33,17 +37,20 @@ class CreateTransactionRequest extends AbstractApiRequest
      * @param string $uniqueId
      * @param array $productRequestCollection
      * @param AddressRequest $shippingAddress
+     * @param array $transactionConfig
      */
     public function __construct(
         string $programId,
         string $uniqueId,
         array $productRequestCollection,
-        AddressRequest $shippingAddress
+        AddressRequest $shippingAddress,
+        array $transactionConfig = []
     ) {
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->productCollection = $productRequestCollection;
         $this->shippingAddress = $shippingAddress;
+        $this->transactionConfig = $transactionConfig;
     }
 
     public function getHttpEndpoint(): string
@@ -64,8 +71,9 @@ class CreateTransactionRequest extends AbstractApiRequest
 
         return [
             "products" => $this->getMappedProductCollection(),
-            "issue_points" => true,
-            "shipping" => $this->shippingAddress
+            "issue_points" => $this->transactionConfig['issue_points'] ?? true,
+            "shipping" => $this->shippingAddress,
+            "meta" => $this->transactionConfig['meta'] ?? [],
         ];
     }
 
