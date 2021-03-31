@@ -9,12 +9,16 @@ $program = 'alldigitalrewards';
 $participantUniqueId = 'ADRTESTP1';
 $adjustmentType = 'credit';
 $adjustmentAmount = 200;
+$referenceId = 'ABC123';
+$description = "Credit adjustment for being awesome!";
 
 $createAdjustmentsRequest = new CreateAdjustmentRequest(
     $program,
     $participantUniqueId,
     $adjustmentType,
-    $adjustmentAmount
+    $adjustmentAmount,
+    $referenceId,
+    $description
 );
 
 /** @var CreateAdjustmentResponse $createAdjustmentsResponse */

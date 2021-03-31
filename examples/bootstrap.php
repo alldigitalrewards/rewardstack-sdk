@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack\Client as RewardStackClient;
 
-//@TODO remove credentials..
 $credentials = new Credentials(
     'username',
     'password'

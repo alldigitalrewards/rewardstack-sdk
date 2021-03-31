@@ -27,7 +27,15 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      */
     private $pointAmount;
 
-    private $referenceId = null;
+    /**
+     * @var string|null
+     */
+    private $referenceId;
+
+    /**
+     * @var string|null
+     */
+    private $description;
 
     protected $httpMethod = 'POST';
 
@@ -38,13 +46,15 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      * @param string $type
      * @param string $pointAmount
      * @param string|null $referenceId
+     * @param string|null $description
      */
     public function __construct(
         string $programId,
         string $uniqueId,
         string $type,
         string $pointAmount,
-        string $referenceId = null
+        string $referenceId = null,
+        string $description = null
     )
     {
         $this->programId = $programId;
@@ -52,6 +62,7 @@ class CreateAdjustmentRequest extends AbstractApiRequest
         $this->type = $type;
         $this->pointAmount = $pointAmount;
         $this->referenceId = $referenceId;
+        $this->description = $description;
     }
 
     public function getHttpEndpoint(): string
@@ -69,7 +80,8 @@ class CreateAdjustmentRequest extends AbstractApiRequest
         return [
             "type" => $this->type,
             "amount" => $this->pointAmount,
-            "reference" => $this->referenceId
+            "reference" => $this->referenceId,
+            'description' => $this->description
         ];
     }
 }
