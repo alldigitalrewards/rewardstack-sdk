@@ -10,7 +10,7 @@ class AdjustmentRequestTest extends TestCase
     protected $uniqueId;
     protected $adjustmentRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uniqueId = uniqid();
         $this->adjustmentRequest = new Adjustment\AdjustmentRequest($this->uniqueId);

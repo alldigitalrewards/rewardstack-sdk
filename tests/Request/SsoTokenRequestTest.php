@@ -11,7 +11,7 @@ class SsoTokenRequestTest extends TestCase
     protected $uniqueId;
     protected $ssoTokenRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uniqueId = uniqid();
         $this->ssoTokenRequest = new SsoTokenRequest($this->uniqueId);
