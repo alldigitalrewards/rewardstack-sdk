@@ -10,7 +10,7 @@ class ParticipantCollectionRequestTest extends TestCase
 {
     protected $participantCollectionRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->participantCollectionRequest = new ParticipantCollectionRequest;
     }

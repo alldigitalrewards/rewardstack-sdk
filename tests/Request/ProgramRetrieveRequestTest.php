@@ -11,7 +11,7 @@ class ProgramRetrieveRequestTest extends TestCase
 
     protected $programRetrieveRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
 
         $this->programRetrieveRequest = new ProgramRetrieveRequest;

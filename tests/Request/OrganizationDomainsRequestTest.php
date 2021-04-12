@@ -11,7 +11,7 @@ class OrganizationDomainsRequestTest extends TestCase
     protected $uniqueId;
     protected $organizationDomainsRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uniqueId = uniqid();
         $this->organizationDomainsRequest = new OrganizationDomainsRequest($this->uniqueId);

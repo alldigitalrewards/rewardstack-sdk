@@ -12,7 +12,7 @@ class CreateSweepstakesEntryRequestTest extends TestCase
     protected $entryCount;
     protected $createSweepstakesEntryRequest;
 
-    protected function setup()
+    protected function setup(): void
     {
         $this->uniqueId = uniqid();
         $this->entryCount = '1';

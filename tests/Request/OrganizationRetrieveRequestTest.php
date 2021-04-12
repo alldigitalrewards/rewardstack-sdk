@@ -11,7 +11,7 @@ class OrganizationRetrieveRequestTest extends TestCase
     protected $uniqueId;
     protected $organizationRetrieveRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uniqueId = uniqid();
         $this->organizationRetrieveRequest = new OrganizationRetrieveRequest($this->uniqueId);
