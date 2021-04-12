@@ -1,11 +1,18 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Organization\OrganizationCollectionFilter;
+use AllDigitalRewards\RewardStack\Organization\OrganizationListRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationListResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationListRequest $organizationListRequest */
-$organizationListRequest = new \AllDigitalRewards\RewardStack\Organization\OrganizationListRequest();
+$filter = new OrganizationCollectionFilter();
+$filter->setNameFilter('test');
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationListResponse $organizationListResponse */
+/** @var OrganizationListRequest $organizationListRequest */
+$organizationListRequest = new OrganizationListRequest(1, 30, $filter);
+
+/** @var OrganizationListResponse $organizationListResponse */
 $organizationListResponse = $client->request($organizationListRequest);
 print_r($organizationListResponse);
 exit;
