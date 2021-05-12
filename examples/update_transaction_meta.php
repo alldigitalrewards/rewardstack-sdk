@@ -25,7 +25,7 @@ $addTransactionMetaRequest = new AddTransactionMetaRequest(
     $meta
 );
 
-/** @var AddTransactionMetaResponse $participantUpdateRequest */
+/** @var AddTransactionMetaResponse $addTransactionMetaResponse */
 $addTransactionMetaResponse = $client->request($addTransactionMetaRequest);
 
 print_r($addTransactionMetaResponse);
