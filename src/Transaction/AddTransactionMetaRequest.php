@@ -53,7 +53,7 @@ class AddTransactionMetaRequest extends AbstractApiRequest
         }
 
         return [
-            "meta" => $this->meta ?? [],
+            "meta" => $this->meta
         ];
     }
 }
