@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateSweepstakesEntryRequestTest extends TestCase
 {
+    protected $program = 'sharecare';
     protected $uniqueId;
     protected $entryCount;
     protected $createSweepstakesEntryRequest;
@@ -16,12 +17,16 @@ class CreateSweepstakesEntryRequestTest extends TestCase
     {
         $this->uniqueId = uniqid();
         $this->entryCount = '1';
-        $this->createSweepstakesEntryRequest = new CreateSweepstakesEntryRequest($this->uniqueId, $this->entryCount);
+        $this->createSweepstakesEntryRequest = new CreateSweepstakesEntryRequest(
+            $this->program,
+            $this->uniqueId,
+            $this->entryCount
+        );
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId . '/sweepstake';
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/sweepstake";
         $this->assertEquals($expectedUrl, $this->createSweepstakesEntryRequest
             ->getHttpEndpoint());
     }

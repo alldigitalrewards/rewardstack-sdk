@@ -17,15 +17,17 @@ class ProgramLayoutRequest extends AbstractApiRequest
     /**
      * ProgramLayoutRequest constructor.
      * @param string $uniqueId
+     * @param $lang
      */
-    public function __construct(string $uniqueId)
+    public function __construct(string $uniqueId, $lang = null)
     {
         $this->uniqueId = $uniqueId;
+        $this->setLang($lang);
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/program/'. $this->uniqueId .'/layout';
+        return '/api/program/'. $this->uniqueId .'/layout?lang=' . $this->getLang();
     }
 
     public function getResponseObject(): AbstractEntity

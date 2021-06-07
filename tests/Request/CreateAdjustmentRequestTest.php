@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateAdjustmentRequestTest extends TestCase
 {
+    protected $program = 'sharecare';
     protected $uniqueId;
     protected $type;
     protected $amount;
@@ -22,6 +23,7 @@ class CreateAdjustmentRequestTest extends TestCase
         $this->referenceId = 'test-reference';
 
         $this->createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest(
+            $this->program,
             $this->uniqueId,
             $this->type,
             $this->amount,
@@ -31,7 +33,7 @@ class CreateAdjustmentRequestTest extends TestCase
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId . '/adjustment';
+        $expectedUrl = '/api/program/'. $this->program . '/participant/' . $this->uniqueId . '/adjustment';
         $this->assertEquals($expectedUrl, $this->createAdjustmentRequest
         ->getHttpEndpoint());
     }
@@ -51,7 +53,8 @@ class CreateAdjustmentRequestTest extends TestCase
         $expectedArray = [
             "type" => $this->type,
             "amount" => $this->amount,
-            "reference" => $this->referenceId
+            "reference" => $this->referenceId,
+            "description" => null,
         ];
 
         $this->assertEquals(

@@ -31,7 +31,7 @@ class ParticipantRetrieveResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $participantRetrieveRequest = new Participant\ParticipantRetrieveRequest('TESTPARTICIPANT1');
+        $participantRetrieveRequest = new Participant\ParticipantRetrieveRequest('sharecare', 'TESTPARTICIPANT1');
         $response = $client->request($participantRetrieveRequest);
 
         $expectedResponse = new ParticipantRetrieveResponse(json_decode($jsonData));

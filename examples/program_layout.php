@@ -7,7 +7,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 /** @var \AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest $programLayoutRequest */
 $programLayoutRequest = new \AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest(
-    'alldigitalrewards'
+    'alldigitalrewards',
+    'en'
 );
 
 try {

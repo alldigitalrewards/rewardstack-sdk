@@ -8,18 +8,25 @@ use PHPUnit\Framework\TestCase;
 
 class ParticipantRetrieveRequestTest extends TestCase
 {
+    protected $program = 'sharecare';
     protected $uniqueId;
     protected $participantRequest;
 
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->participantRequest = new ParticipantRequest($this->uniqueId);
+        $this->participantRequest = new ParticipantRequest(
+            $this->program,
+            $this->uniqueId,
+            'Joe',
+            'Smith',
+            'anyemail.yahoo.com'
+        );
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId;
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId";
         $this->assertEquals($expectedUrl, $this->participantRequest->getHttpEndpoint());
     }
 

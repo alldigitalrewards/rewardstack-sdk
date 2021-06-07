@@ -14,12 +14,12 @@ class ProgramListRequestTest extends TestCase
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->programListRequest = new ProgramListRequest($this->uniqueId);
+        $this->programListRequest = new ProgramListRequest();
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/program/' . $this->uniqueId;
+        $expectedUrl = '/api/program';
         $this->assertEquals($expectedUrl, $this->programListRequest->getHttpEndpoint());
     }
 

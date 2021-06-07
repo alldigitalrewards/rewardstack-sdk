@@ -31,7 +31,7 @@ class ProgramListResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $progromListRequest = new Program\ProgramListRequest('sharecare');
+        $progromListRequest = new Program\ProgramListRequest();
         $response = $client->request($progromListRequest);
 
         $expectedResponse = new ProgramListResponse(json_decode($jsonData));
@@ -40,86 +40,73 @@ class ProgramListResponseTest extends TestCase
             ProgramListResponse::class,
             $response
         );
-
+        /** @var RewardStack\Common\Entity\ProgramRetrieve $firstResponse */
+        $firstResponse = $expectedResponse[0];
+        /** @var RewardStack\Common\Entity\ProgramRetrieve $verify */
+        $verify = $response[0];
         $this->assertEquals(
-            $expectedResponse->getUniqueId(),
-            $response->getUniqueId()
+            $firstResponse->getUniqueId(),
+            $verify->getUniqueId()
         );
 
         $this->assertEquals(
-            $expectedResponse->getMeta(),
-            $response->getMeta()
+            $firstResponse->getMeta(),
+            $verify->getMeta()
         );
 
         $this->assertEquals(
-            $expectedResponse->getName(),
-            $response->getName()
+            $firstResponse->getName(),
+            $verify->getName()
         );
 
         $this->assertEquals(
-            $expectedResponse->getPoint(),
-            $response->getPoint()
+            $firstResponse->getPoint(),
+            $verify->getPoint()
         );
 
         $this->assertEquals(
-            $expectedResponse->getUrl(),
-            $response->getUrl()
+            $firstResponse->getUrl(),
+            $verify->getUrl()
         );
 
         $this->assertEquals(
-            $expectedResponse->getLogo(),
-            $response->getLogo()
+            $firstResponse->getLogo(),
+            $verify->getLogo()
         );
 
         $this->assertEquals(
-            $expectedResponse->getPublished(),
-            $response->getPublished()
+            $firstResponse->getPublished(),
+            $verify->getPublished()
         );
 
         $this->assertEquals(
-            $expectedResponse->getCostCenterId(),
-            $response->getCostCenterId()
+            $firstResponse->getCostCenterId(),
+            $verify->getCostCenterId()
         );
 
         $this->assertEquals(
-            $expectedResponse->getActive(),
-            $response->getActive()
-        );$this->assertEquals(
-            $expectedResponse->getLogo(),
-            $response->getLogo()
+            $firstResponse->getActive(),
+            $verify->getActive()
         );
 
         $this->assertEquals(
-            $expectedResponse->getCreatedAt(),
-            $response->getCreatedAt()
+            $firstResponse->getLogo(),
+            $verify->getLogo()
         );
 
         $this->assertEquals(
-            $expectedResponse->getUpdatedAt(),
-            $response->getUpdatedAt()
+            $firstResponse->getCreatedAt(),
+            $verify->getCreatedAt()
         );
 
         $this->assertEquals(
-            $expectedResponse->getOrganization(),
-            $response->getOrganization()
+            $firstResponse->getUpdatedAt(),
+            $verify->getUpdatedAt()
         );
 
         $this->assertEquals(
-            $expectedResponse->getContact(),
-            $response->getContact()
-        );
-        $this->assertEquals(
-            $expectedResponse->getProductCriteria(),
-            $response->getProductCriteria()
-        );
-        $this->assertEquals(
-            $expectedResponse->getFeaturedProducts(),
-            $response->getFeaturedProducts()
-        );
-
-        $this->assertEquals(
-            $expectedResponse->getAutoRedemption(),
-            $response->getAutoRedemption()
+            $firstResponse->getOrganization(),
+            $verify->getOrganization()
         );
     }
 }

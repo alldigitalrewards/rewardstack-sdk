@@ -35,7 +35,7 @@ class CreateParticipantRequestTest extends TestCase
     public function testGetHttpEndpoint()
     {
 
-        $expectedUrl = '/api/user';
+        $expectedUrl = "/api/program/{$this->program}/participant";
         $this->assertEquals($expectedUrl, $this->createParticipantRequest
             ->getHttpEndpoint());
     }
@@ -54,10 +54,13 @@ class CreateParticipantRequestTest extends TestCase
     {
         $expectedArray = [
             "program" => $this->program,
-            "uniqueId" => $this->uniqueId,
-            "firstname" =>$this->firstname,
-            "lastname"=>$this->lastname,
-            "email_address"=>$this->email_address
+            "unique_id" => $this->uniqueId,
+            "firstname" => $this->firstname,
+            "lastname" => $this->lastname,
+            "email_address" => $this->email_address,
+            "address" => null,
+            "birthdate" => null,
+            "meta" => null,
         ];
 
         $this->assertEquals(

@@ -11,6 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class CreateAdjustmentTest extends TestCase
 {
+    protected $program = 'sharecare';
+
     public function testRequest()
     {
         $jsonData = file_get_contents(__DIR__ . "/../fixtures/create_adjustment_response.json");
@@ -32,7 +34,12 @@ class CreateAdjustmentTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
 
-        $createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest('TESTPARTICIPANT1', 'credit', '100');
+        $createAdjustmentRequest = new Adjustment\CreateAdjustmentRequest(
+            $this->program,
+            'TESTPARTICIPANT1',
+            'credit',
+            '100'
+        );
         $response = $client->request($createAdjustmentRequest);
 
         $expectedResponse = new CreateAdjustmentResponse(json_decode($jsonData));
