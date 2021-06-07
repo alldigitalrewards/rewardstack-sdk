@@ -55,7 +55,7 @@ class CreateTransactionRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return "/api/program/{$this->programId}/participant/$this->uniqueId/transaction";
+        return "/api/program/{$this->programId}/participant/$this->uniqueId/transaction?lang=" . $this->getLang();
     }
 
     public function getResponseObject(): AbstractEntity

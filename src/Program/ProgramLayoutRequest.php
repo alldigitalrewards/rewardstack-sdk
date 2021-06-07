@@ -17,12 +17,10 @@ class ProgramLayoutRequest extends AbstractApiRequest
     /**
      * ProgramLayoutRequest constructor.
      * @param string $uniqueId
-     * @param $lang
      */
-    public function __construct(string $uniqueId, $lang = null)
+    public function __construct(string $uniqueId)
     {
         $this->uniqueId = $uniqueId;
-        $this->setLang($lang);
     }
 
     public function getHttpEndpoint(): string

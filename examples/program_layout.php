@@ -7,9 +7,9 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 /** @var \AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest $programLayoutRequest */
 $programLayoutRequest = new \AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest(
-    'alldigitalrewards',
-    'en'
+    'alldigitalrewards'
 );
+$programLayoutRequest->setLang('en');
 
 try {
     /** @var \AllDigitalRewards\RewardStack\Program\ProgramLayoutResponse $programLayoutResponse */

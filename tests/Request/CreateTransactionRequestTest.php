@@ -51,7 +51,7 @@ class CreateTransactionRequestTest extends TestCase
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction";
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction?lang=en";
         $this->assertEquals($expectedUrl, $this->createTransactionRequest
             ->getHttpEndpoint());
     }

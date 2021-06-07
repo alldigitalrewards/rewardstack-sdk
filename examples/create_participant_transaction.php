@@ -19,6 +19,8 @@ $createTransactionRequest = new \AllDigitalRewards\RewardStack\Transaction\Creat
     $addressRequest
 );
 
+$createTransactionRequest->setLang('en');
+
 /** @var \AllDigitalRewards\RewardStack\Transaction\CreateTransactionResponse $createTransactionResponse */
 $createTransactionResponse = $client->request($createTransactionRequest);
 print_r($createTransactionResponse);
