@@ -8,18 +8,19 @@ use PHPUnit\Framework\TestCase;
 
 class TransactionRequestTest extends TestCase
 {
+    protected $program = 'alldigitalrewards';
     protected $uniqueId;
     protected $transactionRequest;
 
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->transactionRequest = new TransactionRequest($this->uniqueId);
+        $this->transactionRequest = new TransactionRequest($this->program, $this->uniqueId);
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId. '/transaction';
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction";
         $this->assertEquals($expectedUrl, $this->transactionRequest->getHttpEndpoint());
     }
 

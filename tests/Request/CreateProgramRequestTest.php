@@ -20,12 +20,12 @@ class CreateProgramRequestTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->organization ='sharecare';
+        $this->organization ='alldigitalrewards';
         $this->uniqueId = uniqid();
         $this->name ='A super cool name2';
         $this->point ='1000';
         $this->phone ='902109021';
-        $this->url ='sharecare-demo.mydigitalrewards.com';
+        $this->url ='alldigitalrewards-demo.mydigitalrewards.com';
         $this->active ='24';
         $this->logo ='testlogo';
         $this->createProgramRequest = new CreateProgramRequest(

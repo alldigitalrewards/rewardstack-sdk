@@ -37,7 +37,7 @@ class OrganizationResponseTest extends TestCase
             'ABC123A123',
             'ABC123A123 Name',
             [
-                "sharecare-1reward-test.com",
+                "alldigitalrewards-1reward-test.com",
                 "sharecarerewards1.com"
             ]
         );

@@ -18,24 +18,24 @@ class CreateParticipantRequestTest extends TestCase
 
     protected function setup(): void
     {
-        $this->program = 'sharecare';
+        $this->program = 'alldigitalrewards';
         $this->uniqueId = uniqid();
         $this->firstname = 'John';
         $this->lastname = 'Smith';
-        $this->email_address = 'zech+sweepstake1@alldigitalrewards.com';
+        $this->email_address = 'adr+sweepstake1@alldigitalrewards.com';
         $this->createParticipantRequest = new CreateParticipantRequest(
             $this->program,
             $this->uniqueId,
             $this->firstname,
             $this->lastname,
-            $this->email_address = 'zech+sweepstake1@alldigitalrewards.com'
+            $this->email_address = 'adr+sweepstake1@alldigitalrewards.com'
         );
     }
 
     public function testGetHttpEndpoint()
     {
 
-        $expectedUrl = '/api/user';
+        $expectedUrl = "/api/program/{$this->program}/participant";
         $this->assertEquals($expectedUrl, $this->createParticipantRequest
             ->getHttpEndpoint());
     }
@@ -54,10 +54,13 @@ class CreateParticipantRequestTest extends TestCase
     {
         $expectedArray = [
             "program" => $this->program,
-            "uniqueId" => $this->uniqueId,
-            "firstname" =>$this->firstname,
-            "lastname"=>$this->lastname,
-            "email_address"=>$this->email_address
+            "unique_id" => $this->uniqueId,
+            "firstname" => $this->firstname,
+            "lastname" => $this->lastname,
+            "email_address" => $this->email_address,
+            "address" => null,
+            "birthdate" => null,
+            "meta" => null,
         ];
 
         $this->assertEquals(

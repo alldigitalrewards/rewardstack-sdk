@@ -31,7 +31,7 @@ class TransactionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $transactionCollection = new TransactionRequest('TESTPARTICIPANT1');
+        $transactionCollection = new TransactionRequest('alldigitalrewards', 'TESTPARTICIPANT1');
         $response = $client->request($transactionCollection);
 
         $expectedResponse = new TransactionResponse(json_decode($jsonData));

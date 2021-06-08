@@ -19,7 +19,7 @@ class ProgramLayoutRequestTest extends TestCase
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/program/'. $this->uniqueId .'/layout';
+        $expectedUrl = '/api/program/'. $this->uniqueId .'/layout?lang=en';
         $this->assertEquals($expectedUrl, $this->programLayoutRequest->getHttpEndpoint());
     }
 

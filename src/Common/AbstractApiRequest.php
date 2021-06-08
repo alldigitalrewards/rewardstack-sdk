@@ -3,10 +3,11 @@
 namespace AllDigitalRewards\RewardStack\Common;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Response\AbstractApiResponse;
+use AllDigitalRewards\RewardStack\Traits\LanguageHydrationTrait;
 
 abstract class AbstractApiRequest implements \JsonSerializable
 {
+    use LanguageHydrationTrait;
     protected $httpEndpoint = '/';
     protected $httpMethod = 'GET';
     protected $queryParams = '';

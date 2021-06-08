@@ -4,10 +4,10 @@
   "active": 1,
   "created_at": "2018-01-15 19:42:45",
   "updated_at": "2018-04-06 19:35:15",
-  "parent": "sharecare",
+  "parent": "alldigitalrewards",
   "domains": [
     "mydigitalrewards2.com",
-    "sharecare-1reward-test.com",
+    "alldigitalrewards-1reward-test.com",
     "sharecarerewards1.com"
   ],
   "company_contact": {

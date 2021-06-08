@@ -32,11 +32,11 @@ class ProgramResponseTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
         $prograqmRequest = new Program\ProgramRequest(
-            'sharecare',
+            'alldigitalrewards',
             'A super cool name2',
             '1005',
             '902109021',
-            'sharecare-demo.mydigitalrewards.com',
+            'alldigitalrewards-demo.mydigitalrewards.com',
             '24',
             '/testurl',
             'testlogo'

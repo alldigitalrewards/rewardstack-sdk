@@ -2,25 +2,56 @@
 
 namespace AllDigitalRewards\Tests;
 
+use AllDigitalRewards\RewardStack\Participant\AddressRequest;
 use AllDigitalRewards\RewardStack\Transaction\CreateTransactionRequest;
 use AllDigitalRewards\RewardStack\Transaction\CreateTransactionResponse;
 use PHPUnit\Framework\TestCase;
 
 class CreateTransactionRequestTest extends TestCase
 {
+    protected $program = 'alldigitalrewards';
     protected $uniqueId;
+    protected $productArray = [
+        [
+            "sku" => "HRA01",
+            "quantity" => 1,
+            "amount" => 10
+        ],
+        [
+            "sku" => "PS0000889497-24",
+            "quantity" => 1
+        ]
+    ];
     protected $createTransactionRequest;
+
+    private function getAddressRequest()
+    {
+        $addressRequest = new AddressRequest();
+        $addressRequest->setFirstname('John');
+        $addressRequest->setLastname('Smith');
+        $addressRequest->setAddress1('123 Acme St.');
+        $addressRequest->setCity('Beverly Hills');
+        $addressRequest->setState('CA');
+        $addressRequest->setCountry('US');
+        $addressRequest->setZip('90210');
+        return $addressRequest;
+    }
 
     protected function setup(): void
     {
         $this->uniqueId = uniqid();
 
-        $this->createTransactionRequest = new CreateTransactionRequest($this->uniqueId);
+        $this->createTransactionRequest = new CreateTransactionRequest(
+            $this->program,
+            $this->uniqueId,
+            $this->productArray,
+            $this->getAddressRequest()
+        );
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId . '/transaction';
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction?lang=en";
         $this->assertEquals($expectedUrl, $this->createTransactionRequest
             ->getHttpEndpoint());
     }
@@ -38,30 +69,10 @@ class CreateTransactionRequestTest extends TestCase
     public function testJsonSerialize()
     {
         $expectedArray = [
-            "products" => [
-                [
-                    "sku" => "HRA01",
-                    "quantity" => 1,
-                    "amount" => 10
-                ],
-                [
-                    "sku" => "PS0000889497-24",
-                    "quantity" => 1
-                ]
-            ],
+            "products" => $this->productArray,
             "issue_points" => true,
-            "meta" => [
-                ["hello" => "world2"],
-                ["new" => "hello world"]],
-            "shipping" => [
-                "firstname" => "Zech1",
-                "lastname" => "Walden1",
-                "address1" => "123 Acme Dr",
-                "address2" => "",
-                "city" => "Beverly Hills",
-                "state" => "CA",
-                "zip" => "90210"
-            ]
+            "meta" => [],
+            "shipping" => $this->getAddressRequest()
         ];
         $this->assertEquals(
             $expectedArray,

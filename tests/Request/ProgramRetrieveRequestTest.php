@@ -9,17 +9,18 @@ use PHPUnit\Framework\TestCase;
 class ProgramRetrieveRequestTest extends TestCase
 {
 
+    protected $program = 'alldigitalrewards';
     protected $programRetrieveRequest;
 
     protected function setUp(): void
     {
 
-        $this->programRetrieveRequest = new ProgramRetrieveRequest;
+        $this->programRetrieveRequest = new ProgramRetrieveRequest($this->program);
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/program' ;
+        $expectedUrl = '/api/program/' . $this->program ;
         $this->assertEquals($expectedUrl, $this->programRetrieveRequest->getHttpEndpoint());
     }
 

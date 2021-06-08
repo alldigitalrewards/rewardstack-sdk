@@ -8,16 +8,17 @@ use PHPUnit\Framework\TestCase;
 
 class ParticipantCollectionRequestTest extends TestCase
 {
+    protected $program = 'alldigitalrewards';
     protected $participantCollectionRequest;
 
     protected function setUp(): void
     {
-        $this->participantCollectionRequest = new ParticipantCollectionRequest;
+        $this->participantCollectionRequest = new ParticipantCollectionRequest($this->program);
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user';
+        $expectedUrl = "/api/program/$this->program/participant";
         $this->assertEquals($expectedUrl, $this->participantCollectionRequest->getHttpEndpoint());
     }
 

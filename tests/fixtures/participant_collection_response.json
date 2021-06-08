@@ -1,6 +1,6 @@
 [
   {
-    "email_address": "zech+sweepstake1@alldigitalrewards.com",
+    "email_address": "adr+sweepstake1@alldigitalrewards.com",
     "unique_id": "myfirstuser",
     "credit": "566751.00",
     "firstname": "Johnxx",
@@ -10,10 +10,10 @@
     "created_at": "2018-03-20 19:06:12",
     "updated_at": "2018-04-05 17:05:46",
     "program": "AWESOME1",
-    "organization": "sharecare"
+    "organization": "alldigitalrewards"
   },
   {
-    "email_address": "zech+sweepstake1@alldigitalrewards.com",
+    "email_address": "adr+sweepstake1@alldigitalrewards.com",
     "unique_id": "joker2",
     "credit": "587450.00",
     "firstname": "John",
@@ -23,7 +23,7 @@
     "created_at": "2018-03-22 16:43:17",
     "updated_at": "2018-04-05 17:05:46",
     "program": "JOKER1",
-    "organization": "sharecare"
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "Melissa@test.co",
@@ -36,7 +36,7 @@
     "created_at": "2018-03-28 18:20:59",
     "updated_at": "2018-04-05 17:05:46",
     "program": "MelissaFullProgram21318",
-    "organization": "sharecare"
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "test10@gmail.com",
@@ -49,7 +49,7 @@
     "created_at": "2018-04-02 22:59:09",
     "updated_at": "2018-04-05 17:05:46",
     "program": "MelissaFullProgram21318",
-    "organization": "sharecare"
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "nrath@alldigitalrewards.com",
@@ -61,8 +61,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "wgrant@alldigitalrewards.com",
@@ -74,8 +74,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "alda73@alldigitalrewards.com",
@@ -87,8 +87,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "erosenbaum@alldigitalrewards.com",
@@ -100,8 +100,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "lesch.raphaelle@alldigitalrewards.com",
@@ -113,8 +113,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "theresia.lynch@alldigitalrewards.com",
@@ -126,8 +126,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "pacocha.tina@alldigitalrewards.com",
@@ -139,8 +139,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "isatterfield@alldigitalrewards.com",
@@ -152,8 +152,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "domenic.oberbrunner@alldigitalrewards.com",
@@ -165,8 +165,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "golden.baumbach@alldigitalrewards.com",
@@ -178,8 +178,8 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
-    "organization": "sharecare"
+    "program": "alldigitalrewards",
+    "organization": "alldigitalrewards"
   },
   {
     "email_address": "stroman.ursula@alldigitalrewards.com",
@@ -191,7 +191,7 @@
     "active": 1,
     "created_at": "2017-01-01 00:00:00",
     "updated_at": "2018-04-05 17:05:46",
-    "program": "sharecare",
+    "program": "alldigitalrewards",
     "organization": "sharecare"
   },
   {

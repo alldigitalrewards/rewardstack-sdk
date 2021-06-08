@@ -21,7 +21,7 @@ class OrganizationRequestTest extends TestCase
         $this->username = 'abc123a123';
         $this->password ='ABC123A123';
         $this->name ='ABC123A123 Name';
-        $this->domains ='["sharecare-1reward-test.com", "sharecarerewards1.com"]';
+        $this->domains ='["alldigitalrewards-1reward-test.com", "sharecarerewards1.com"]';
 
         $this->organizationRequest = new OrganizationRequest(
             $this->uniqueId,

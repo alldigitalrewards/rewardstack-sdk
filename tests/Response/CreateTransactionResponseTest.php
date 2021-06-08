@@ -4,6 +4,7 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
+use AllDigitalRewards\RewardStack\Participant\AddressRequest;
 use AllDigitalRewards\RewardStack\Transaction\CreateTransactionResponse;
 use \AllDigitalRewards\RewardStack\Transaction;
 use GuzzleHttp\Psr7\Response;
@@ -31,7 +32,18 @@ class CreateTransactionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $createTransactionRequest = new Transaction\CreateTransactionRequest('TESTPARTICIPANT1');
+        $createTransactionRequest = new Transaction\CreateTransactionRequest(
+            'alldigitalrewards',
+            'TESTPARTICIPANT1',
+            [
+                [
+                    "sku" => "HRA01",
+                    "quantity" => 1,
+                    "amount" => 12
+                ]
+            ],
+            $this->getAddressRequest()
+        );
         $response = $client->request($createTransactionRequest);
 
         $expectedResponse = new CreateTransactionResponse(json_decode($jsonData));
@@ -99,5 +111,18 @@ class CreateTransactionResponseTest extends TestCase
             $expectedResponse->getMeta(),
             $response->getMeta()
         );
+    }
+
+    private function getAddressRequest()
+    {
+        $addressRequest = new AddressRequest();
+        $addressRequest->setFirstname('Jason');
+        $addressRequest->setLastname('Bentle');
+        $addressRequest->setAddress1('3539 W. Aire Libre');
+        $addressRequest->setCity('Phoenix');
+        $addressRequest->setState('AZ');
+        $addressRequest->setCountry('US');
+        $addressRequest->setZip('85053');
+        return $addressRequest;
     }
 }

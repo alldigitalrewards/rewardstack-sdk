@@ -9,6 +9,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 $programLayoutRequest = new \AllDigitalRewards\RewardStack\Program\ProgramLayoutRequest(
     'alldigitalrewards'
 );
+$programLayoutRequest->setLang('en');
 
 try {
     /** @var \AllDigitalRewards\RewardStack\Program\ProgramLayoutResponse $programLayoutResponse */

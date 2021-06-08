@@ -8,18 +8,19 @@ use PHPUnit\Framework\TestCase;
 
 class SsoTokenRequestTest extends TestCase
 {
+    protected $program = 'alldigitalrewards';
     protected $uniqueId;
     protected $ssoTokenRequest;
 
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->ssoTokenRequest = new SsoTokenRequest($this->uniqueId);
+        $this->ssoTokenRequest = new SsoTokenRequest($this->program, $this->uniqueId);
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/user/' . $this->uniqueId . '/sso';
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/sso";
         $this->assertEquals($expectedUrl, $this->ssoTokenRequest->getHttpEndpoint());
     }
 
