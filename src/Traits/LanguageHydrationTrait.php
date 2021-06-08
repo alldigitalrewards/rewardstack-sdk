@@ -4,16 +4,15 @@ namespace AllDigitalRewards\RewardStack\Traits;
 
 trait LanguageHydrationTrait
 {
-    private $lang;
+    private $lang = 'en';
 
     /**
      * @return string
      */
     public function getLang(): string
     {
-        $lang = empty($this->lang) === true ? 'en' : $this->lang;
-        switch ($lang) {
-            case strpos($lang, 'es') !== false:
+        switch ($this->lang) {
+            case strpos($this->lang, 'es') !== false:
                 return 'es';
             default:
                 return 'en';
@@ -25,6 +24,9 @@ trait LanguageHydrationTrait
      */
     public function setLang($lang): void
     {
+        if (empty($lang) === true) {
+            return;
+        }
         $this->lang = $lang;
     }
 }
