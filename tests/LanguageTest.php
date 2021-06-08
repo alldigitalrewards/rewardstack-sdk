@@ -39,6 +39,12 @@ class LanguageTest extends TestCase
         $this->assertTrue($this->getLang() === 'en');
     }
 
+    public function testTrimmedEmptySetterLangGetterReturnsEnIsTrue()
+    {
+        $this->setLang('  ');
+        $this->assertTrue($this->getLang() === 'en');
+    }
+
     public function testNonAcceptedSetterLangGetterReturnsEnIsTrue()
     {
         $this->setLang('fr');

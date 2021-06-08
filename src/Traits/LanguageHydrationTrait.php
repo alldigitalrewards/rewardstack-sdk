@@ -24,7 +24,7 @@ trait LanguageHydrationTrait
      */
     public function setLang($lang): void
     {
-        if (empty($lang) === true) {
+        if (empty($lang) === true || empty(trim($lang)) === true) {
             return;
         }
         $this->lang = $lang;
