@@ -47,13 +47,16 @@ class CreateTransactionRequestTest extends TestCase
             $this->productArray,
             $this->getAddressRequest()
         );
+        $this->createTransactionRequest->setLang('en');
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction?lang=en";
+        $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction";
         $this->assertEquals($expectedUrl, $this->createTransactionRequest
             ->getHttpEndpoint());
+        $this->assertEquals('lang=en', $this->createTransactionRequest
+            ->getQueryParams());
     }
 
     public function testGetResponseObject()
