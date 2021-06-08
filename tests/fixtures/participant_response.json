@@ -1,5 +1,5 @@
 {
-  "email_address": "zech+test@alldigitalrewards.com",
+  "email_address": "adr+test@alldigitalrewards.com",
   "unique_id": "TESTPARTICIPANT1",
   "credit": "97902.00",
   "firstname": "Zech",
@@ -19,8 +19,8 @@
     "zip": "90210",
     "country": 840
   },
-  "program": "sharecare",
-  "organization": "sharecare",
+  "program": "alldigitalrewards",
+  "organization": "alldigitalrewards",
   "meta": [
     {
       "hello": "world2"

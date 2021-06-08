@@ -1,7 +1,7 @@
 [
   {
-    "name": "Sharecare",
-    "unique_id": "sharecare",
+    "name": "alldigitalrewards",
+    "unique_id": "alldigitalrewards",
     "accounts_payable_contact_reference": null,
     "company_contact_reference": null,
     "active": 1,
@@ -19,7 +19,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 1,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "MelissaConfigAdminTestOrgX",
@@ -85,7 +85,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 0,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "MelissaReportAdminTestOrgXUpdate",
@@ -107,7 +107,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 0,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "MelissaTestOrg022718A",
@@ -118,7 +118,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 0,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "MelissaTestOrg022718",
@@ -129,7 +129,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 0,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "Test",
@@ -151,7 +151,7 @@
     "created_at": "2018-04-03 19:54:54",
     "updated_at": "2018-04-03 19:54:54",
     "program_count": 0,
-    "parent": "sharecare"
+    "parent": "alldigitalrewards"
   },
   {
     "name": "TestOrganization123ABC",

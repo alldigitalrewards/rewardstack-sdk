@@ -31,7 +31,7 @@ class ParticipantCollectionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $participantCollectionRequest = new Participant\ParticipantCollectionRequest('sharecare');
+        $participantCollectionRequest = new Participant\ParticipantCollectionRequest('alldigitalrewards');
         $response = $client->request($participantCollectionRequest);
 
         $expectedResponse = new ParticipantCollectionResponse(json_decode($jsonData));

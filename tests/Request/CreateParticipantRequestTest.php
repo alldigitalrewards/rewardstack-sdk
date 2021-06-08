@@ -18,17 +18,17 @@ class CreateParticipantRequestTest extends TestCase
 
     protected function setup(): void
     {
-        $this->program = 'sharecare';
+        $this->program = 'alldigitalrewards';
         $this->uniqueId = uniqid();
         $this->firstname = 'John';
         $this->lastname = 'Smith';
-        $this->email_address = 'zech+sweepstake1@alldigitalrewards.com';
+        $this->email_address = 'adr+sweepstake1@alldigitalrewards.com';
         $this->createParticipantRequest = new CreateParticipantRequest(
             $this->program,
             $this->uniqueId,
             $this->firstname,
             $this->lastname,
-            $this->email_address = 'zech+sweepstake1@alldigitalrewards.com'
+            $this->email_address = 'adr+sweepstake1@alldigitalrewards.com'
         );
     }
 

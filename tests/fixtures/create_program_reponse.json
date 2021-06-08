@@ -2,7 +2,7 @@
   "unique_id": "ABC123456",
   "name": "A super cool name2",
   "point": 1000,
-  "url": "sharecare-demo.mydigitalrewards.com",
+  "url": "alldigitalrewards-demo.mydigitalrewards.com",
   "logo": "testlogo",
   "published": 0,
   "meta": null,
@@ -11,7 +11,7 @@
   "active": 1,
   "updated_at": "2018-04-09 17:06:57",
   "created_at": "2018-04-09 17:06:57",
-  "organization": "sharecare",
+  "organization": "alldigitalrewards",
   "contact": {
     "firstname": null,
     "lastname": null,

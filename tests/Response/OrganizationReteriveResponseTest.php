@@ -31,7 +31,7 @@ class OrganizationReteriveResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $organizationReteriveRequest = new Organization\OrganizationRetrieveRequest('sharecare');
+        $organizationReteriveRequest = new Organization\OrganizationRetrieveRequest('alldigitalrewards');
         $response = $client->request($organizationReteriveRequest);
 
         $expectedResponse = new OrganizationRetreiveResponse(json_decode($jsonData));

@@ -33,7 +33,7 @@ class CreateParticipantResponseTest extends TestCase
 
 
         $createParticipantRequest = new Participant\CreateParticipantRequest(
-            'sharecare',
+            'alldigitalrewards',
             'TESTPARTICIPANT1',
             'John',
             'Smith',

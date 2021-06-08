@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateTransactionRequestTest extends TestCase
 {
-    protected $program = 'sharecare';
+    protected $program = 'alldigitalrewards';
     protected $uniqueId;
     protected $productArray = [
         [

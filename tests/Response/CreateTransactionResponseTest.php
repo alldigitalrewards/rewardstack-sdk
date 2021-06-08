@@ -33,7 +33,7 @@ class CreateTransactionResponseTest extends TestCase
         $client = new RewardStack\Client($authProxy);
 
         $createTransactionRequest = new Transaction\CreateTransactionRequest(
-            'sharecare',
+            'alldigitalrewards',
             'TESTPARTICIPANT1',
             [
                 [

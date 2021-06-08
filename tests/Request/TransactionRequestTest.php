@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class TransactionRequestTest extends TestCase
 {
-    protected $program = 'sharecare';
+    protected $program = 'alldigitalrewards';
     protected $uniqueId;
     protected $transactionRequest;
 

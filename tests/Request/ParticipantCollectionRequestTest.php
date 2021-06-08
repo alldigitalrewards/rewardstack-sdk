@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ParticipantCollectionRequestTest extends TestCase
 {
-    protected $program = 'sharecare';
+    protected $program = 'alldigitalrewards';
     protected $participantCollectionRequest;
 
     protected function setUp(): void

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class ProgramRetrieveRequestTest extends TestCase
 {
 
-    protected $program = 'sharecare';
+    protected $program = 'alldigitalrewards';
     protected $programRetrieveRequest;
 
     protected function setUp(): void

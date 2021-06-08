@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class CreateAdjustmentTest extends TestCase
 {
-    protected $program = 'sharecare';
+    protected $program = 'alldigitalrewards';
 
     public function testRequest()
     {
