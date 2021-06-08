@@ -15,12 +15,14 @@ class ProgramLayoutRequestTest extends TestCase
     {
         $this->uniqueId = uniqid();
         $this->programLayoutRequest = new ProgramLayoutRequest($this->uniqueId);
+        $this->programLayoutRequest->setLang('en');
     }
 
     public function testGetHttpEndpoint()
     {
-        $expectedUrl = '/api/program/'. $this->uniqueId .'/layout?lang=en';
+        $expectedUrl = '/api/program/'. $this->uniqueId .'/layout';
         $this->assertEquals($expectedUrl, $this->programLayoutRequest->getHttpEndpoint());
+        $this->assertEquals('lang=en', $this->programLayoutRequest->getQueryParams());
     }
 
     public function testGetResponseObject()

@@ -25,7 +25,12 @@ class ProgramLayoutRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return '/api/program/'. $this->uniqueId .'/layout?lang=' . $this->getLang();
+        return '/api/program/'. $this->uniqueId . '/layout';
+    }
+
+    public function getQueryParams(): string
+    {
+        return 'lang=' . $this->getLang();
     }
 
     public function getResponseObject(): AbstractEntity
