@@ -79,7 +79,7 @@ abstract class AbstractApiCollectionRequest extends AbstractApiRequest
     public function getQueryParams(): string
     {
         $filterQueryString = '';
-        if($this->filterCollection !== null) {
+        if ($this->filterCollection !== null) {
             $filterQueryString = '&' . $this->filterCollection->getQueryString();
         }
         return "page={$this->page}&limit={$this->limit}" . $filterQueryString;
