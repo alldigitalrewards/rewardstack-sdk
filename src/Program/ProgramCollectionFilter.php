@@ -82,5 +82,4 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     {
         $this->nameFilter = $nameFilter;
     }
-
 }

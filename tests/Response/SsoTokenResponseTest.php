@@ -31,7 +31,7 @@ class SsoTokenResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $createSsoRequest = new Sso\SsoTokenRequest('alldigitalrewards','TESTPARTICIPANT1');
+        $createSsoRequest = new Sso\SsoTokenRequest('alldigitalrewards', 'TESTPARTICIPANT1');
         $response = $client->request($createSsoRequest);
 
         $expectedResponse = new SsoTokenResponse(json_decode($jsonData));

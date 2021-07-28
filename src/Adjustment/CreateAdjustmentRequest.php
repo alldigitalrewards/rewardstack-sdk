@@ -55,8 +55,8 @@ class CreateAdjustmentRequest extends AbstractApiRequest
         string $pointAmount,
         string $referenceId = null,
         string $description = null
-    )
-    {
+    ) {
+    
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->type = $type;
