@@ -4,9 +4,12 @@ namespace AllDigitalRewards\RewardStack\Participant;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
+use AllDigitalRewards\RewardStack\Traits\MetaValidationTrait;
+use Exception;
 
 class CreateParticipantRequest extends AbstractApiRequest
 {
+    use MetaValidationTrait;
     /**
      * @var string
      */
@@ -90,8 +93,16 @@ class CreateParticipantRequest extends AbstractApiRequest
         return new CreateParticipantResponse();
     }
 
+    /**
+     * @throws Exception
+     */
     public function jsonSerialize()
     {
+        if (empty($this->meta) === false && $this->hasWellFormedMeta($this->meta) === false) {
+            throw new Exception(
+                'Meta data provided must have valid key/values'
+            );
+        }
         return [
             "program" => $this->programId,
             "unique_id" => $this->uniqueId,

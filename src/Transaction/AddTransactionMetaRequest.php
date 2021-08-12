@@ -4,9 +4,13 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
+use AllDigitalRewards\RewardStack\Traits\MetaValidationTrait;
+use Exception;
 
 class AddTransactionMetaRequest extends AbstractApiRequest
 {
+    use MetaValidationTrait;
+
     private $programId;
 
     private $uniqueId;
@@ -46,14 +50,17 @@ class AddTransactionMetaRequest extends AbstractApiRequest
         return new AddTransactionMetaResponse();
     }
 
+    /**
+     * @throws Exception
+     */
     public function jsonSerialize()
     {
-        if (empty($this->meta)) {
-            throw new \Exception('Transaction meta data has to be provided to request transaction meta update');
+        if (empty($this->meta) || $this->hasWellFormedMeta($this->meta) === false) {
+            throw new Exception(
+                'Transaction meta data has to be provided and valid key/values to request transaction meta update'
+            );
         }
 
-        return [
-            "meta" => $this->meta
-        ];
+        return $this->meta;
     }
 }
