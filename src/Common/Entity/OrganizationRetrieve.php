@@ -4,15 +4,15 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class OrganizationRetrieve extends AbstractEntity
 {
-    private $name;
-    private $unique_id;
-    private $active;
-    private $created_at;
-    private $updated_at;
-    private $parent;
-    private $domains= [];
-    private $company_contact;
-    private $accounts_payable_contact;
+    protected $name;
+    protected $unique_id;
+    protected $active;
+    protected $created_at;
+    protected $updated_at;
+    protected $parent;
+    protected $domains= [];
+    protected $company_contact;
+    protected $accounts_payable_contact;
 
     /**
      * @return mixed

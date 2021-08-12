@@ -4,8 +4,8 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class ProgramLayout extends AbstractEntity
 {
-    private $label;
-    private $cards;
+    protected $label;
+    protected $cards;
 
     /**
      * @return mixed

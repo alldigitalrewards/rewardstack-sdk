@@ -6,18 +6,18 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 class ParticipantCollection extends AbstractEntity
 {
 
-    private $email_address;
-    private $unique_id;
-    private $credit;
-    private $firstname;
-    private $lastname;
-    private $phone;
-    private $active;
-    private $created_at;
-    private $updated_at;
-    private $address;
-    private $program;
-    private $organization;
+    protected $email_address;
+    protected $unique_id;
+    protected $credit;
+    protected $firstname;
+    protected $lastname;
+    protected $phone;
+    protected $active;
+    protected $created_at;
+    protected $updated_at;
+    protected $address;
+    protected $program;
+    protected $organization;
 
     /**
      * @return mixed

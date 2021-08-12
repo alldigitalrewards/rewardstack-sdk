@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
-class AbstractEntity
+class AbstractEntity implements \JsonSerializable
 {
     public function __construct($data = null)
     {
@@ -42,5 +42,25 @@ class AbstractEntity
         $setterName = str_ireplace(" ", "", $setterName);
 
         return "set" . $setterName;
+    }
+
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        $methods = call_user_func('get_object_vars', $this);
+        foreach (array_keys($methods) as $methodKey) {
+            if (strpos($methodKey, '__') !== false) {
+                unset($methods[$methodKey]);
+            }
+        }
+
+        return $methods;
     }
 }

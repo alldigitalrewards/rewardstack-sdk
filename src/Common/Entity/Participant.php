@@ -4,20 +4,20 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Participant extends AbstractEntity
 {
-    private $email_address;
-    private $unique_id;
-    private $credit;
-    private $firstname;
-    private $lastname;
-    private $phone;
-    private $birthdate;
-    private $active;
-    private $created_at;
-    private $updated_at;
-    private $address;
-    private $program;
-    private $organization;
-    private $meta;
+    protected $email_address;
+    protected $unique_id;
+    protected $credit;
+    protected $firstname;
+    protected $lastname;
+    protected $phone;
+    protected $birthdate;
+    protected $active;
+    protected $created_at;
+    protected $updated_at;
+    protected $address;
+    protected $program;
+    protected $organization;
+    protected $meta;
 
     /**
      * @return mixed

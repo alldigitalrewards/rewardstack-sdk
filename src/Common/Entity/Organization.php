@@ -5,15 +5,15 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Organization extends AbstractEntity
 {
-    private $name;
-    private $unique_id;
-    private $accounts_payable_contact_reference;
-    private $company_contact_reference;
-    private $active;
-    private $created_at;
-    private $updated_at;
-    private $program_count;
-    private $parent;
+    protected $name;
+    protected $unique_id;
+    protected $accounts_payable_contact_reference;
+    protected $company_contact_reference;
+    protected $active;
+    protected $created_at;
+    protected $updated_at;
+    protected $program_count;
+    protected $parent;
 
     /**
      * @return mixed

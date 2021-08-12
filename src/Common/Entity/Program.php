@@ -5,22 +5,22 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Program extends AbstractEntity
 {
-    private $unique_id;
-    private $name;
-    private $point;
-    private $url;
-    private $logo;
-    private $published;
-    private $meta;
-    private $cost_center_id;
-    private $active;
-    private $updated_at;
-    private $created_at;
-    private $organization;
-    private $contact;
-    private $productCriteria;
-    private $featured_products;
-    private $auto_redemption;
+    protected $unique_id;
+    protected $name;
+    protected $point;
+    protected $url;
+    protected $logo;
+    protected $published;
+    protected $meta;
+    protected $cost_center_id;
+    protected $active;
+    protected $updated_at;
+    protected $created_at;
+    protected $organization;
+    protected $contact;
+    protected $productCriteria;
+    protected $featured_products;
+    protected $auto_redemption;
 
     /**
      * @return mixed
