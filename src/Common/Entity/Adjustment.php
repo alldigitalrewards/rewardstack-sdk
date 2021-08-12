@@ -5,14 +5,14 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Adjustment extends AbstractEntity
 {
-    private $amount;
-    private $type;
-    private $transaction_id;
-    private $reference;
-    private $description;
-    private $id;
-    private $created_at;
-    private $updated_at;
+    protected $amount;
+    protected $type;
+    protected $transaction_id;
+    protected $reference;
+    protected $description;
+    protected $id;
+    protected $created_at;
+    protected $updated_at;
 
     /**
      * @return mixed

@@ -4,18 +4,18 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class ProgramRetrieve extends AbstractEntity
 {
-    private $unique_id;
-    private $name;
-    private $point;
-    private $url;
-    private $logo;
-    private $published;
-    private $meta;
-    private $cost_center_id;
-    private $active;
-    private $updated_at;
-    private $created_at;
-    private $organization;
+    protected $unique_id;
+    protected $name;
+    protected $point;
+    protected $url;
+    protected $logo;
+    protected $published;
+    protected $meta;
+    protected $cost_center_id;
+    protected $active;
+    protected $updated_at;
+    protected $created_at;
+    protected $organization;
 
 
     /**

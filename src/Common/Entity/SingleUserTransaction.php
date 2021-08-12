@@ -4,20 +4,20 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class SingleUserTransaction extends AbstractEntity
 {
-    private $unique_id;
-    private $wholesale;
-    private $subtotal;
-    private $total;
-    private $email_address;
-    private $type;
-    private $id;
-    private $created_at;
-    private $updated_at;
-    private $points;
-    private $shipping;
-    private $products;
-    private $user;
-    private $meta;
+    protected $unique_id;
+    protected $wholesale;
+    protected $subtotal;
+    protected $total;
+    protected $email_address;
+    protected $type;
+    protected $id;
+    protected $created_at;
+    protected $updated_at;
+    protected $points;
+    protected $shipping;
+    protected $products;
+    protected $user;
+    protected $meta;
 
     /**
      * @return mixed

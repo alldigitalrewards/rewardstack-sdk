@@ -4,10 +4,10 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class SingleSignOn extends AbstractEntity
 {
-    private $token;
-    private $participant;
-    private $domain;
-    private $exchange;
+    protected $token;
+    protected $participant;
+    protected $domain;
+    protected $exchange;
 
     /**
      * @return mixed

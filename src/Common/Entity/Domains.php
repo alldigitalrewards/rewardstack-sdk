@@ -4,12 +4,12 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class Domains extends AbstractEntity
 {
-    private $id;
-    private $organization_id;
-    private $url;
-    private $active;
-    private $updated_at;
-    private $created_at;
+    protected $id;
+    protected $organization_id;
+    protected $url;
+    protected $active;
+    protected $updated_at;
+    protected $created_at;
 
     /**
      * @return mixed
