@@ -12,7 +12,12 @@ $participantRequest = new ParticipantRequest(
     $participantUniqueId,
     'John',
     'Smith',
-    'nowhere+ADRTESTP1@alldigitalrewards.com'
+    'nowhere+ADRTESTP1@alldigitalrewards.com',
+    null,
+    null,
+    [
+        ['META_KEY' => 'META_VALUE']
+    ]
 );
 
 /** @var ParticipantResponse $participantUpdateRequest */

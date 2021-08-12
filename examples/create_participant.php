@@ -12,7 +12,12 @@ $createParticipantRequest = new CreateParticipantRequest(
     $participantUniqueId,
     'John',
     'Smith',
-    'johnsmith+sdk-test@alldigitalrewards.com'
+    'johnsmith+sdk-test@alldigitalrewards.com',
+    null,
+    null,
+    [
+        ['META_KEY' => 'META_VALUE']
+    ]
 );
 
 /** @var CreateParticipantResponse $createParticipantResponse */

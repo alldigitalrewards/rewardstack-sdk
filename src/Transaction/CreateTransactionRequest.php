@@ -5,9 +5,12 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Participant\AddressRequest;
+use AllDigitalRewards\RewardStack\Traits\MetaValidationTrait;
+use Exception;
 
 class CreateTransactionRequest extends AbstractApiRequest
 {
+    use MetaValidationTrait;
     /**
      * @var string
      */
@@ -68,12 +71,21 @@ class CreateTransactionRequest extends AbstractApiRequest
         return new CreateTransactionResponse();
     }
 
+    /**
+     * @throws Exception
+     */
     public function jsonSerialize()
     {
         if (empty($this->productCollection)) {
-            throw new \Exception('A product list must be supplied to request a transaction');
+            throw new Exception('A product list must be supplied to request a transaction');
         }
-
+        if (empty($this->transactionConfig['meta']) === false
+            && $this->hasWellFormedMeta($this->transactionConfig['meta']) === false
+        ) {
+            throw new Exception(
+                'Meta data provided must have valid key/values'
+            );
+        }
         return [
             "products" => $this->getMappedProductCollection(),
             "issue_points" => $this->transactionConfig['issue_points'] ?? true,

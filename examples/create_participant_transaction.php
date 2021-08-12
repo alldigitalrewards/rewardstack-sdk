@@ -16,7 +16,12 @@ $createTransactionRequest = new \AllDigitalRewards\RewardStack\Transaction\Creat
     [
         ['sku' => 'VVISA01', 'quantity' => 1, 'amount' => 10.00]
     ],
-    $addressRequest
+    $addressRequest,
+    [
+        'meta' => [
+            ['META_KEY' => 'META_VALUE']
+        ]
+    ]
 );
 
 $createTransactionRequest->setLang('en');
