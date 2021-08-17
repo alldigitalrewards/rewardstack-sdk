@@ -7,7 +7,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 $createSweepstakesEntryRequest = new CreateSweepstakesEntryRequest(
     'alldigitalrewards',
-    'TESTPARTICIPANT1',
+    'ADRTESTP1',
     2
 );
 

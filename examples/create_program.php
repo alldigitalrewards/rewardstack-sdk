@@ -7,11 +7,11 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 $createProgramRequest = new CreateProgramRequest(
     'alldigitalrewards',
-    'JOEADRTESTPROGRAM',
+    uniqid(),
     'A Test Program',
     '1',
     '1231231234',
-    'JOEADRTESTPROGRAM.mydigitalrewards.com',
+    'someurl.mydigitalrewards.com',
     true
 );
 

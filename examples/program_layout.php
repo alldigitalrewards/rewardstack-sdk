@@ -10,7 +10,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 // This is for fetching a program's layout
 
 $programLayoutRequest = new ProgramLayoutRequest(
-    'sharecare'
+    'alldigitalrewards'
 );
 $programLayoutRequest->setLang('en');
 

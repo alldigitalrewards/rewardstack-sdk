@@ -9,7 +9,7 @@ $organizationRequest = new OrganizationPutRequest(
     'TESTABC1',
     'Over the Rainbow #2',
     [
-        "joesrewards.com"
+        "someurl.com"
     ]
 );
 

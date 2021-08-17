@@ -51,8 +51,11 @@ class SsoUserAuthRequest extends AbstractApiRequest
 
     public function jsonSerialize()
     {
-        return [
-            "token" => $this->token,
-        ];
+        return [];
+    }
+
+    public function getQueryParams(): string
+    {
+        return 'token=' . $this->token;
     }
 }

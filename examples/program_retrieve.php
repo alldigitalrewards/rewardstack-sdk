@@ -8,7 +8,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 // This is for fetching a single program
 //unique id or url as param
 $programRetrieveRequest = new ProgramRetrieveRequest(
-    'batman.mydigitalrewards.com'
+    'demo.test.com'
 );
 
 /** @var ProgramRetrieveResponse $programRetrieveResponse */
