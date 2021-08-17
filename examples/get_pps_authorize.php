@@ -5,8 +5,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthIdResponse;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthorizePointBalanceTokenRequest;
 
-$program = '1001';
-$participantUniqueId = '1586502';
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
 $amount = '100.00';
 $participantRequest = new ProgramParticipantAuthorizePointBalanceTokenRequest($program, $participantUniqueId, $amount);
 

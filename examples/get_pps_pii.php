@@ -5,8 +5,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 use AllDigitalRewards\RewardStack\Participant\ParticipantResponse;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantPiiRequest;
 
-$program = '1001';
-$participantUniqueId = '1586502';
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
 $participantRequest = new ProgramParticipantPiiRequest($program, $participantUniqueId);
 
 /** @var ParticipantResponse $participantResponse */

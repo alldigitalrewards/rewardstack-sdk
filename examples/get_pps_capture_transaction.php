@@ -7,8 +7,8 @@ use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthId
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthorizePointBalanceTokenRequest;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantCaptureTransactionRequest;
 
-$program = '1001';
-$participantUniqueId = '1586502';
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
 $amount = '100.00';
 $participantAuthRequest = new ProgramParticipantAuthorizePointBalanceTokenRequest(
     $program,
