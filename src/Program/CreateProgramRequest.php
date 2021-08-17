@@ -15,7 +15,6 @@ class CreateProgramRequest extends AbstractApiRequest
     private $phone;
     private $url;
     private $active;
-    private $logo;
 
     protected $httpMethod = 'POST';
 
@@ -26,8 +25,7 @@ class CreateProgramRequest extends AbstractApiRequest
         string $point,
         int $phone,
         string $url,
-        string $active,
-        string $logo
+        string $active
     ) {
         $this->organization =$organization;
         $this->uniqueId = $uniqueId;
@@ -36,7 +34,6 @@ class CreateProgramRequest extends AbstractApiRequest
         $this->phone =$phone;
         $this->url =$url;
         $this->active =$active;
-        $this->logo =$logo;
     }
 
 
@@ -60,9 +57,7 @@ class CreateProgramRequest extends AbstractApiRequest
             "point" => $this->point,
             "phone" => $this->phone,
             "url" =>$this->url,
-            "active" =>$this->active,
-            "logo" => $this->logo
-
+            "active" =>$this->active
         ];
     }
 }

@@ -1,18 +1,21 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Transaction\TransactionRequest;
+use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Transaction\TransactionRequest $transactionRequest */
+/** @var TransactionRequest $transactionRequest */
 
 $program = 'alldigitalrewards';
 $participantUniqueId = 'ADRTESTP1';
 
-$transactionRequest = new \AllDigitalRewards\RewardStack\Transaction\TransactionRequest(
+$transactionRequest = new TransactionRequest(
     $program,
     $participantUniqueId
 );
 
-/** @var \AllDigitalRewards\RewardStack\Transaction\TransactionResponse $transactionResponse */
+/** @var TransactionResponse $transactionResponse */
 $transactionResponse = $client->request($transactionRequest);
 print_r($transactionResponse);
 exit;

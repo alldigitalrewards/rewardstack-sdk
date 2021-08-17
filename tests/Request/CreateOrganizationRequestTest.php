@@ -23,7 +23,6 @@ class CreateOrganizationRequestTest extends TestCase
     protected function setup(): void
     {
         $this->uniqueId = uniqid();
-        $this->username = 'TestABC #1';
         $this->name = 'Over the Rainbow';
         $this->phone = '1233211230';
         $this->address1 ='123 Acme St';
@@ -34,7 +33,6 @@ class CreateOrganizationRequestTest extends TestCase
         $this->parent ='';
         $this->createOrganizationRequest = new CreateOrganizationRequest(
             $this->uniqueId,
-            $this->username,
             $this->name,
             $this->phone,
             $this->address1,
@@ -68,14 +66,14 @@ class CreateOrganizationRequestTest extends TestCase
     {
         $expectedArray = [
             "unique_id" => $this->uniqueId,
-            "username" => $this->username,
             "name" => $this->name,
             "phone" => $this->phone,
             "address1" =>$this->address1,
             "address2" =>$this->address2,
             "city" => $this->city,
             "state" => $this->state,
-            "zip" => $this->zip
+            "zip" => $this->zip,
+            "parent" => $this->parent,
         ];
 
         $this->assertEquals(

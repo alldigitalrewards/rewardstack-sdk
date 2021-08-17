@@ -6,6 +6,7 @@ class ProgramLayout extends AbstractEntity
 {
     protected $label;
     protected $cards;
+    protected $priority;
 
     /**
      * @return mixed
@@ -37,5 +38,21 @@ class ProgramLayout extends AbstractEntity
     public function setCards($cards)
     {
         $this->cards = $cards;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * @param mixed $priority
+     */
+    public function setPriority($priority): void
+    {
+        $this->priority = $priority;
     }
 }

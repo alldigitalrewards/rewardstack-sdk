@@ -1,15 +1,17 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Program\ProgramRetrieveRequest;
+use AllDigitalRewards\RewardStack\Program\ProgramRetrieveResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
 // This is for fetching a single program
-
-/** @var \AllDigitalRewards\RewardStack\Program\ProgramRetrieveRequest $programRetrieveRequest */
-$programRetrieveRequest = new \AllDigitalRewards\RewardStack\Program\ProgramRetrieveRequest(
-    'sharecare'
+//unique id or url as param
+$programRetrieveRequest = new ProgramRetrieveRequest(
+    'demo.test.com'
 );
 
-/** @var \AllDigitalRewards\RewardStack\Program\ProgramRetrieveResponse $programRetrieveResponse */
+/** @var ProgramRetrieveResponse $programRetrieveResponse */
 $programRetrieveResponse = $client->request($programRetrieveRequest);
-print_r($programRetrieveResponse->getUniqueId());
+print_r($programRetrieveResponse);
 exit;

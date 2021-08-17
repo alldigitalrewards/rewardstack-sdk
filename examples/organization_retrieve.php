@@ -1,11 +1,13 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Organization\OrganizationRetreiveResponse;
+use AllDigitalRewards\RewardStack\Organization\OrganizationRetrieveRequest;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationRetrieveRequest $organizationRetrieveRequest */
-$organizationRetrieveRequest = new \AllDigitalRewards\RewardStack\Organization\OrganizationRetrieveRequest('TESTABC1');
+$organizationRetrieveRequest = new OrganizationRetrieveRequest('TESTABC1');
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationRetreiveResponse $organizationReteriveResponse */
-$organizationReteriveResponse = $client->request($organizationRetrieveRequest);
-print_r($organizationReteriveResponse);
+/** @var OrganizationRetreiveResponse $organizationRetrieveResponse */
+$organizationRetrieveResponse = $client->request($organizationRetrieveRequest);
+print_r($organizationRetrieveResponse);
 exit;

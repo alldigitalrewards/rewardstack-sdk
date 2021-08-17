@@ -1,11 +1,13 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Organization\OrganizationDomainsRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationDomainsResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationDomainsRequest $organizationDomainRequest */
-$organizationDomainRequest = new \AllDigitalRewards\RewardStack\Organization\OrganizationDomainsRequest('TESTABC1');
+$organizationDomainRequest = new OrganizationDomainsRequest('TESTABC1');
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationDomainsResponse $organizationDomainResponse */
+/** @var OrganizationDomainsResponse $organizationDomainResponse */
 $organizationDomainResponse = $client->request($organizationDomainRequest);
 print_r($organizationDomainResponse);
 exit;

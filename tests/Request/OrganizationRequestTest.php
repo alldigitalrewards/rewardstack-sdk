@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Organization\OrganizationRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationPutRequest;
 use AllDigitalRewards\RewardStack\Organization\OrganizationResponse;
 use PHPUnit\Framework\TestCase;
 
@@ -18,17 +18,13 @@ class OrganizationRequestTest extends TestCase
     protected function setup(): void
     {
         $this->uniqueId = uniqid();
-        $this->username = 'abc123a123';
-        $this->password ='ABC123A123';
-        $this->name ='ABC123A123 Name';
-        $this->domains ='["alldigitalrewards-1reward-test.com", "sharecarerewards1.com"]';
+        $this->name = 'ABC123A123 Name';
+        $this->domains = '["alldigitalrewards-1reward-test.com", "sharecarerewards1.com"]';
 
-        $this->organizationRequest = new OrganizationRequest(
+        $this->organizationRequest = new OrganizationPutRequest(
             $this->uniqueId,
-            $this->username,
-            $this->password,
             $this->name,
-            $this->domains
+            $this->domains,
         );
     }
 
@@ -49,10 +45,9 @@ class OrganizationRequestTest extends TestCase
     public function testJsonSerialize()
     {
         $expectedArray = [
-            "username" => $this->username,
-            "password" => $this->password,
             "name" => $this->name,
-            "domains" => $this->domains
+            "domains" => $this->domains,
+            "unique_id" => $this->uniqueId,
         ];
 
         $this->assertEquals(

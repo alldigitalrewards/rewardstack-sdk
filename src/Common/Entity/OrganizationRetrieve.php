@@ -10,7 +10,7 @@ class OrganizationRetrieve extends AbstractEntity
     protected $created_at;
     protected $updated_at;
     protected $parent;
-    protected $domains= [];
+    protected $domains = [];
     protected $company_contact;
     protected $accounts_payable_contact;
 
@@ -121,8 +121,9 @@ class OrganizationRetrieve extends AbstractEntity
     /**
      * @param mixed $domains
      */
-    public function setDomains(array $domains)
+    public function setDomains($domains)
     {
+        $this->domains = $domains;
     }
 
     /**

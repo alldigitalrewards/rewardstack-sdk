@@ -1,11 +1,13 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Program\ProgramRequest;
+use AllDigitalRewards\RewardStack\Program\ProgramResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
 // This is for updating a program
 
-/** @var \AllDigitalRewards\RewardStack\Program\ProgramRequest $programRequest */
-$programRequest = new \AllDigitalRewards\RewardStack\Program\ProgramRequest(
+$programRequest = new ProgramRequest(
     '565665',
     'All Digital Rewards Test',
     '1',
@@ -16,7 +18,7 @@ $programRequest = new \AllDigitalRewards\RewardStack\Program\ProgramRequest(
     'alldigitalrewards'
 );
 
-/** @var \AllDigitalRewards\RewardStack\Program\ProgramResponse $programResponse */
+/** @var ProgramResponse $programResponse */
 $programResponse = $client->request($programRequest);
 print_r($programResponse);
 exit;

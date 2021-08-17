@@ -6,11 +6,9 @@ namespace AllDigitalRewards\RewardStack\Organization;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 
-class OrganizationRequest extends AbstractApiRequest
+class OrganizationPutRequest extends AbstractApiRequest
 {
     private $unique_id;
-    private $username;
-    private $password;
     private $name;
     private $domains;
 
@@ -18,22 +16,18 @@ class OrganizationRequest extends AbstractApiRequest
 
     public function __construct(
         string $unique_id,
-        string $username,
-        string $password,
         string $name,
         $domains
     ) {
 
         $this->unique_id = $unique_id;
-        $this->username =$username;
-        $this->password =$password;
-        $this->name =$name;
-        $this->domains =$domains;
+        $this->name = $name;
+        $this->domains = $domains;
     }
 
     /**
      * GetParticipantRequest constructor.
-     * @param string $uniqueId
+     * @return string
      */
     public function getHttpEndpoint(): string
     {
@@ -50,9 +44,7 @@ class OrganizationRequest extends AbstractApiRequest
     public function jsonSerialize()
     {
         return [
-
-            "username" => $this->username,
-            "password" => $this->password,
+            "unique_id" => $this->unique_id,
             "name" => $this->name,
             "domains" => $this->domains
         ];

@@ -1,20 +1,22 @@
 <?php
+
+use AllDigitalRewards\RewardStack\Program\CreateProgramRequest;
+use AllDigitalRewards\RewardStack\Program\CreateProgramResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Program\CreateProgramRequest $createProgramRequest */
-$createProgramRequest = new \AllDigitalRewards\RewardStack\Program\CreateProgramRequest(
+$createProgramRequest = new CreateProgramRequest(
     'alldigitalrewards',
-    'ADRTESTPROGRAM',
+    uniqid(),
     'A Test Program',
     '1',
     '1231231234',
-    'somewhere-over-the-rainbow.mydigitalrewards.com',
-    true,
-    'testlogo'
+    'someurl.mydigitalrewards.com',
+    true
 );
 
 
-/** @var \AllDigitalRewards\RewardStack\Program\CreateProgramResponse $createProgramResponse */
+/** @var CreateProgramResponse $createProgramResponse */
 $createProgramResponse = $client->request($createProgramRequest);
 print_r($createProgramResponse);
 exit;

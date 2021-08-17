@@ -17,5 +17,4 @@ $uri = new Uri('https://admin.adrqa.info');
 $httpClient = new Client();
 $authProxy = new AuthProxy($credentials, $uri, $httpClient);
 
-$client = new RewardStackClient($authProxy);
-return $client;
+return new RewardStackClient($authProxy);

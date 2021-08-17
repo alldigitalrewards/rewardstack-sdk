@@ -9,7 +9,6 @@ $client = require_once __DIR__ . '/bootstrap.php';
 $filter = new OrganizationCollectionFilter();
 $filter->setNameFilter('test');
 
-/** @var OrganizationListRequest $organizationListRequest */
 $organizationListRequest = new OrganizationListRequest(1, 30, $filter);
 
 /** @var OrganizationListResponse $organizationListResponse */

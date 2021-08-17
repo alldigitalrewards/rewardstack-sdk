@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Participant\ParticipantRequest;
+use AllDigitalRewards\RewardStack\Participant\ParticipantPutRequest;
 use AllDigitalRewards\RewardStack\Participant\ParticipantResponse;
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +15,7 @@ class ParticipantRetrieveRequestTest extends TestCase
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->participantRequest = new ParticipantRequest(
+        $this->participantRequest = new ParticipantPutRequest(
             $this->program,
             $this->uniqueId,
             'Joe',
