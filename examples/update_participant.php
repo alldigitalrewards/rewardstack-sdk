@@ -2,12 +2,12 @@
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
-use AllDigitalRewards\RewardStack\Participant\ParticipantRequest;
+use AllDigitalRewards\RewardStack\Participant\ParticipantPutRequest;
 use AllDigitalRewards\RewardStack\Participant\ParticipantResponse;
 
 $program = 'alldigitalrewards';
 $participantUniqueId = 'ADRTESTP1';
-$participantRequest = new ParticipantRequest(
+$participantRequest = new ParticipantPutRequest(
     $program,
     $participantUniqueId,
     'John',

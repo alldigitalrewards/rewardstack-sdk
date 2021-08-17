@@ -31,7 +31,7 @@ class ParticipantResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $participantRequest = new Participant\ParticipantRequest(
+        $participantRequest = new Participant\ParticipantPutRequest(
             'alldigitalrewards',
             'TESTPARTICIPANT1',
             'Zech',

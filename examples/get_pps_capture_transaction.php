@@ -2,7 +2,7 @@
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
-use AllDigitalRewards\RewardStack\Common\Entity\ProgramParticipantCaptureResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\SuccessResponse;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthIdResponse;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantAuthorizePointBalanceTokenRequest;
 use AllDigitalRewards\RewardStack\ProgramParticipantApi\ProgramParticipantCaptureTransactionRequest;
@@ -29,7 +29,7 @@ $captureTransaction = new ProgramParticipantCaptureTransactionRequest(
     $amount,
     '1001001'
 );
-/** @var ProgramParticipantCaptureResponse $captureTransactionResponse */
+/** @var SuccessResponse $captureTransactionResponse */
 $captureTransactionResponse = $client->request($captureTransaction);
 print_r($captureTransactionResponse);
 exit;

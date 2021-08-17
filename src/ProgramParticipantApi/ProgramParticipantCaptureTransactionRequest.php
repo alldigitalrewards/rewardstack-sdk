@@ -4,7 +4,7 @@ namespace AllDigitalRewards\RewardStack\ProgramParticipantApi;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
-use AllDigitalRewards\RewardStack\Common\Entity\ProgramParticipantCaptureResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\SuccessResponse;
 
 class ProgramParticipantCaptureTransactionRequest extends AbstractApiRequest
 {
@@ -37,7 +37,7 @@ class ProgramParticipantCaptureTransactionRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new ProgramParticipantCaptureResponse();
+        return new SuccessResponse();
     }
 
     public function jsonSerialize()

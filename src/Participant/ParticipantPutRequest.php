@@ -7,7 +7,7 @@ use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Traits\MetaValidationTrait;
 use Exception;
 
-class ParticipantRequest extends AbstractApiRequest
+class ParticipantPutRequest extends AbstractApiRequest
 {
     use MetaValidationTrait;
     /**

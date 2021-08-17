@@ -11,6 +11,7 @@ class Transaction extends AbstractEntity
     protected $email_address;
     protected $type;
     protected $id;
+    protected $meta;
     protected $created_at;
     protected $updated_at;
 
@@ -124,6 +125,22 @@ class Transaction extends AbstractEntity
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMeta()
+    {
+        return $this->meta;
+    }
+
+    /**
+     * @param mixed $meta
+     */
+    public function setMeta($meta): void
+    {
+        $this->meta = $meta;
     }
 
     /**
