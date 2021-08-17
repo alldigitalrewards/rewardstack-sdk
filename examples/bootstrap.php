@@ -9,7 +9,7 @@ use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack\Client as RewardStackClient;
 
 $credentials = new Credentials(
-    'username',
+    'test@alldigitalrewards.com',
     'password'
 );
 
@@ -17,5 +17,4 @@ $uri = new Uri('https://admin.adrqa.info');
 $httpClient = new Client();
 $authProxy = new AuthProxy($credentials, $uri, $httpClient);
 
-$client = new RewardStackClient($authProxy);
-return $client;
+return new RewardStackClient($authProxy);

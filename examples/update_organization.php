@@ -1,19 +1,19 @@
 <?php
 
+use AllDigitalRewards\RewardStack\Organization\OrganizationPutRequest;
+use AllDigitalRewards\RewardStack\Organization\OrganizationResponse;
+
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationRequest $organizationRequest */
-$organizationRequest = new \AllDigitalRewards\RewardStack\Organization\OrganizationRequest(
+$organizationRequest = new OrganizationPutRequest(
     'TESTABC1',
-    'username',
-    'password',
     'Over the Rainbow #2',
     [
-        "mydigitalrewards.com"
+        "joesrewards.com"
     ]
 );
 
-/** @var \AllDigitalRewards\RewardStack\Organization\OrganizationResponse $organizationResponse */
+/** @var OrganizationResponse $organizationResponse */
 $organizationResponse = $client->request($organizationRequest);
 print_r($organizationResponse);
 exit;

@@ -5,7 +5,7 @@ use AllDigitalRewards\RewardStack\Participant\CreateParticipantRequest;
 use AllDigitalRewards\RewardStack\Participant\CreateParticipantResponse;
 
 $program = 'alldigitalrewards';
-$participantUniqueId = 'ADRTESTP1';
+$participantUniqueId = uniqid();
 
 $createParticipantRequest = new CreateParticipantRequest(
     $program,
