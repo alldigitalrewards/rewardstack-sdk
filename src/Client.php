@@ -4,6 +4,7 @@ namespace AllDigitalRewards\RewardStack;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 
@@ -23,7 +24,10 @@ class Client
         $this->authProxy = $authProxy;
     }
 
-    public function request(AbstractApiRequest $apiRequest)
+    /**
+     * @throws GuzzleException
+     */
+    public function request(AbstractApiRequest $apiRequest): Common\Entity\AbstractEntity
     {
         // Generate HTTP Request from API Request
         $httpRequest = $this->generateHttpRequest($apiRequest);

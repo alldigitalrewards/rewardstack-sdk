@@ -15,7 +15,6 @@ class CreateProgramRequestTest extends TestCase
     protected $phone;
     protected $url;
     protected $active;
-    protected $logo;
     protected $createProgramRequest;
 
     protected function setUp(): void
@@ -27,7 +26,6 @@ class CreateProgramRequestTest extends TestCase
         $this->phone ='902109021';
         $this->url ='alldigitalrewards-demo.mydigitalrewards.com';
         $this->active ='24';
-        $this->logo ='testlogo';
         $this->createProgramRequest = new CreateProgramRequest(
             $this->organization,
             $this->uniqueId,
@@ -35,8 +33,7 @@ class CreateProgramRequestTest extends TestCase
             $this->point,
             $this->phone,
             $this->url,
-            $this->active,
-            $this->logo
+            $this->active
         );
     }
 
@@ -63,9 +60,7 @@ class CreateProgramRequestTest extends TestCase
             "point" => $this->point,
             "phone" => $this->phone,
             "url" =>$this->url,
-            "active" =>$this->active,
-            "logo" => $this->logo
-
+            "active" =>$this->active
         ];
 
         $this->assertEquals(

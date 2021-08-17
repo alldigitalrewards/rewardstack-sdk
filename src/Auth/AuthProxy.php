@@ -3,6 +3,7 @@
 namespace AllDigitalRewards\RewardStack\Auth;
 
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -53,6 +54,9 @@ class AuthProxy
         return $this->uri;
     }
 
+    /**
+     * @throws GuzzleException
+     */
     public function request(RequestInterface $request): ResponseInterface
     {
         // Add Auth Header to request.

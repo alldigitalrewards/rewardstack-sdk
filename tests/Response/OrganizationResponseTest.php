@@ -31,7 +31,7 @@ class OrganizationResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $organizationRequest = new Organization\OrganizationRequest(
+        $organizationRequest = new Organization\OrganizationPutRequest(
             '14213123',
             'abc123a123',
             'ABC123A123',

@@ -9,16 +9,16 @@ class ProgramRetrieveRequest extends AbstractApiRequest
 {
     protected $httpMethod = 'GET';
 
-    protected $uniqueId;
+    protected $searchParam;
 
-    public function __construct($uniqueId)
+    public function __construct($searchParam)
     {
-        $this->uniqueId = $uniqueId;
+        $this->searchParam = $searchParam;
     }
 
     public function getHttpEndpoint(): string
     {
-        return '/api/program/' . $this->uniqueId;
+        return '/api/program/' . $this->searchParam;
     }
 
 
