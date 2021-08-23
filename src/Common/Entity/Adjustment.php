@@ -8,6 +8,9 @@ class Adjustment extends AbstractEntity
     protected $amount;
     protected $type;
     protected $transaction_id;
+    protected $transaction_item_id;
+    protected $completed_at;
+    protected $activity;
     protected $reference;
     protected $description;
     protected $id;
@@ -140,5 +143,53 @@ class Adjustment extends AbstractEntity
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTransactionItemId()
+    {
+        return $this->transaction_item_id;
+    }
+
+    /**
+     * @param mixed $transaction_item_id
+     */
+    public function setTransactionItemId($transaction_item_id): void
+    {
+        $this->transaction_item_id = $transaction_item_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompletedAt()
+    {
+        return $this->completed_at;
+    }
+
+    /**
+     * @param mixed $completed_at
+     */
+    public function setCompletedAt($completed_at): void
+    {
+        $this->completed_at = $completed_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActivity()
+    {
+        return $this->activity;
+    }
+
+    /**
+     * @param mixed $activity
+     */
+    public function setActivity($activity): void
+    {
+        $this->activity = $activity;
     }
 }
