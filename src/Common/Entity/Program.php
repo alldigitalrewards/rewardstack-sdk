@@ -21,6 +21,7 @@ class Program extends AbstractEntity
     protected $productCriteria;
     protected $featured_products;
     protected $auto_redemption;
+    protected $collect_ssn;
 
     /**
      * @return mixed
@@ -276,5 +277,21 @@ class Program extends AbstractEntity
     public function setAutoRedemption($auto_redemption)
     {
         $this->auto_redemption = $auto_redemption;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCollectSsn()
+    {
+        return $this->collect_ssn;
+    }
+
+    /**
+     * @param mixed $collect_ssn
+     */
+    public function setCollectSsn($collect_ssn): void
+    {
+        $this->collect_ssn = $collect_ssn;
     }
 }
