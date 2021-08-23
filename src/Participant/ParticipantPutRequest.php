@@ -51,6 +51,11 @@ class ParticipantPutRequest extends AbstractApiRequest
     private $meta;
 
     /**
+     * @var string|null
+     */
+    private $phone;
+
+    /**
      * @var string
      */
     protected $httpMethod = 'PUT';
@@ -62,6 +67,7 @@ class ParticipantPutRequest extends AbstractApiRequest
      * @param string $firstname
      * @param string $lastname
      * @param string $emailAddress
+     * @param string|null $phone
      * @param AddressRequest|null $address
      * @param string|null $birthdate
      * @param array|null $meta
@@ -72,6 +78,7 @@ class ParticipantPutRequest extends AbstractApiRequest
         string $firstname,
         string $lastname,
         string $emailAddress,
+        string $phone = null,
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null
@@ -82,6 +89,7 @@ class ParticipantPutRequest extends AbstractApiRequest
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->emailAddress = $emailAddress;
+        $this->phone = $phone;
         $this->address = $address;
         $this->birthdate = $birthdate;
         $this->meta = $meta;
@@ -111,6 +119,7 @@ class ParticipantPutRequest extends AbstractApiRequest
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
             "email_address" => $this->emailAddress,
+            "phone" => $this->phone,
             'address' => $this->address,
             'birthdate' => $this->birthdate,
             'meta' => $this->meta
