@@ -13,6 +13,7 @@ $participantRequest = new ParticipantPutRequest(
     'John',
     'Smith',
     'nowhere+ADRTESTP1@alldigitalrewards.com',
+    '8776521234',
     null,
     null,
     [
