@@ -47,6 +47,22 @@ class AuthProxy
     }
 
     /**
+     * @return JwtToken|null
+     */
+    public function getJwtToken(): ?JwtToken
+    {
+        return $this->jwtToken;
+    }
+
+    /**
+     * @param JwtToken $jwtToken
+     */
+    public function setJwtToken(JwtToken $jwtToken): void
+    {
+        $this->jwtToken = $jwtToken;
+    }
+
+    /**
      * @return UriInterface
      */
     public function getUri(): UriInterface
@@ -71,29 +87,29 @@ class AuthProxy
         // Check if the JWT Token is valid.
         if ($this->jwtTokenIsValid() === false) {
             // If it's not then renew it.
-            $this->updateJwtToken();
+            $this->requestJwtToken();
         }
 
         return $request->withHeader(
             'Authorization',
-            'Bearer ' . $this->jwtToken->getToken()
+            'Bearer ' . $this->getJwtToken()->getToken()
         );
     }
 
-    private function jwtTokenIsValid()
+    private function jwtTokenIsValid(): bool
     {
-        if (!$this->jwtToken instanceof JwtToken) {
+        if (!$this->getJwtToken() instanceof JwtToken) {
             return false;
         }
 
-        if ($this->jwtToken->isExpired() === true) {
+        if ($this->getJwtToken()->isExpired() === true) {
             return false;
         }
 
         return true;
     }
 
-    private function updateJwtToken()
+    public function requestJwtToken()
     {
         $httpResponse = $this->httpClient->send(
             $this->generateTokenRequest()
@@ -102,6 +118,8 @@ class AuthProxy
         $response = json_decode($httpResponse->getBody());
 
         $this->jwtToken = new JwtToken($response->token, $response->expires);
+
+        $this->setJwtToken($this->jwtToken);
     }
 
     private function generateTokenRequest(): RequestInterface
