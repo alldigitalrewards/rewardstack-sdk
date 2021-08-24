@@ -21,15 +21,14 @@ class CreateTransactionRequest extends AbstractApiRequest
     private $uniqueId;
 
     private $productCollection;
-
     /**
-     * @var array
+     * @var AddressRequest|null
      */
     private $shippingAddress;
     /**
      * @var array
      */
-    private $transactionConfig = [];
+    private $transactionConfig;
 
     protected $httpMethod = 'POST';
 
@@ -39,14 +38,14 @@ class CreateTransactionRequest extends AbstractApiRequest
      * @param string $programId
      * @param string $uniqueId
      * @param array $productRequestCollection
-     * @param AddressRequest $shippingAddress
+     * @param AddressRequest|null $shippingAddress
      * @param array $transactionConfig
      */
     public function __construct(
         string $programId,
         string $uniqueId,
         array $productRequestCollection,
-        AddressRequest $shippingAddress,
+        AddressRequest $shippingAddress = null,
         array $transactionConfig = []
     ) {
         $this->programId = $programId;
@@ -86,12 +85,15 @@ class CreateTransactionRequest extends AbstractApiRequest
                 'Meta data provided must have valid key/values'
             );
         }
-        return [
+        $return = [
             "products" => $this->getMappedProductCollection(),
             "issue_points" => $this->transactionConfig['issue_points'] ?? true,
-            "shipping" => $this->shippingAddress,
             "meta" => $this->transactionConfig['meta'] ?? [],
         ];
+        if ($this->shippingAddress instanceof AddressRequest) {
+            $return['shipping'] = $this->shippingAddress;
+        }
+        return $return;
     }
 
     private function getMappedProductCollection()
