@@ -9,7 +9,7 @@ use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack\Client as RewardStackClient;
 
 $credentials = new Credentials(
-    'test@alldigitalrewards.com',
+    'username',
     'password'
 );
 
