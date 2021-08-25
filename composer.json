@@ -6,7 +6,8 @@
     "require": {
         "php" : "^7.3|^8.0",
         "guzzlehttp/guzzle": "^7.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "alldigitalrewards/country-mapper": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "^7.0|^8",

@@ -2,6 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Transaction;
 
+use AllDigitalRewards\CountryMapper\CountryMapperException;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Participant\AddressRequest;
@@ -91,12 +92,17 @@ class CreateTransactionRequest extends AbstractApiRequest
             "meta" => $this->transactionConfig['meta'] ?? [],
         ];
         if ($this->shippingAddress instanceof AddressRequest) {
+            try {
+                $this->getMappedCountry($this->shippingAddress->getCountry());
+            } catch (CountryMapperException $exception) {
+                throw new Exception($exception->getMessage());
+            }
             $return['shipping'] = $this->shippingAddress;
         }
         return $return;
     }
 
-    private function getMappedProductCollection()
+    private function getMappedProductCollection(): array
     {
         $productCollection = [];
         foreach ($this->productCollection as $productRequest) {

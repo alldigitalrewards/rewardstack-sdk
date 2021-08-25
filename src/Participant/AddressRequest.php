@@ -2,8 +2,16 @@
 
 namespace AllDigitalRewards\RewardStack\Participant;
 
+use AllDigitalRewards\CountryMapper\CountryInputMapperService;
+use AllDigitalRewards\CountryMapper\CountryMapperException;
+use AllDigitalRewards\CountryMapper\Entity\Country;
+use AllDigitalRewards\RewardStack\Traits\CountryMapperTrait;
+use Exception;
+
 class AddressRequest
 {
+    use CountryMapperTrait;
+
     public $firstname;
 
     public $lastname;
@@ -144,7 +152,7 @@ class AddressRequest
 
     /**
      * @param $country
-     * @throws \Exception
+     * @throws Exception
      */
     public function setCountry($country)
     {
@@ -153,21 +161,17 @@ class AddressRequest
 
     /**
      * @param string $country
-     * @return int
-     * @throws \Exception
+     * @return string
+     * @throws Exception
      */
-    private function getNumericCountryCode(string $country)
+    private function getNumericCountryCode(string $country): string
     {
-        $this->country_code = $country;
-        switch ($country) {
-            case "CA":
-                return 124;
-                break;
-            case "US":
-                return 840;
-                break;
-            default:
-                throw new \Exception('The country provided is not supported currently');
+        try {
+            $countryResponse = $this->getMappedCountry($country);
+            $this->country_code = $countryResponse->getAlpha2();
+            return $countryResponse->getNumeric();
+        } catch (CountryMapperException $exception) {
+            throw new Exception($exception->getMessage());
         }
     }
 }

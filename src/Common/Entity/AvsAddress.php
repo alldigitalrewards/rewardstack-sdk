@@ -96,7 +96,7 @@ class AvsAddress extends AbstractEntity
      */
     public function getCountry(): string
     {
-        return $this->country;
+        return $this->country ?? '';
     }
 
     /**
