@@ -96,7 +96,7 @@ class CreateTransactionRequest extends AbstractApiRequest
         return $return;
     }
 
-    private function getMappedProductCollection()
+    private function getMappedProductCollection(): array
     {
         $productCollection = [];
         foreach ($this->productCollection as $productRequest) {

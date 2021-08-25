@@ -2,14 +2,19 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
+use AllDigitalRewards\CountryMapper\CountryMapperException;
+use AllDigitalRewards\RewardStack\Traits\CountryMapperTrait;
+use Exception;
+
 class AvsAddress extends AbstractEntity
 {
+    use CountryMapperTrait;
     protected $address1 = '';
     protected $address2 = '';
     protected $city = '';
     protected $state = '';
     protected $postal_code = '';
-    protected $country = '840';
+    protected $country = '';
 
     /**
      * @return string
@@ -96,14 +101,30 @@ class AvsAddress extends AbstractEntity
      */
     public function getCountry(): string
     {
-        return $this->country;
+        return $this->country ?? '';
     }
 
     /**
      * @param string $country
+     * @throws Exception
      */
     public function setCountry(string $country): void
     {
-        $this->country = $country;
+        $this->country = $this->getAlphaCountryCode($country);
+    }
+
+    /**
+     * @param string $country
+     * @return string
+     * @throws Exception
+     */
+    private function getAlphaCountryCode(string $country): string
+    {
+        try {
+            $countryResponse = $this->getMappedCountry($country);
+            return $countryResponse->getAlpha2();
+        } catch (CountryMapperException $exception) {
+            throw new Exception($exception->getMessage());
+        }
     }
 }
