@@ -21,6 +21,10 @@ class ProgramRetrieveRequest extends AbstractApiRequest
         return '/api/program/' . $this->searchParam;
     }
 
+    public function getQueryParams(): string
+    {
+        return 'lang=' . $this->getLang();
+    }
 
     public function getResponseObject(): AbstractEntity
     {
