@@ -5,20 +5,20 @@ namespace AllDigitalRewards\RewardStack\RedemptionApi;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class CampaignRetrieveRequest extends AbstractApiRequest
+class CampaignRetrieveBySubdomainRequest extends AbstractApiRequest
 {
-    private $pin;
+    private $subDomain;
 
     protected $httpMethod = 'GET';
 
-    public function __construct(string $pin)
+    public function __construct(string $subDomain)
     {
-        $this->pin = $pin;
+        $this->subDomain = $subDomain;
     }
 
     public function getHttpEndpoint(): string
     {
-        return "/api/redemption-campaigns/pin/$this->pin";
+        return "/api/redemption-campaigns/$this->subDomain";
     }
 
     public function getQueryParams(): string
@@ -28,7 +28,9 @@ class CampaignRetrieveRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new CampaignRetrieveResponse();
+        //sadly I built the api to return the entity in an array so
+        //im overriding the hydration to pop off first from the list
+        return new SingleCampaignFromListResponse();
     }
 
     public function jsonSerialize()
