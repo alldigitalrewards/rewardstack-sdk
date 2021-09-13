@@ -2,21 +2,19 @@
 
 namespace AllDigitalRewards\RewardStack\Traits;
 
+use AllDigitalRewards\LanguageMapper\LanguageMapper;
+
 trait LanguageHydrationTrait
 {
-    private $lang = 'en';
+    private $lang = LanguageMapper::DEFAULT_LANGUAGE;
 
     /**
      * @return string
      */
     public function getLang(): string
     {
-        switch ($this->lang) {
-            case strpos($this->lang, 'es') !== false:
-                return 'es';
-            default:
-                return 'en';
-        }
+        $languageMapper = new LanguageMapper($this->lang);
+        return $languageMapper->getLanguage();
     }
 
     /**
@@ -24,7 +22,8 @@ trait LanguageHydrationTrait
      */
     public function setLang($lang): void
     {
-        if (empty($lang) === true || empty(trim($lang)) === true) {
+        if (empty($lang) === true) {
+            $this->lang = LanguageMapper::DEFAULT_LANGUAGE;
             return;
         }
         $this->lang = $lang;
