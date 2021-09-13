@@ -22,7 +22,7 @@ class ProgramLayoutRequestTest extends TestCase
     {
         $expectedUrl = '/api/program/'. $this->uniqueId .'/layout';
         $this->assertEquals($expectedUrl, $this->programLayoutRequest->getHttpEndpoint());
-        $this->assertEquals('lang=en', $this->programLayoutRequest->getQueryParams());
+        $this->assertEquals('lang=en_US', $this->programLayoutRequest->getQueryParams());
     }
 
     public function testGetResponseObject()
