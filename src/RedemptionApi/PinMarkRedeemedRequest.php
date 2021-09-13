@@ -6,7 +6,7 @@ use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Common\Entity\SuccessResponse;
 
-class RedemptionPinMarkRedeemedRequest extends AbstractApiRequest
+class PinMarkRedeemedRequest extends AbstractApiRequest
 {
     private $subDomain;
     private $pin;

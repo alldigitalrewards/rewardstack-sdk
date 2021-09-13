@@ -1,13 +1,13 @@
 <?php
 
-use AllDigitalRewards\RewardStack\RedemptionApi\RedemptionPinMarkRedeemedRequest;
+use AllDigitalRewards\RewardStack\RedemptionApi\PinMarkRedeemedRequest;
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
 $subDomain = 'somecampaign';
 $pin = 'HSsEVD81CuCfwyD';
 $transactionGuid = 'some-guid-here';
-$request = new RedemptionPinMarkRedeemedRequest(
+$request = new PinMarkRedeemedRequest(
     $subDomain,
     $pin,
     $transactionGuid

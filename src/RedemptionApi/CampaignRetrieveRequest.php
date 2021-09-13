@@ -4,25 +4,21 @@ namespace AllDigitalRewards\RewardStack\RedemptionApi;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
-use AllDigitalRewards\RewardStack\Common\Entity\SuccessResponse;
-use AllDigitalRewards\RewardStack\Participant\ParticipantResponse;
 
-class RedemptionPinValidationRequest extends AbstractApiRequest
+class CampaignRetrieveRequest extends AbstractApiRequest
 {
-    private $subDomain;
     private $pin;
 
     protected $httpMethod = 'GET';
 
-    public function __construct(string $subDomain, string $pin)
+    public function __construct(string $pin)
     {
-        $this->subDomain = $subDomain;
         $this->pin = $pin;
     }
 
     public function getHttpEndpoint(): string
     {
-        return "/api/redemption-campaigns/$this->subDomain/pins/$this->pin";
+        return "/api/redemption-campaigns/pin/$this->pin";
     }
 
     public function getQueryParams(): string
@@ -32,7 +28,7 @@ class RedemptionPinValidationRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new RedemptionApiPinResponse();
+        return new CampaignRetrieveResponse();
     }
 
     public function jsonSerialize()

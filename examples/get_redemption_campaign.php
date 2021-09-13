@@ -1,13 +1,11 @@
 <?php
 
-use AllDigitalRewards\RewardStack\RedemptionApi\PinValidationRequest;
+use AllDigitalRewards\RewardStack\RedemptionApi\CampaignRetrieveRequest;
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
-$subDomain = 'somecampaign';
 $pin = 'HSsEVD81CuCfwyD';
-$request = new PinValidationRequest(
-    $subDomain,
+$request = new CampaignRetrieveRequest(
     $pin
 );
 $request->setLang('en_US');
