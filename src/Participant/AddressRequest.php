@@ -160,13 +160,16 @@ class AddressRequest
     }
 
     /**
-     * @param string $country
+     * @param $country
      * @return string
      * @throws Exception
      */
-    private function getNumericCountryCode(string $country): string
+    private function getNumericCountryCode($country): string
     {
         try {
+            if (empty($country) === true) {
+                $country = 'US';
+            }
             $countryResponse = $this->getMappedCountry($country);
             $this->country_code = $countryResponse->getAlpha2();
             return $countryResponse->getNumeric();
