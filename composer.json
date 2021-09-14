@@ -8,7 +8,7 @@
         "guzzlehttp/guzzle": "^7.0",
         "ext-json": "*",
         "alldigitalrewards/country-mapper": "^1.1",
-        "alldigitalrewards/language-mapper": "^1.1"
+        "alldigitalrewards/language-mapper": "^1"
     },
     "require-dev": {
         "phpunit/phpunit" : "^7.0|^8|^9.0",
