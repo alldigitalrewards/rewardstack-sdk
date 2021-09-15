@@ -28,7 +28,7 @@ class CampaignRetrieveByPinRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new CampaignRetrieveResponse();
+        return new SingleCampaignFromListResponse();
     }
 
     public function jsonSerialize()
