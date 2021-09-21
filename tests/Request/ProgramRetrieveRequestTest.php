@@ -12,7 +12,7 @@ class ProgramRetrieveRequestTest extends TestCase
     protected $program = 'alldigitalrewards';
     protected $programRetrieveRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
 
         $this->programRetrieveRequest = new ProgramRetrieveRequest($this->program);

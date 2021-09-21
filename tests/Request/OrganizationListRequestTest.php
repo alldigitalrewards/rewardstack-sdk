@@ -10,7 +10,7 @@ class OrganizationListRequestTest extends TestCase
 {
     protected $organizationListRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
 
         $this->organizationListRequest = new OrganizationListRequest;

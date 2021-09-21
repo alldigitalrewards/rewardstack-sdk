@@ -20,7 +20,7 @@ class CreateOrganizationRequestTest extends TestCase
     protected $parent;
     protected $createOrganizationRequest;
 
-    protected function setup()
+    protected function setup(): void
     {
         $this->uniqueId = uniqid();
         $this->name = 'Over the Rainbow';

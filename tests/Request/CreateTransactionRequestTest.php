@@ -37,7 +37,7 @@ class CreateTransactionRequestTest extends TestCase
         return $addressRequest;
     }
 
-    protected function setup()
+    protected function setup(): void
     {
         $this->uniqueId = uniqid();
 

@@ -12,7 +12,7 @@ class ParticipantRetrieveRequestTest extends TestCase
     protected $uniqueId;
     protected $participantRetrieveRequest;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->uniqueId = uniqid();
         $this->participantRetrieveRequest = new ParticipantRetrieveRequest(

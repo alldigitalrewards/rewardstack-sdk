@@ -15,7 +15,7 @@ class CreateAdjustmentRequestTest extends TestCase
     protected $referenceId;
     protected $createAdjustmentRequest;
 
-    protected function setup()
+    protected function setup(): void
     {
         $this->uniqueId = uniqid();
         $this->type = 'credit';
