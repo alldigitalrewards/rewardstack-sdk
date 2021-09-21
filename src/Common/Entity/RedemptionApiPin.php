@@ -26,7 +26,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $id
      */
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -42,7 +42,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $pin
      */
-    public function setPin($pin): void
+    public function setPin($pin)
     {
         $this->pin = $pin;
     }
@@ -58,7 +58,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $uuid
      */
-    public function setUuid($uuid): void
+    public function setUuid($uuid)
     {
         $this->uuid = $uuid;
     }
@@ -74,7 +74,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $transaction_guid
      */
-    public function setTransactionGuid($transaction_guid): void
+    public function setTransactionGuid($transaction_guid)
     {
         $this->transaction_guid = $transaction_guid;
     }
@@ -90,7 +90,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $claimed_on
      */
-    public function setClaimedOn($claimed_on): void
+    public function setClaimedOn($claimed_on)
     {
         $this->claimed_on = $claimed_on;
     }
@@ -106,7 +106,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $exported_at
      */
-    public function setExportedAt($exported_at): void
+    public function setExportedAt($exported_at)
     {
         $this->exported_at = $exported_at;
     }
@@ -122,7 +122,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $created_at
      */
-    public function setCreatedAt($created_at): void
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }
@@ -138,7 +138,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $updated_at
      */
-    public function setUpdatedAt($updated_at): void
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
     }
@@ -154,7 +154,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $active
      */
-    public function setActive($active): void
+    public function setActive($active)
     {
         $this->active = $active;
     }
@@ -170,7 +170,7 @@ class RedemptionApiPin extends AbstractEntity
     /**
      * @param mixed $exported
      */
-    public function setExported($exported): void
+    public function setExported($exported)
     {
         $this->exported = $exported;
     }

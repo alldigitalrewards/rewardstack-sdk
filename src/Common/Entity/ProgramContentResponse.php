@@ -47,7 +47,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $program_id
      */
-    public function setProgramId($program_id): void
+    public function setProgramId($program_id)
     {
         $this->program_id = $program_id;
     }
@@ -63,7 +63,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $my_account_url
      */
-    public function setMyAccountUrl($my_account_url): void
+    public function setMyAccountUrl($my_account_url)
     {
         $this->my_account_url = $my_account_url;
     }
@@ -79,7 +79,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $points_filter
      */
-    public function setPointsFilter($points_filter): void
+    public function setPointsFilter($points_filter)
     {
         $this->points_filter = $points_filter;
     }
@@ -95,7 +95,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $site_color
      */
-    public function setSiteColor($site_color): void
+    public function setSiteColor($site_color)
     {
         $this->site_color = $site_color;
     }
@@ -111,7 +111,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $google_analytics
      */
-    public function setGoogleAnalytics($google_analytics): void
+    public function setGoogleAnalytics($google_analytics)
     {
         $this->google_analytics = $google_analytics;
     }
@@ -127,7 +127,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $marketplace_enabled
      */
-    public function setMarketplaceEnabled($marketplace_enabled): void
+    public function setMarketplaceEnabled($marketplace_enabled)
     {
         $this->marketplace_enabled = $marketplace_enabled;
     }
@@ -143,7 +143,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $point_visibility
      */
-    public function setPointVisibility($point_visibility): void
+    public function setPointVisibility($point_visibility)
     {
         $this->point_visibility = $point_visibility;
     }
@@ -159,7 +159,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $reward_terms
      */
-    public function setRewardTerms($reward_terms): void
+    public function setRewardTerms($reward_terms)
     {
         $this->reward_terms = $reward_terms;
     }
@@ -175,7 +175,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $program_terms
      */
-    public function setProgramTerms($program_terms): void
+    public function setProgramTerms($program_terms)
     {
         $this->program_terms = $program_terms;
     }
@@ -191,7 +191,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $return_policy
      */
-    public function setReturnPolicy($return_policy): void
+    public function setReturnPolicy($return_policy)
     {
         $this->return_policy = $return_policy;
     }
@@ -207,7 +207,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $privacy_policy
      */
-    public function setPrivacyPolicy($privacy_policy): void
+    public function setPrivacyPolicy($privacy_policy)
     {
         $this->privacy_policy = $privacy_policy;
     }
@@ -223,7 +223,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $rules
      */
-    public function setRules($rules): void
+    public function setRules($rules)
     {
         $this->rules = $rules;
     }
@@ -239,7 +239,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $contact_us
      */
-    public function setContactUs($contact_us): void
+    public function setContactUs($contact_us)
     {
         $this->contact_us = $contact_us;
     }
@@ -255,7 +255,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $feedback
      */
-    public function setFeedback($feedback): void
+    public function setFeedback($feedback)
     {
         $this->feedback = $feedback;
     }
@@ -271,7 +271,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $participant_config
      */
-    public function setParticipantConfig($participant_config): void
+    public function setParticipantConfig($participant_config)
     {
         $this->participant_config = $participant_config;
     }
@@ -287,7 +287,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $confirmation_page
      */
-    public function setConfirmationPage($confirmation_page): void
+    public function setConfirmationPage($confirmation_page)
     {
         $this->confirmation_page = $confirmation_page;
     }
@@ -303,7 +303,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $footer
      */
-    public function setFooter($footer): void
+    public function setFooter($footer)
     {
         $this->footer = $footer;
     }
@@ -319,7 +319,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $how_it_works
      */
-    public function setHowItWorks($how_it_works): void
+    public function setHowItWorks($how_it_works)
     {
         $this->how_it_works = $how_it_works;
     }
@@ -335,7 +335,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $issue_date_config
      */
-    public function setIssueDateConfig($issue_date_config): void
+    public function setIssueDateConfig($issue_date_config)
     {
         $this->issue_date_config = $issue_date_config;
     }
@@ -351,7 +351,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $reward_form
      */
-    public function setRewardForm($reward_form): void
+    public function setRewardForm($reward_form)
     {
         $this->reward_form = $reward_form;
     }
@@ -367,7 +367,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $promo_code_config
      */
-    public function setPromoCodeConfig($promo_code_config): void
+    public function setPromoCodeConfig($promo_code_config)
     {
         $this->promo_code_config = $promo_code_config;
     }
@@ -383,7 +383,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $redirect_sso
      */
-    public function setRedirectSso($redirect_sso): void
+    public function setRedirectSso($redirect_sso)
     {
         $this->redirect_sso = $redirect_sso;
     }
@@ -399,7 +399,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $account_dashboard
      */
-    public function setAccountDashboard($account_dashboard): void
+    public function setAccountDashboard($account_dashboard)
     {
         $this->account_dashboard = $account_dashboard;
     }
@@ -415,7 +415,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $created_at
      */
-    public function setCreatedAt($created_at): void
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
     }
@@ -431,7 +431,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $updated_at
      */
-    public function setUpdatedAt($updated_at): void
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
     }
@@ -447,7 +447,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $marketplace_types
      */
-    public function setMarketplaceTypes($marketplace_types): void
+    public function setMarketplaceTypes($marketplace_types)
     {
         $this->marketplace_types = $marketplace_types;
     }
@@ -463,7 +463,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $faqs
      */
-    public function setFaqs($faqs): void
+    public function setFaqs($faqs)
     {
         $this->faqs = $faqs;
     }
@@ -479,7 +479,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $copyright
      */
-    public function setCopyright($copyright): void
+    public function setCopyright($copyright)
     {
         $this->copyright = $copyright;
     }
@@ -495,7 +495,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $logo
      */
-    public function setLogo($logo): void
+    public function setLogo($logo)
     {
         $this->logo = $logo;
     }
@@ -511,7 +511,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $home_banner
      */
-    public function setHomeBanner($home_banner): void
+    public function setHomeBanner($home_banner)
     {
         $this->home_banner = $home_banner;
     }
@@ -527,7 +527,7 @@ class ProgramContentResponse extends AbstractEntity
     /**
      * @param mixed $language_toggler
      */
-    public function setLanguageToggler($language_toggler): void
+    public function setLanguageToggler($language_toggler)
     {
         $this->language_toggler = $language_toggler;
     }

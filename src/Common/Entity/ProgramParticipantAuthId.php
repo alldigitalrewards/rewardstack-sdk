@@ -17,7 +17,7 @@ class ProgramParticipantAuthId extends AbstractEntity
     /**
      * @param mixed $authorization_id
      */
-    public function setAuthorizationId($authorization_id): void
+    public function setAuthorizationId($authorization_id)
     {
         $this->authorization_id = $authorization_id;
     }

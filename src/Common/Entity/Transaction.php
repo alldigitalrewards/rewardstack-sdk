@@ -138,7 +138,7 @@ class Transaction extends AbstractEntity
     /**
      * @param mixed $meta
      */
-    public function setMeta($meta): void
+    public function setMeta($meta)
     {
         $this->meta = $meta;
     }

@@ -11,7 +11,7 @@ class ProgramListRequestTest extends TestCase
     protected $uniqueId;
     protected $programListRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->uniqueId = uniqid();
         $this->programListRequest = new ProgramListRequest();

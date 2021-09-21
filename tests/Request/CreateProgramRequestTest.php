@@ -17,7 +17,7 @@ class CreateProgramRequestTest extends TestCase
     protected $active;
     protected $createProgramRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->organization ='alldigitalrewards';
         $this->uniqueId = uniqid();

@@ -19,7 +19,7 @@ class ProgramRequestTest extends TestCase
     protected $organization;
     protected $programRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
 
         $this->uniqueId = uniqid();

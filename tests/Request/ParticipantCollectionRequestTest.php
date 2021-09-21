@@ -11,7 +11,7 @@ class ParticipantCollectionRequestTest extends TestCase
     protected $program = 'alldigitalrewards';
     protected $participantCollectionRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->participantCollectionRequest = new ParticipantCollectionRequest($this->program);
     }

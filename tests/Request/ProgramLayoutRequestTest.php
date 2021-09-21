@@ -11,7 +11,7 @@ class ProgramLayoutRequestTest extends TestCase
     protected $uniqueId;
     protected $programLayoutRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->uniqueId = uniqid();
         $this->programLayoutRequest = new ProgramLayoutRequest($this->uniqueId);

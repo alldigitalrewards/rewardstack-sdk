@@ -12,7 +12,7 @@ class TransactionRequestTest extends TestCase
     protected $uniqueId;
     protected $transactionRequest;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->uniqueId = uniqid();
         $this->transactionRequest = new TransactionRequest($this->program, $this->uniqueId);

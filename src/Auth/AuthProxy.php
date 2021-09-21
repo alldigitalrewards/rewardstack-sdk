@@ -61,7 +61,7 @@ class AuthProxy
     /**
      * @param JwtToken $jwtToken
      */
-    public function setJwtToken(JwtToken $jwtToken): void
+    public function setJwtToken(JwtToken $jwtToken)
     {
         $this->jwtToken = $jwtToken;
     }

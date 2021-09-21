@@ -27,7 +27,7 @@ class AvsAddress extends AbstractEntity
     /**
      * @param string $address1
      */
-    public function setAddress1(string $address1): void
+    public function setAddress1(string $address1)
     {
         $this->address1 = $address1;
     }
@@ -43,7 +43,7 @@ class AvsAddress extends AbstractEntity
     /**
      * @param string $address2
      */
-    public function setAddress2(string $address2): void
+    public function setAddress2(string $address2)
     {
         $this->address2 = $address2;
     }
@@ -59,7 +59,7 @@ class AvsAddress extends AbstractEntity
     /**
      * @param string $city
      */
-    public function setCity(string $city): void
+    public function setCity(string $city)
     {
         $this->city = $city;
     }
@@ -75,7 +75,7 @@ class AvsAddress extends AbstractEntity
     /**
      * @param string $state
      */
-    public function setState(string $state): void
+    public function setState(string $state)
     {
         $this->state = $state;
     }
@@ -91,7 +91,7 @@ class AvsAddress extends AbstractEntity
     /**
      * @param string $postal_code
      */
-    public function setPostalCode(string $postal_code): void
+    public function setPostalCode(string $postal_code)
     {
         $this->postal_code = $postal_code;
     }
@@ -108,7 +108,7 @@ class AvsAddress extends AbstractEntity
      * @param string $country
      * @throws Exception
      */
-    public function setCountry(string $country): void
+    public function setCountry(string $country)
     {
         $this->country = $this->getAlphaCountryCode($country);
     }

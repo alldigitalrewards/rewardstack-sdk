@@ -16,7 +16,7 @@ class CreateParticipantRequestTest extends TestCase
     protected $email_address;
     protected $createParticipantRequest;
 
-    protected function setup(): void
+    protected function setup()
     {
         $this->program = 'alldigitalrewards';
         $this->uniqueId = uniqid();
