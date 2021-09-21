@@ -34,6 +34,7 @@ class ProgramContentResponse extends AbstractEntity
     protected $copyright;
     protected $logo;
     protected $home_banner;
+    protected $language_toggler;
 
     /**
      * @return mixed
@@ -513,5 +514,21 @@ class ProgramContentResponse extends AbstractEntity
     public function setHomeBanner($home_banner): void
     {
         $this->home_banner = $home_banner;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguageToggler()
+    {
+        return $this->language_toggler;
+    }
+
+    /**
+     * @param mixed $language_toggler
+     */
+    public function setLanguageToggler($language_toggler): void
+    {
+        $this->language_toggler = $language_toggler;
     }
 }
