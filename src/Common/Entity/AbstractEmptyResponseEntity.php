@@ -17,7 +17,7 @@ class AbstractEmptyResponseEntity extends AbstractEntity
     /**
      * @param bool $success
      */
-    public function setSuccess(bool $success): void
+    public function setSuccess(bool $success)
     {
         $this->success = $success;
     }

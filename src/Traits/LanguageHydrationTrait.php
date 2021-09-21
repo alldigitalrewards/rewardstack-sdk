@@ -20,7 +20,7 @@ trait LanguageHydrationTrait
     /**
      * @param mixed $lang
      */
-    public function setLang($lang): void
+    public function setLang($lang)
     {
         if (empty($lang) === true) {
             $this->lang = LanguageMapper::DEFAULT_LANGUAGE;

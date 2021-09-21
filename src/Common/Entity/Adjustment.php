@@ -156,7 +156,7 @@ class Adjustment extends AbstractEntity
     /**
      * @param mixed $transaction_item_id
      */
-    public function setTransactionItemId($transaction_item_id): void
+    public function setTransactionItemId($transaction_item_id)
     {
         $this->transaction_item_id = $transaction_item_id;
     }
@@ -172,7 +172,7 @@ class Adjustment extends AbstractEntity
     /**
      * @param mixed $completed_at
      */
-    public function setCompletedAt($completed_at): void
+    public function setCompletedAt($completed_at)
     {
         $this->completed_at = $completed_at;
     }
@@ -188,7 +188,7 @@ class Adjustment extends AbstractEntity
     /**
      * @param mixed $activity
      */
-    public function setActivity($activity): void
+    public function setActivity($activity)
     {
         $this->activity = $activity;
     }

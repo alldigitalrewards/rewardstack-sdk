@@ -51,7 +51,7 @@ class ProgramLayout extends AbstractEntity
     /**
      * @param mixed $priority
      */
-    public function setPriority($priority): void
+    public function setPriority($priority)
     {
         $this->priority = $priority;
     }

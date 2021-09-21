@@ -290,7 +290,7 @@ class Program extends AbstractEntity
     /**
      * @param mixed $collect_ssn
      */
-    public function setCollectSsn($collect_ssn): void
+    public function setCollectSsn($collect_ssn)
     {
         $this->collect_ssn = $collect_ssn;
     }

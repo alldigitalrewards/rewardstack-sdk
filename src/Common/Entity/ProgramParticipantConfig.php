@@ -22,7 +22,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $program_id
      */
-    public function setProgramId($program_id): void
+    public function setProgramId($program_id)
     {
         $this->program_id = $program_id;
     }
@@ -38,7 +38,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $participant_point_config
      */
-    public function setParticipantPointConfig($participant_point_config): void
+    public function setParticipantPointConfig($participant_point_config)
     {
         $this->participant_point_config = $participant_point_config;
     }
@@ -54,7 +54,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $participant_shipping_config
      */
-    public function setParticipantShippingConfig($participant_shipping_config): void
+    public function setParticipantShippingConfig($participant_shipping_config)
     {
         $this->participant_shipping_config = $participant_shipping_config;
     }
@@ -70,7 +70,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $authorize_point_balance_config
      */
-    public function setAuthorizePointBalanceConfig($authorize_point_balance_config): void
+    public function setAuthorizePointBalanceConfig($authorize_point_balance_config)
     {
         $this->authorize_point_balance_config = $authorize_point_balance_config;
     }
@@ -86,7 +86,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $capture_transaction_config
      */
-    public function setCaptureTransactionConfig($capture_transaction_config): void
+    public function setCaptureTransactionConfig($capture_transaction_config)
     {
         $this->capture_transaction_config = $capture_transaction_config;
     }
@@ -102,7 +102,7 @@ class ProgramParticipantConfig extends AbstractEntity
     /**
      * @param mixed $placeholders
      */
-    public function setPlaceholders($placeholders): void
+    public function setPlaceholders($placeholders)
     {
         $this->placeholders = $placeholders;
     }

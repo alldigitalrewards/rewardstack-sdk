@@ -38,7 +38,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $id
      */
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -54,7 +54,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $program_id
      */
-    public function setProgramId($program_id): void
+    public function setProgramId($program_id)
     {
         $this->program_id = $program_id;
     }
@@ -70,7 +70,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $unique_id
      */
-    public function setUniqueId($unique_id): void
+    public function setUniqueId($unique_id)
     {
         $this->unique_id = $unique_id;
     }
@@ -86,7 +86,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $domain
      */
-    public function setDomain($domain): void
+    public function setDomain($domain)
     {
         $this->domain = $domain;
     }
@@ -102,7 +102,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $sub_domain
      */
-    public function setSubDomain($sub_domain): void
+    public function setSubDomain($sub_domain)
     {
         $this->sub_domain = $sub_domain;
     }
@@ -118,7 +118,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $title
      */
-    public function setTitle($title): void
+    public function setTitle($title)
     {
         $this->title = $title;
     }
@@ -134,7 +134,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $value
      */
-    public function setValue($value): void
+    public function setValue($value)
     {
         $this->value = $value;
     }
@@ -150,7 +150,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $pin_count
      */
-    public function setPinCount($pin_count): void
+    public function setPinCount($pin_count)
     {
         $this->pin_count = $pin_count;
     }
@@ -166,7 +166,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $pin_length
      */
-    public function setPinLength($pin_length): void
+    public function setPinLength($pin_length)
     {
         $this->pin_length = $pin_length;
     }
@@ -182,7 +182,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $expiration
      */
-    public function setExpiration($expiration): void
+    public function setExpiration($expiration)
     {
         $this->expiration = $expiration;
     }
@@ -198,7 +198,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $min_reward_value
      */
-    public function setMinRewardValue($min_reward_value): void
+    public function setMinRewardValue($min_reward_value)
     {
         $this->min_reward_value = $min_reward_value;
     }
@@ -214,7 +214,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $max_reward_value
      */
-    public function setMaxRewardValue($max_reward_value): void
+    public function setMaxRewardValue($max_reward_value)
     {
         $this->max_reward_value = $max_reward_value;
     }
@@ -230,7 +230,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $cards
      */
-    public function setCards($cards): void
+    public function setCards($cards)
     {
         $this->cards = $cards;
     }
@@ -246,7 +246,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $active
      */
-    public function setActive($active): void
+    public function setActive($active)
     {
         $this->active = $active;
     }
@@ -262,7 +262,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $isExpired
      */
-    public function setIsExpired($isExpired): void
+    public function setIsExpired($isExpired)
     {
         $this->isExpired = $isExpired;
     }
@@ -278,7 +278,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $unused
      */
-    public function setUnused($unused): void
+    public function setUnused($unused)
     {
         $this->unused = $unused;
     }
@@ -294,7 +294,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $used
      */
-    public function setUsed($used): void
+    public function setUsed($used)
     {
         $this->used = $used;
     }
@@ -310,7 +310,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $total
      */
-    public function setTotal($total): void
+    public function setTotal($total)
     {
         $this->total = $total;
     }
@@ -326,7 +326,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $url
      */
-    public function setUrl($url): void
+    public function setUrl($url)
     {
         $this->url = $url;
     }
@@ -342,7 +342,7 @@ class RedemptionApiCampaign extends AbstractEntity
     /**
      * @param mixed $show
      */
-    public function setShow($show): void
+    public function setShow($show)
     {
         $this->show = $show;
     }
