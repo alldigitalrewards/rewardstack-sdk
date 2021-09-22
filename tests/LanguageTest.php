@@ -12,7 +12,6 @@ class LanguageTest extends TestCase
     public function testLangGetterReturnsEsIsFalse()
     {
         $this->setLang(null);
-        var_dump($this->getLang());
         $this->assertFalse($this->getLang() === 'es');
     }
 
