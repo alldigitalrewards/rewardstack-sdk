@@ -2,6 +2,7 @@
 
 namespace AllDigitalRewards\RewardStack\Transaction;
 
+use AllDigitalRewards\RewardStack\Common\Entity\AbstractEmptyResponseEntity;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 use AllDigitalRewards\RewardStack\Traits\MetaValidationTrait;
@@ -47,7 +48,7 @@ class AddTransactionMetaRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new AddTransactionMetaResponse();
+        return new AbstractEmptyResponseEntity();
     }
 
     /**
