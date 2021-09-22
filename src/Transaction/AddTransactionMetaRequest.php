@@ -26,13 +26,13 @@ class AddTransactionMetaRequest extends AbstractApiRequest
      * AddTransactionMetaRequest constructor.
      * @param string $programId
      * @param string $uniqueId
-     * @param int $transactionId
+     * @param $transactionId
      * @param array $meta
      */
     public function __construct(
         string $programId,
         string $uniqueId,
-        int $transactionId,
+        $transactionId,
         array $meta
     ) {
         $this->programId = $programId;
@@ -56,6 +56,12 @@ class AddTransactionMetaRequest extends AbstractApiRequest
      */
     public function jsonSerialize()
     {
+        if (empty($this->transactionId) === true) {
+            throw new Exception(
+                'Transaction Id must be present to request transaction meta update'
+            );
+        }
+
         if (empty($this->meta) || $this->hasWellFormedMeta($this->meta) === false) {
             throw new Exception(
                 'Transaction meta data has to be provided and valid key/values to request transaction meta update'
