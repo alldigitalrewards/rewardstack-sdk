@@ -113,8 +113,8 @@ class CreateTransactionRequest extends AbstractApiRequest
                 $product['terms'] = $productRequest['terms'];
             }
 
-            if (!empty($productRequest['terms_approved'])) {
-                $product['terms_approved'] = $productRequest['terms_approved'];
+            if (isset($productRequest['terms_approved'])) {
+                $product['terms_approved'] = $productRequest['terms_approved'] == 1 ? true : false;
             }
 
             $productCollection[] = $product;
