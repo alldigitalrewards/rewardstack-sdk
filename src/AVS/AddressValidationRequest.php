@@ -32,4 +32,10 @@ class AddressValidationRequest extends AbstractApiRequest
     {
         return $this->address->toArray();
     }
+
+    // Params
+    public function getQueryParams(): string
+    {
+        return 'lang=' . $this->getLang();
+    }
 }
