@@ -35,6 +35,7 @@ class ProgramContentResponse extends AbstractEntity
     protected $logo;
     protected $home_banner;
     protected $language_toggler;
+    protected $show_wallet_view;
 
     /**
      * @return mixed
@@ -530,5 +531,21 @@ class ProgramContentResponse extends AbstractEntity
     public function setLanguageToggler($language_toggler)
     {
         $this->language_toggler = $language_toggler;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShowWalletView()
+    {
+        return $this->show_wallet_view;
+    }
+
+    /**
+     * @param mixed $show_wallet_view
+     */
+    public function setShowWalletView($show_wallet_view): void
+    {
+        $this->show_wallet_view = $show_wallet_view;
     }
 }
