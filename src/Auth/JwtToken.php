@@ -33,6 +33,14 @@ class JwtToken
         return $this->token;
     }
 
+    /**
+     * @return int
+     */
+    public function getExpires(): int
+    {
+        return $this->expires;
+    }
+
     public function isExpired(): bool
     {
         if ($this->expires > time()) {
