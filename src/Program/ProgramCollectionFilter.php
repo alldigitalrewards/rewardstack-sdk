@@ -11,7 +11,8 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
         return [
             'uniqueId' => $this->uniqueIdFilter,
             'name' => $this->nameFilter,
-            'organization' => $this->organizationFilter
+            'organization' => $this->organizationFilter,
+            'active' => $this->activeFilter,
         ];
     }
 
@@ -26,6 +27,8 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
      * @var string
      */
     private $nameFilter = '';
+
+    private $activeFilter = '';
 
     /**
      * @param string $uniqueId
@@ -81,5 +84,21 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     public function setNameFilter(string $nameFilter)
     {
         $this->nameFilter = $nameFilter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActiveFilter(): string
+    {
+        return $this->activeFilter;
+    }
+
+    /**
+     * @param string $activeFilter
+     */
+    public function setActiveFilter(string $activeFilter): void
+    {
+        $this->activeFilter = $activeFilter;
     }
 }
