@@ -13,6 +13,7 @@ class ParticipantCollection extends AbstractEntity
     protected $lastname;
     protected $phone;
     protected $active;
+    protected $status;
     protected $created_at;
     protected $updated_at;
     protected $address;
@@ -129,6 +130,22 @@ class ParticipantCollection extends AbstractEntity
     public function setActive($active)
     {
         $this->active = $active;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status): void
+    {
+        $this->status = $status;
     }
 
     /**
