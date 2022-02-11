@@ -3,6 +3,8 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
+use AllDigitalRewards\LanguageMapper\LanguageMapper;
+
 class ParticipantCollection extends AbstractEntity
 {
 
@@ -19,6 +21,7 @@ class ParticipantCollection extends AbstractEntity
     protected $address;
     protected $program;
     protected $organization;
+    protected $language;
 
     /**
      * @return mixed
@@ -226,5 +229,22 @@ class ParticipantCollection extends AbstractEntity
     public function setOrganization($organization)
     {
         $this->organization = $organization;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language): void
+    {
+        $language = $language ?? LanguageMapper::DEFAULT_LANGUAGE;
+        $this->language = (new LanguageMapper($language))->getLanguage();
     }
 }
