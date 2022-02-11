@@ -6,7 +6,7 @@ use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionFilter;
 use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionRequest;
 use AllDigitalRewards\RewardStack\Participant\ParticipantCollectionResponse;
 
-$program = 'sharecare';
+$program = 'alldigitalrewards';
 $filter = new ParticipantCollectionFilter();
 $filter->setStatusFilter(1);
 $participantCollectionRequest = new ParticipantCollectionRequest($program, 1, 30, $filter);
