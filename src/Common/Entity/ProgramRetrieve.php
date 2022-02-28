@@ -16,7 +16,7 @@ class ProgramRetrieve extends AbstractEntity
     protected $updated_at;
     protected $created_at;
     protected $organization;
-
+    protected $end_date;
 
     /**
      * @return mixed
@@ -208,5 +208,21 @@ class ProgramRetrieve extends AbstractEntity
     public function setOrganization($organization)
     {
         $this->organization = $organization;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEndDate()
+    {
+        return $this->end_date;
+    }
+
+    /**
+     * @param mixed $end_date
+     */
+    public function setEndDate($end_date): void
+    {
+        $this->end_date = $end_date;
     }
 }

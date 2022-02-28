@@ -9,7 +9,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 // This is for fetching collection of programs
 
 $filter = new ProgramCollectionFilter();
-$filter->setActiveFilter(0); //only need to pass this if needed explicitly, default is 1
+$filter->setEndDateFilter('2022-03-17'); //Y-m-d
 // Set page / limit / filter in constructor or by setter
 
 $programListRequest = new ProgramListRequest(1, 30, $filter);
