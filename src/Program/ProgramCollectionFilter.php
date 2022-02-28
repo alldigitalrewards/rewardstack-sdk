@@ -3,6 +3,8 @@
 namespace AllDigitalRewards\RewardStack\Program;
 
 use AllDigitalRewards\RewardStack\Common\AbstractCollectionFilter;
+use DateTime;
+use Exception;
 
 class ProgramCollectionFilter extends AbstractCollectionFilter
 {
@@ -13,6 +15,7 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
             'name' => $this->nameFilter,
             'organization' => $this->organizationFilter,
             'active' => $this->activeFilter,
+            'end_date' => $this->endDateFilter,
         ];
     }
 
@@ -29,6 +32,8 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     private $nameFilter = '';
 
     private $activeFilter = '';
+
+    private $endDateFilter = '';
 
     /**
      * @param string $uniqueId
@@ -100,5 +105,26 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     public function setActiveFilter(string $activeFilter): void
     {
         $this->activeFilter = $activeFilter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEndDateFilter(): string
+    {
+        return $this->endDateFilter;
+    }
+
+    /**
+     * @param string $endDateFilter
+     * @throws Exception
+     */
+    public function setEndDateFilter(string $endDateFilter): void
+    {
+        if (empty($endDateFilter) === true
+            || DateTime::createFromFormat('Y-m-d', $endDateFilter) === false) {
+            throw new Exception('End Date must be valid Y-m-d format');
+        }
+        $this->endDateFilter = $endDateFilter;
     }
 }

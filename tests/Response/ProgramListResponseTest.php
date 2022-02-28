@@ -108,5 +108,10 @@ class ProgramListResponseTest extends TestCase
             $firstResponse->getOrganization(),
             $verify->getOrganization()
         );
+
+        $this->assertEquals(
+            $firstResponse->getEndDate(),
+            $verify->getEndDate()
+        );
     }
 }
