@@ -22,6 +22,7 @@ class Program extends AbstractEntity
     protected $featured_products;
     protected $auto_redemption;
     protected $collect_ssn;
+    protected $end_date;
 
     /**
      * @return mixed
@@ -293,5 +294,21 @@ class Program extends AbstractEntity
     public function setCollectSsn($collect_ssn)
     {
         $this->collect_ssn = $collect_ssn;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEndDate()
+    {
+        return $this->end_date;
+    }
+
+    /**
+     * @param mixed $end_date
+     */
+    public function setEndDate($end_date): void
+    {
+        $this->end_date = $end_date;
     }
 }
