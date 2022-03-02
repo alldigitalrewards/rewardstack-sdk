@@ -30,6 +30,8 @@ class CreateTransactionRequest extends AbstractApiRequest
      */
     private $transactionConfig;
 
+    private $avsDisabled;
+
     protected $httpMethod = 'POST';
 
     /**
@@ -40,19 +42,22 @@ class CreateTransactionRequest extends AbstractApiRequest
      * @param array $productRequestCollection
      * @param AddressRequest|null $shippingAddress
      * @param array $transactionConfig
+     * @param bool $avsDisabled
      */
     public function __construct(
         string $programId,
         string $uniqueId,
         array $productRequestCollection,
         AddressRequest $shippingAddress = null,
-        array $transactionConfig = []
+        array $transactionConfig = [],
+        bool $avsDisabled = false
     ) {
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->productCollection = $productRequestCollection;
         $this->shippingAddress = $shippingAddress;
         $this->transactionConfig = $transactionConfig;
+        $this->avsDisabled = $avsDisabled;
     }
 
     public function getHttpEndpoint(): string
@@ -89,6 +94,7 @@ class CreateTransactionRequest extends AbstractApiRequest
             "products" => $this->getMappedProductCollection(),
             "issue_points" => $this->transactionConfig['issue_points'] ?? true,
             "meta" => $this->transactionConfig['meta'] ?? [],
+            "avs_disabled" => $this->avsDisabled == true,
         ];
         if ($this->shippingAddress instanceof AddressRequest) {
             $return['shipping'] = $this->shippingAddress;
