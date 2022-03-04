@@ -193,6 +193,11 @@ class Transaction extends AbstractEntity
         $this->products = $products;
     }
 
+    public function getSourceDisplay()
+    {
+        return ucwords(strtolower(str_replace('_', ' ', $this->getSource())));
+    }
+
     /**
      * @return string
      */
@@ -200,7 +205,7 @@ class Transaction extends AbstractEntity
     {
         foreach ($this->getMeta() as $meta) {
             $data = (array)$meta;
-            if (array_key_exists('TRANSACTION_SOURCE', $data) && empty($data['TRANSACTION_SOURCE']) === false) {
+            if (empty($data['TRANSACTION_SOURCE']) === false) {
                 return $data['TRANSACTION_SOURCE'];
             }
         }
