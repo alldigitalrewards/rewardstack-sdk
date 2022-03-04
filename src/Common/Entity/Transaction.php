@@ -12,6 +12,8 @@ class Transaction extends AbstractEntity
     protected $type;
     protected $id;
     protected $meta;
+    protected $products;
+    protected $source;
     protected $created_at;
     protected $updated_at;
 
@@ -173,5 +175,43 @@ class Transaction extends AbstractEntity
     public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param mixed $products
+     */
+    public function setProducts($products): void
+    {
+        $this->products = $products;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSource(): string
+    {
+        foreach ($this->getMeta() as $meta) {
+            $data = (array)$meta;
+            if (array_key_exists('TRANSACTION_SOURCE', $data) && empty($data['TRANSACTION_SOURCE']) === false) {
+                return $data['TRANSACTION_SOURCE'];
+            }
+        }
+        return '';
+    }
+
+    /**
+     * @param mixed $source
+     */
+    public function setSource($source): void
+    {
+        $this->source = $source;
     }
 }
