@@ -2,7 +2,7 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Transaction\TransactionRequest;
+use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionRequest;
 use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
 use PHPUnit\Framework\TestCase;
 
@@ -15,7 +15,7 @@ class TransactionRequestTest extends TestCase
     protected function setUp(): void
     {
         $this->uniqueId = uniqid();
-        $this->transactionRequest = new TransactionRequest($this->program, $this->uniqueId);
+        $this->transactionRequest = new TransactionCollectionRequest($this->program, $this->uniqueId);
     }
 
     public function testGetHttpEndpoint()

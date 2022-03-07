@@ -4,7 +4,7 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Transaction\TransactionRequest;
+use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionRequest;
 use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
@@ -31,7 +31,7 @@ class TransactionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $transactionCollection = new TransactionRequest('alldigitalrewards', 'TESTPARTICIPANT1');
+        $transactionCollection = new TransactionCollectionRequest('alldigitalrewards', 'TESTPARTICIPANT1');
         $response = $client->request($transactionCollection);
 
         $expectedResponse = new TransactionResponse(json_decode($jsonData));

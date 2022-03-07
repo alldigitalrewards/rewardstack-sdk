@@ -6,7 +6,7 @@ use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
 use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 
-class TransactionRequest extends AbstractApiCollectionRequest
+class TransactionCollectionRequest extends AbstractApiCollectionRequest
 {
     /**
      * @var string
