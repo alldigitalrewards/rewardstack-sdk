@@ -2,10 +2,11 @@
 
 namespace AllDigitalRewards\RewardStack\Transaction;
 
+use AllDigitalRewards\RewardStack\Common\AbstractApiCollectionRequest;
+use AllDigitalRewards\RewardStack\Common\CollectionFilterInterface;
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
-use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
 
-class ParticipantTransactionCollectionRequest extends AbstractApiRequest
+class TransactionCollectionRequest extends AbstractApiCollectionRequest
 {
     /**
      * @var string
@@ -16,21 +17,16 @@ class ParticipantTransactionCollectionRequest extends AbstractApiRequest
      */
     private $uniqueId;
 
-    private $year;
-
-    protected $httpMethod = 'GET';
-
-    /**
-     * UserTransactionCollectionRequest constructor.
-     * @param string $programId
-     * @param string $uniqueId
-     * @param string $year
-     */
-    public function __construct(string $programId, string $uniqueId, string $year = '')
-    {
+    public function __construct(
+        string $programId,
+        string $uniqueId,
+        int $page = 1,
+        int $limit = 30,
+        CollectionFilterInterface $filter = null
+    ) {
+        parent::__construct($page, $limit, $filter);
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
-        $this->year = $year;
     }
 
     public function getHttpEndpoint(): string
@@ -46,13 +42,5 @@ class ParticipantTransactionCollectionRequest extends AbstractApiRequest
     public function jsonSerialize()
     {
         return [];
-    }
-
-    public function getQueryParams(): string
-    {
-        if (empty($this->year) === false) {
-            return 'year=' . $this->year;
-        }
-        return '';
     }
 }

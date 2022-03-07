@@ -188,9 +188,15 @@ class Transaction extends AbstractEntity
     /**
      * @param mixed $products
      */
-    public function setProducts($products): void
+    public function setProducts($products)
     {
-        $this->products = $products;
+        $container = [];
+        if (empty($products) === false) {
+            foreach ($products as $product) {
+                $container[] = new TransactionProduct((array)$product);
+            }
+        }
+        $this->products = $container;
     }
 
     public function getSourceDisplay()

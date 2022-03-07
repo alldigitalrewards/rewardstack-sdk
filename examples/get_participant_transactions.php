@@ -1,18 +1,25 @@
 <?php
 
-use AllDigitalRewards\RewardStack\Transaction\TransactionRequest;
+use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionFilter;
+use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionRequest;
 use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
 
 $client = require_once __DIR__ . '/bootstrap.php';
 
-/** @var TransactionRequest $transactionRequest */
+/** @var TransactionCollectionRequest $transactionRequest */
 
-$program = 'alldigitalrewards';
-$participantUniqueId = 'ADRTESTP1';
+$program = 'someprogram';
+$participantUniqueId = 'someparticipantuuid';
 
-$transactionRequest = new TransactionRequest(
+$filter = new TransactionCollectionFilter();
+$filter->setYear('2022');//optional
+$filter->setIncentiveType('egift');//optional
+$transactionRequest = new TransactionCollectionRequest(
     $program,
-    $participantUniqueId
+    $participantUniqueId,
+    1,
+    30,
+    $filter
 );
 
 /** @var TransactionResponse $transactionResponse */
