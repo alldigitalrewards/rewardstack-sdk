@@ -5,8 +5,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
 use AllDigitalRewards\RewardStack\Transaction\ParticipantTransactionCollectionRequest;
 
-$program = '12121212';
-$uuid = 'TESTPARTICIPANT1';
+$program = 'some-program';
+$uuid = 'someuuid';
 
 $transactionCollectionRequest = new ParticipantTransactionCollectionRequest(
     $program,
