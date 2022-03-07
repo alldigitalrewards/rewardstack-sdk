@@ -4,7 +4,7 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 
 use AllDigitalRewards\RewardStack\Common\AbstractCollectionFilter;
 
-class ParticipantTransactionCollectionFilter extends AbstractCollectionFilter
+class TransactionCollectionFilter extends AbstractCollectionFilter
 {
     private $year;
     private $incentiveType;
