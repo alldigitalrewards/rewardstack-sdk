@@ -181,7 +181,7 @@ class TransactionProduct extends AbstractEntity
      */
     public function isReturned(): bool
     {
-        return $this->returned == true;
+        return $this->returned === true;
     }
 
     /**

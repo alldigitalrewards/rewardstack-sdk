@@ -31,7 +31,7 @@ class TransactionItemCollectionRequest extends AbstractApiCollectionRequest
 
     public function getHttpEndpoint(): string
     {
-        return "/api/program/{$this->programId}/participant/$this->uniqueId/transaction/items";
+        return "/api/program/{$this->programId}/participant/{$this->uniqueId}/transaction/items";
     }
 
     public function getResponseObject(): AbstractEntity
