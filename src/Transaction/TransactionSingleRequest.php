@@ -4,8 +4,9 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
+use AllDigitalRewards\RewardStack\Common\Entity\Transaction;
 
-class SingleUserTransactionRequest extends AbstractApiRequest
+class TransactionSingleRequest extends AbstractApiRequest
 {
     /**
      * @var string
@@ -40,7 +41,7 @@ class SingleUserTransactionRequest extends AbstractApiRequest
 
     public function getResponseObject(): AbstractEntity
     {
-        return new SingleUserTransactionResponse();
+        return new Transaction();
     }
 
     public function jsonSerialize()

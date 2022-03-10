@@ -16,6 +16,9 @@ class Transaction extends AbstractEntity
     protected $source;
     protected $created_at;
     protected $updated_at;
+    protected $points;
+    protected $shipping;
+    protected $user;
 
     /**
      * @return mixed
@@ -224,5 +227,53 @@ class Transaction extends AbstractEntity
     public function setSource($source): void
     {
         $this->source = $source;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPoints()
+    {
+        return $this->points;
+    }
+
+    /**
+     * @param mixed $points
+     */
+    public function setPoints($points): void
+    {
+        $this->points = $points;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShipping()
+    {
+        return $this->shipping;
+    }
+
+    /**
+     * @param mixed $shipping
+     */
+    public function setShipping($shipping): void
+    {
+        $this->shipping = $shipping;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void
+    {
+        $this->user = $user;
     }
 }
