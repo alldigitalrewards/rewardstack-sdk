@@ -2,9 +2,9 @@
 
 namespace AllDigitalRewards\RewardStack\Transaction;
 
-use AllDigitalRewards\RewardStack\Common\Entity\SingleUserTransaction;
+use AllDigitalRewards\RewardStack\Common\Entity\Transaction;
 
-class CreateTransactionResponse extends SingleUserTransaction
+class CreateTransactionResponse extends Transaction
 {
 
 }

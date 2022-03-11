@@ -4,7 +4,6 @@ namespace AllDigitalRewards\Tests;
 
 use AllDigitalRewards\RewardStack\Auth\AuthProxy;
 use AllDigitalRewards\RewardStack;
-use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionResponse;
 use \AllDigitalRewards\RewardStack\Transaction;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
@@ -31,13 +30,13 @@ class SingleUserTransactionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $singleUserTransactionRequest = new Transaction\SingleUserTransactionRequest('alldigitalrewards', 'TESTPARTICIPANT1', '200');
+        $singleUserTransactionRequest = new Transaction\TransactionSingleRequest('alldigitalrewards', 'TESTPARTICIPANT1', '200');
         $response = $client->request($singleUserTransactionRequest);
 
-        $expectedResponse = new SingleUserTransactionResponse(json_decode($jsonData));
+        $expectedResponse = new RewardStack\Common\Entity\Transaction(json_decode($jsonData));
 
         $this->assertInstanceOf(
-            SingleUserTransactionResponse::class,
+            RewardStack\Common\Entity\Transaction::class,
             $response
         );
 

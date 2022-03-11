@@ -2,8 +2,8 @@
 
 namespace AllDigitalRewards\Tests;
 
-use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionRequest;
-use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\Transaction;
+use AllDigitalRewards\RewardStack\Transaction\TransactionSingleRequest;
 use PHPUnit\Framework\TestCase;
 
 class SingleUserTransactionRequestTest extends TestCase
@@ -17,7 +17,7 @@ class SingleUserTransactionRequestTest extends TestCase
     {
         $this->uniqueId = uniqid();
         $this->transactionId = '200';
-        $this->singleUsertransactionRequest = new SingleUserTransactionRequest(
+        $this->singleUsertransactionRequest = new TransactionSingleRequest(
             $this->program,
             $this->uniqueId,
             $this->transactionId
@@ -34,7 +34,7 @@ class SingleUserTransactionRequestTest extends TestCase
     public function testGetResponseObject()
     {
         $this->assertInstanceOf(
-            SingleUserTransactionResponse::class,
+            Transaction::class,
             $this->singleUsertransactionRequest->getResponseObject()
         );
     }

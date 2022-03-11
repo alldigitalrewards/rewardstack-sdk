@@ -14,6 +14,7 @@ class TransactionProduct extends AbstractEntity
     protected $terms_approved;
     protected $is_digital;
     protected $vendor;
+    protected $returned;
 
     /**
      * @return mixed
@@ -173,5 +174,21 @@ class TransactionProduct extends AbstractEntity
     public function setVendor($vendor): void
     {
         $this->vendor = $vendor;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isReturned(): bool
+    {
+        return $this->returned === true;
+    }
+
+    /**
+     * @param mixed $returned
+     */
+    public function setReturned($returned): void
+    {
+        $this->returned = $returned;
     }
 }

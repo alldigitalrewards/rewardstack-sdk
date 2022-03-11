@@ -1,19 +1,19 @@
 <?php
 
 use AllDigitalRewards\RewardStack\Client;
-use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionRequest;
-use AllDigitalRewards\RewardStack\Transaction\SingleUserTransactionResponse;
+use AllDigitalRewards\RewardStack\Common\Entity\Transaction;
+use AllDigitalRewards\RewardStack\Transaction\TransactionSingleRequest;
 
 /** @var Client $client */
 $client = require_once __DIR__ . '/bootstrap.php';
 
-$singleUserTransactionRequest = new SingleUserTransactionRequest(
+$singleUserTransactionRequest = new TransactionSingleRequest(
     'alldigitalrewards',
-    'ADRTESTP1',
+    'testuuid',
     1
 );
 
-/** @var SingleUserTransactionResponse $singleUserTransactionResponse */
+/** @var Transaction $singleUserTransactionResponse */
 $singleUserTransactionResponse = $client->request($singleUserTransactionRequest);
 print_r($singleUserTransactionResponse);
 exit;
