@@ -22,6 +22,10 @@ class CreateTransactionRequestTest extends TestCase
             "quantity" => 1
         ]
     ];
+
+    /**
+     * @var CreateTransactionRequest
+     */
     protected $createTransactionRequest;
 
     private function getAddressRequest()
@@ -37,25 +41,28 @@ class CreateTransactionRequestTest extends TestCase
         return $addressRequest;
     }
 
-    protected function setup(): void
+    private function getTransactionRequest(array $transactionConfig)
     {
         $this->uniqueId = uniqid();
 
-        $this->createTransactionRequest = new CreateTransactionRequest(
+        $request = new CreateTransactionRequest(
             $this->program,
             $this->uniqueId,
             $this->productArray,
-            $this->getAddressRequest()
+            $this->getAddressRequest(),
+            $transactionConfig
         );
-        $this->createTransactionRequest->setLang('en');
+        $request->setLang('en');
+        return $request;
     }
 
     public function testGetHttpEndpoint()
     {
+        $transactionRequest = $this->getTransactionRequest([]);
         $expectedUrl = "/api/program/$this->program/participant/$this->uniqueId/transaction";
-        $this->assertEquals($expectedUrl, $this->createTransactionRequest
+        $this->assertEquals($expectedUrl, $transactionRequest
             ->getHttpEndpoint());
-        $this->assertEquals('lang=en_US', $this->createTransactionRequest
+        $this->assertEquals('lang=en_US', $transactionRequest
             ->getQueryParams());
     }
 
@@ -63,14 +70,14 @@ class CreateTransactionRequestTest extends TestCase
     {
         $this->assertInstanceOf(
             CreateTransactionResponse::class,
-            $this
-                ->createTransactionRequest
+            $this->getTransactionRequest([])
             ->getResponseObject()
         );
     }
 
-    public function testJsonSerialize()
+    public function testDefaultTransactionSource()
     {
+        $transactionRequest = $this->getTransactionRequest([]);
         $expectedArray = [
             "products" => $this->productArray,
             "issue_points" => true,
@@ -81,7 +88,24 @@ class CreateTransactionRequestTest extends TestCase
         ];
         $this->assertEquals(
             $expectedArray,
-            $this->createTransactionRequest->jsonSerialize()
+            $transactionRequest->jsonSerialize()
+        );
+    }
+
+    public function testJsonSerialize()
+    {
+        $transactionRequest = $this->getTransactionRequest(['transaction_source' => 'CLIENT-CAMPAIGN-Y']);
+        $expectedArray = [
+            "products" => $this->productArray,
+            "issue_points" => true,
+            "meta" => [],
+            "shipping" => $this->getAddressRequest(),
+            'avs_disabled' => false,
+            'transaction_source' => 'CLIENT-CAMPAIGN-Y',
+        ];
+        $this->assertEquals(
+            $expectedArray,
+            $transactionRequest->jsonSerialize()
         );
     }
 }
