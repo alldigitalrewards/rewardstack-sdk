@@ -13,7 +13,7 @@ class Transaction extends AbstractEntity
     protected $id;
     protected $meta;
     protected $products;
-    protected $source;
+    protected $transaction_source;
     protected $created_at;
     protected $updated_at;
     protected $points;
@@ -202,31 +202,35 @@ class Transaction extends AbstractEntity
         $this->products = $container;
     }
 
+    public function getTransactionSource(): string
+    {
+        return $this->transaction_source;
+    }
+
+    public function setTransactionSource(string $transaction_source): void
+    {
+        $this->transaction_source = $transaction_source;
+    }
+
     public function getSourceDisplay()
     {
         return ucwords(strtolower(str_replace('_', ' ', $this->getSource())));
     }
 
     /**
+     * @NOTE: I suppose we could move this, but that would break backwards compatibility for no real benefit
      * @return string
      */
     public function getSource(): string
     {
-        foreach ($this->getMeta() as $meta) {
-            $data = (array)$meta;
-            if (empty($data['TRANSACTION_SOURCE']) === false) {
-                return $data['TRANSACTION_SOURCE'];
-            }
+        if (isset($this->transaction_source)) {
+            return $this->transaction_source;
         }
-        return '';
     }
 
-    /**
-     * @param mixed $source
-     */
-    public function setSource($source): void
+    public function setSource(string $transaction_source): void
     {
-        $this->source = $source;
+        $this->transaction_source = $transaction_source;
     }
 
     /**

@@ -17,10 +17,11 @@ $createTransactionRequest = new CreateTransactionRequest(
     'alldigitalrewards',
     'ADRTESTP1',
     [
-        ['sku' => 'VVISA01', 'quantity' => 1, 'amount' => 10.00]
+        ['sku' => 'PVISA01', 'quantity' => 1, 'amount' => 10.00]
     ],
     $addressRequest,
     [
+        'transaction_source' => 'CLIENT-CAMPAIGN-Y',
         'meta' => [
             ['META_KEY' => 'META_VALUE']
         ]

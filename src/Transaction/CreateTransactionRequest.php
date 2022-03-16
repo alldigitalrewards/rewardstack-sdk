@@ -93,6 +93,7 @@ class CreateTransactionRequest extends AbstractApiRequest
         $return = [
             "products" => $this->getMappedProductCollection(),
             "issue_points" => $this->transactionConfig['issue_points'] ?? true,
+            "transaction_source" => $this->transactionConfig['transaction_source'] ?? 'NONE',
             "meta" => $this->transactionConfig['meta'] ?? [],
             "avs_disabled" => $this->avsDisabled == true,
         ];
