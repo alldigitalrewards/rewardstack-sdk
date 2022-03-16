@@ -76,7 +76,8 @@ class CreateTransactionRequestTest extends TestCase
             "issue_points" => true,
             "meta" => [],
             "shipping" => $this->getAddressRequest(),
-            'avs_disabled' => false
+            'avs_disabled' => false,
+            'transaction_source' => 'CLIENT',
         ];
         $this->assertEquals(
             $expectedArray,
