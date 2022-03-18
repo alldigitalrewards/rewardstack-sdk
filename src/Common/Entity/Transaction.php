@@ -226,6 +226,8 @@ class Transaction extends AbstractEntity
         if (isset($this->transaction_source)) {
             return $this->transaction_source;
         }
+
+        return '';
     }
 
     public function setSource(string $transaction_source): void
