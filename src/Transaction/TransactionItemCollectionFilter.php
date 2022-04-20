@@ -4,9 +4,10 @@ namespace AllDigitalRewards\RewardStack\Transaction;
 
 use AllDigitalRewards\RewardStack\Common\AbstractCollectionFilter;
 
-class TransactionItemCollectionFilter extends TransactionCollectionFilter
+class TransactionItemCollectionFilter extends AbstractCollectionFilter
 {
     private $incentiveType;
+    private $year;
 
     /**
      * @return mixed
@@ -22,6 +23,22 @@ class TransactionItemCollectionFilter extends TransactionCollectionFilter
     public function setIncentiveType($incentiveType): void
     {
         $this->incentiveType = $incentiveType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * @param mixed $year
+     */
+    public function setYear($year): void
+    {
+        $this->year = $year;
     }
 
     public function getFilterArray(): array

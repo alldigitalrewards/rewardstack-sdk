@@ -1,7 +1,6 @@
 <?php
 
-use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionFilter;
-use AllDigitalRewards\RewardStack\Transaction\TransactionCollectionRequest;
+use AllDigitalRewards\RewardStack\Common\Entity\OrderBy;
 use AllDigitalRewards\RewardStack\Transaction\TransactionItemCollectionFilter;
 use AllDigitalRewards\RewardStack\Transaction\TransactionItemCollectionRequest;
 use AllDigitalRewards\RewardStack\Transaction\TransactionResponse;
@@ -10,12 +9,14 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 /** @var TransactionItemCollectionRequest $transactionRequest */
 
-$program = 'programuuid';
-$participantUniqueId = 'participantuuid';
+$program = 'aprogram';
+$participantUniqueId = 'aparticipant';
 
 $filter = new TransactionItemCollectionFilter();
-$filter->setYear('2022');//optional
-$filter->setIncentiveType('game');//optional
+$orderBy = new OrderBy();
+$orderBy->setField('transaction.created_at');
+$orderBy->setDirection('asc');
+$filter->setOrderBy($orderBy);
 $transactionRequest = new TransactionItemCollectionRequest(
     $program,
     $participantUniqueId,
