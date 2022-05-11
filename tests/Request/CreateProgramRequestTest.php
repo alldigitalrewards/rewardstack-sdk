@@ -60,7 +60,8 @@ class CreateProgramRequestTest extends TestCase
             "point" => $this->point,
             "phone" => $this->phone,
             "url" =>$this->url,
-            "active" =>$this->active
+            "active" =>$this->active,
+            "enable_email_login" => 0,
         ];
 
         $this->assertEquals(

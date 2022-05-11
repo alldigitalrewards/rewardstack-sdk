@@ -16,6 +16,7 @@ class ProgramRequest extends AbstractApiRequest
     private $active;
     private $logo;
     private $organization;
+    private $enable_email_login;
 
     protected $httpMethod = 'PUT';
 
@@ -39,6 +40,20 @@ class ProgramRequest extends AbstractApiRequest
         $this->organization =$organization;
     }
 
+    public function getEnableEmailLogin()
+    {
+        return $this->enable_email_login;
+    }
+
+    /**
+     * Int (1/0) or Bool true/false
+     * @param mixed $enable_email_login
+     */
+    public function setEnableEmailLogin($enable_email_login): void
+    {
+        $this->enable_email_login = $enable_email_login;
+    }
+
     public function getHttpEndpoint(): string
     {
         return '/api/program/' .$this->uniqueId ;
@@ -51,7 +66,7 @@ class ProgramRequest extends AbstractApiRequest
 
     public function jsonSerialize()
     {
-        return [
+        $data = [
             "name" => $this->name,
             "point" => $this->point,
             "phone" => $this->phone,
@@ -59,7 +74,12 @@ class ProgramRequest extends AbstractApiRequest
             "active" =>$this->active,
             "logo" => $this->logo,
             "organization" => $this->organization,
-
         ];
+        if ($this->getEnableEmailLogin() !== null) {
+            //only passing this if they set it
+            $data['enable_email_login'] = $this->getEnableEmailLogin();
+        }
+
+        return $data;
     }
 }
