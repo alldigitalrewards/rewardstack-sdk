@@ -46,12 +46,21 @@ class ProgramRequest extends AbstractApiRequest
     }
 
     /**
-     * Int (1/0) or Bool true/false
      * @param int $enable_email_login
      */
     public function setEnableEmailLogin(int $enable_email_login)
     {
         $this->enable_email_login = $enable_email_login;
+    }
+
+    public function disableEmailLogin()
+    {
+        $this->enable_email_login = 0;
+    }
+
+    public function enableEmailLogin()
+    {
+        $this->enable_email_login = 1;
     }
 
     public function getHttpEndpoint(): string
