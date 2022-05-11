@@ -17,7 +17,7 @@ $programRequest = new ProgramRequest(
     '/testurl',
     'alldigitalrewards'
 );
-$programRequest->setEnableEmailLogin(false);
+$programRequest->setEnableEmailLogin(true);
 /** @var ProgramResponse $programResponse */
 $programResponse = $client->request($programRequest);
 print_r($programResponse);
