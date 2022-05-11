@@ -47,9 +47,9 @@ class ProgramRequest extends AbstractApiRequest
 
     /**
      * Int (1/0) or Bool true/false
-     * @param mixed $enable_email_login
+     * @param int $enable_email_login
      */
-    public function setEnableEmailLogin($enable_email_login): void
+    public function setEnableEmailLogin(int $enable_email_login)
     {
         $this->enable_email_login = $enable_email_login;
     }

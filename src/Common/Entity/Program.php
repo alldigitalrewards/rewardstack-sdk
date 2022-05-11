@@ -324,7 +324,7 @@ class Program extends AbstractEntity
     /**
      * @param mixed $enable_email_login
      */
-    public function setEnableEmailLogin($enable_email_login): void
+    public function setEnableEmailLogin($enable_email_login)
     {
         $this->enable_email_login = $enable_email_login;
     }
