@@ -28,11 +28,14 @@ class EmailParticipantAuthRequest extends AbstractApiRequest
      */
     public function __construct(string $programId, string $email, string $password)
     {
-        $this->programId = $programId;
+        $this->programId = trim($programId);
         $this->email = trim($email);
         $this->password = trim($password);
+        if (empty($this->programId) === true) {
+            throw new Exception('Program Uuid must not be empty.');
+        }
         if (empty($this->email) === true) {
-            throw new Exception('Email must be valid.');
+            throw new Exception('Email must not be empty.');
         }
         if (empty($this->password) === true) {
             throw new Exception('Password must not be empty.');
