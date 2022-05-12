@@ -34,7 +34,7 @@ class EmailParticipantAuthRequest extends AbstractApiRequest
         if (empty($this->programId) === true) {
             throw new Exception('Program Uuid must not be empty.');
         }
-        if (empty($this->email) === true) {
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception('Email must not be empty.');
         }
         if (empty($this->password) === true) {
