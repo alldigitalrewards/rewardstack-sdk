@@ -8,16 +8,16 @@ $client = require_once __DIR__ . '/bootstrap.php';
 // This is for updating a program
 
 $programRequest = new ProgramRequest(
-    '565665',
+    '627c1f5d7f13e',
     'All Digital Rewards Test',
     '1',
     '12312312345',
     'alldigitalrewards-test.mydigitalrewards.com',
-    '24',
+    1,
     '/testurl',
     'alldigitalrewards'
 );
-
+$programRequest->disableEmailLogin();
 /** @var ProgramResponse $programResponse */
 $programResponse = $client->request($programRequest);
 print_r($programResponse);

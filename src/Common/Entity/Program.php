@@ -23,6 +23,7 @@ class Program extends AbstractEntity
     protected $auto_redemption;
     protected $collect_ssn;
     protected $end_date;
+    protected $enable_email_login;
 
     /**
      * @return mixed
@@ -310,5 +311,21 @@ class Program extends AbstractEntity
     public function setEndDate($end_date): void
     {
         $this->end_date = $end_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnableEmailLogin()
+    {
+        return $this->enable_email_login;
+    }
+
+    /**
+     * @param mixed $enable_email_login
+     */
+    public function setEnableEmailLogin($enable_email_login)
+    {
+        $this->enable_email_login = $enable_email_login;
     }
 }

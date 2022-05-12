@@ -11,11 +11,10 @@ $createProgramRequest = new CreateProgramRequest(
     'A Test Program',
     '1',
     '1231231234',
-    'someurl.mydigitalrewards.com',
+    'someurl2.mydigitalrewards.com',
     true
 );
-
-
+$createProgramRequest->disableEmailLogin();
 /** @var CreateProgramResponse $createProgramResponse */
 $createProgramResponse = $client->request($createProgramRequest);
 print_r($createProgramResponse);
