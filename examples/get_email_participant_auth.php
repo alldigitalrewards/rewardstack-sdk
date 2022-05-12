@@ -8,7 +8,7 @@ $client = require_once __DIR__ . '/bootstrap.php';
 
 $request = new EmailParticipantAuthRequest(
     'alldigitalrewards',
-    'test@alldigitalrewards.com',
+    'participant@alldigitalrewards.com',
     'password'
 );
 
