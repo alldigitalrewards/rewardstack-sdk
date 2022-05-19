@@ -11,6 +11,8 @@ $adjustmentType = 'credit';
 $adjustmentAmount = 200;
 $referenceId = 'ABC123';
 $description = "Credit adjustment for being awesome!";
+$activity = 'cool-activity';
+$completedAt = (new DateTime())->format('Y-m-d H:i:s');
 
 $createAdjustmentsRequest = new CreateAdjustmentRequest(
     $program,
@@ -18,7 +20,9 @@ $createAdjustmentsRequest = new CreateAdjustmentRequest(
     $adjustmentType,
     $adjustmentAmount,
     $referenceId,
-    $description
+    $description,
+    $activity,
+    $completedAt,
 );
 
 /** @var CreateAdjustmentResponse $createAdjustmentsResponse */
