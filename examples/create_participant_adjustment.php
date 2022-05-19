@@ -5,12 +5,14 @@ $client = require_once __DIR__ . '/bootstrap.php';
 use AllDigitalRewards\RewardStack\Adjustment\CreateAdjustmentRequest;
 use AllDigitalRewards\RewardStack\Adjustment\CreateAdjustmentResponse;
 
-$program = 'alldigitalrewards';
-$participantUniqueId = 'ADRTESTP1';
+$program = 'stan12121212';
+$participantUniqueId = 'stan00001';
 $adjustmentType = 'credit';
 $adjustmentAmount = 200;
 $referenceId = 'ABC123';
 $description = "Credit adjustment for being awesome!";
+$activity = 'cool-activity';
+$completedAt = (new DateTime())->format('Y-m-d H:i:s');
 
 $createAdjustmentsRequest = new CreateAdjustmentRequest(
     $program,
@@ -18,7 +20,9 @@ $createAdjustmentsRequest = new CreateAdjustmentRequest(
     $adjustmentType,
     $adjustmentAmount,
     $referenceId,
-    $description
+    $description,
+    $activity,
+    $completedAt,
 );
 
 /** @var CreateAdjustmentResponse $createAdjustmentsResponse */
