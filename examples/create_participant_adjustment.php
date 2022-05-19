@@ -5,8 +5,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 use AllDigitalRewards\RewardStack\Adjustment\CreateAdjustmentRequest;
 use AllDigitalRewards\RewardStack\Adjustment\CreateAdjustmentResponse;
 
-$program = 'stan12121212';
-$participantUniqueId = 'stan00001';
+$program = 'alldigitalrewards';
+$participantUniqueId = 'ADRTESTP1';
 $adjustmentType = 'credit';
 $adjustmentAmount = 200;
 $referenceId = 'ABC123';
