@@ -112,7 +112,7 @@ class CreateTransactionRequest extends AbstractApiRequest
                 'quantity' => $productRequest['quantity']
             ];
 
-            if (!empty($productRequest['amount'])) {
+            if (isset($productRequest['amount'])) {
                 $product['amount'] = $productRequest['amount'];
             }
 
