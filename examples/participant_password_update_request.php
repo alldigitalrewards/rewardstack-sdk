@@ -1,17 +1,17 @@
 <?php
 
 use AllDigitalRewards\RewardStack\Client;
-use AllDigitalRewards\RewardStack\Participant\EmailParticipantAuthRequest;
+use AllDigitalRewards\RewardStack\Participant\ParticipantPasswordResetRequest;
+use AllDigitalRewards\RewardStack\Participant\ParticipantPasswordUpdateRequest;
 
 /** @var Client $client */
 $client = require_once __DIR__ . '/bootstrap.php';
 
-$request = new EmailParticipantAuthRequest(
+$request = new ParticipantPasswordUpdateRequest(
     'alldigitalrewards',
     'test@test.com',
-    'password'
+    'passwordtestme1212'
 );
-
 
 $response = $client->request($request);
 print_r($response);
