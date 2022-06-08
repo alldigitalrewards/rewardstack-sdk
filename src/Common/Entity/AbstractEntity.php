@@ -2,7 +2,9 @@
 
 namespace AllDigitalRewards\RewardStack\Common\Entity;
 
-class AbstractEntity implements \JsonSerializable
+use JsonSerializable;
+
+class AbstractEntity implements JsonSerializable
 {
     public function __construct($data = null)
     {
@@ -26,7 +28,7 @@ class AbstractEntity implements \JsonSerializable
         return $this;
     }
 
-    private function isValidProperty($propertyName)
+    private function isValidProperty($propertyName): bool
     {
         if (method_exists($this, $this->getSetter($propertyName))) {
             return true;
@@ -35,7 +37,7 @@ class AbstractEntity implements \JsonSerializable
         return false;
     }
 
-    private function getSetter($propertyName)
+    private function getSetter($propertyName): string
     {
         $setterName = str_ireplace("_", " ", $propertyName);
         $setterName = ucwords($setterName);
@@ -44,7 +46,7 @@ class AbstractEntity implements \JsonSerializable
         return "set" . $setterName;
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
