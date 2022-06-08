@@ -45,6 +45,11 @@ class ParticipantPasswordResetRequest extends AbstractApiRequest
         return new SuccessResponse();
     }
 
+    public function getQueryParams(): string
+    {
+        return 'lang=' . $this->getLang();
+    }
+
     public function jsonSerialize(): array
     {
         return [
