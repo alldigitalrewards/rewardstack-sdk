@@ -10,7 +10,8 @@ $client = require_once __DIR__ . '/bootstrap.php';
 $request = new ParticipantPasswordUpdateRequest(
     'alldigitalrewards',
     'test@test.com',
-    'passwordtestme1212'
+    'passwordtestme1212',
+    'sometoken'
 );
 
 $response = $client->request($request);

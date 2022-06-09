@@ -21,17 +21,26 @@ class ParticipantPasswordUpdateRequest extends AbstractApiRequest
      * @var string
      */
     private $password;
+    /**
+     * @var string
+     */
+    private $inviteToken;
 
     protected $httpMethod = 'PATCH';
 
     /**
      * @throws Exception
      */
-    public function __construct(string $programId, string $email, string $password)
-    {
+    public function __construct(
+        string $programId,
+        string $email,
+        string $password,
+        string $inviteToken
+    ) {
         $this->programId = trim($programId);
         $this->email = trim($email);
         $this->password = trim($password);
+        $this->inviteToken = trim($inviteToken);
         if (empty($this->programId) === true) {
             throw new Exception('Program Uuid must not be empty.');
         }
@@ -40,6 +49,9 @@ class ParticipantPasswordUpdateRequest extends AbstractApiRequest
         }
         if (empty($this->password) === true || strlen($this->password) < 12) {
             throw new Exception('Password must not be empty and at least 12 characters.');
+        }
+        if (empty($this->inviteToken) === true) {
+            throw new Exception('Invite Token must not be empty.');
         }
     }
 
@@ -58,6 +70,7 @@ class ParticipantPasswordUpdateRequest extends AbstractApiRequest
         return [
             'email_address' => $this->email,
             'password' => $this->password,
+            'invite_token' => $this->inviteToken,
         ];
     }
 }
