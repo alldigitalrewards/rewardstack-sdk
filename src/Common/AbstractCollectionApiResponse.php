@@ -4,7 +4,10 @@ namespace AllDigitalRewards\RewardStack\Common;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 
-abstract class AbstractCollectionApiResponse extends AbstractApiResponse implements \IteratorAggregate, \ArrayAccess, \Countable
+abstract class AbstractCollectionApiResponse extends AbstractApiResponse implements
+    \IteratorAggregate,
+    \ArrayAccess,
+    \Countable
 {
     /**
      * Holds the data for the collection

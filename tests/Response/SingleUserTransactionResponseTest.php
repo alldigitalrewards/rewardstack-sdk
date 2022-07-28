@@ -30,7 +30,11 @@ class SingleUserTransactionResponseTest extends TestCase
 
         $client = new RewardStack\Client($authProxy);
 
-        $singleUserTransactionRequest = new Transaction\TransactionSingleRequest('alldigitalrewards', 'TESTPARTICIPANT1', '200');
+        $singleUserTransactionRequest = new Transaction\TransactionSingleRequest(
+            'alldigitalrewards',
+            'TESTPARTICIPANT1',
+            '200'
+        );
         $response = $client->request($singleUserTransactionRequest);
 
         $expectedResponse = new RewardStack\Common\Entity\Transaction(json_decode($jsonData));
