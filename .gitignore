@@ -3,3 +3,5 @@
 /build/
 /examples/testing.php
 .phpunit.result.cache
+composer.phar
+composer.lock
