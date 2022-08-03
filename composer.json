@@ -4,7 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php" : "^7.3|^8.0",
+        "php" : "^8.0",
         "guzzlehttp/guzzle": "^7.0",
         "ext-json": "*",
         "alldigitalrewards/country-mapper": "^1.1",
