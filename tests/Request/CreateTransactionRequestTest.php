@@ -85,6 +85,8 @@ class CreateTransactionRequestTest extends TestCase
             "shipping" => $this->getAddressRequest(),
             'avs_disabled' => false,
             'transaction_source' => 'NONE',
+            'email_address' => null,
+            'phone' => null,
         ];
         $this->assertEquals(
             $expectedArray,
@@ -102,6 +104,8 @@ class CreateTransactionRequestTest extends TestCase
             "shipping" => $this->getAddressRequest(),
             'avs_disabled' => false,
             'transaction_source' => 'CLIENT-CAMPAIGN-Y',
+            'email_address' => null,
+            'phone' => null,
         ];
         $this->assertEquals(
             $expectedArray,
