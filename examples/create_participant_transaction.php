@@ -21,6 +21,9 @@ $createTransactionRequest = new CreateTransactionRequest(
     ],
     $addressRequest,
     [
+        'issue_points' => true,
+        'email_address' => 'test@alldigitalrewards.com',
+        'phone' => '1231231234',
         'transaction_source' => 'CLIENT-CAMPAIGN-Y',
         'meta' => [
             ['META_KEY' => 'META_VALUE']

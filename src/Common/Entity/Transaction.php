@@ -8,6 +8,7 @@ class Transaction extends AbstractEntity
     protected $wholesale;
     protected $subtotal;
     protected $total;
+    protected $phone;
     protected $email_address;
     protected $type;
     protected $id;
@@ -82,6 +83,22 @@ class Transaction extends AbstractEntity
     public function setTotal($total)
     {
         $this->total = $total;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 
     /**
