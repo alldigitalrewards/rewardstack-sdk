@@ -4,8 +4,9 @@ namespace AllDigitalRewards\RewardStack\Common;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Traits\LanguageHydrationTrait;
+use JsonSerializable;
 
-abstract class AbstractApiRequest implements \JsonSerializable
+abstract class AbstractApiRequest implements JsonSerializable
 {
     use LanguageHydrationTrait;
     protected $httpEndpoint = '/';
