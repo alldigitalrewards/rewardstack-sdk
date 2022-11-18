@@ -54,7 +54,7 @@ class AbstractEntity implements JsonSerializable
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         $methods = call_user_func('get_object_vars', $this);
         foreach (array_keys($methods) as $methodKey) {

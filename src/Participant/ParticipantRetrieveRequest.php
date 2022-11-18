@@ -34,7 +34,7 @@ class ParticipantRetrieveRequest extends AbstractApiRequest
         return new ParticipantRetrieveResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

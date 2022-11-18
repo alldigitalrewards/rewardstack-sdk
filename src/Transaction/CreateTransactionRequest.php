@@ -78,7 +78,7 @@ class CreateTransactionRequest extends AbstractApiRequest
     /**
      * @throws Exception
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         if (empty($this->productCollection)) {
             throw new Exception('A product list must be supplied to request a transaction');

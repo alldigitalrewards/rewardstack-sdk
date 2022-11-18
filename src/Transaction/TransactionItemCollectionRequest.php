@@ -39,7 +39,7 @@ class TransactionItemCollectionRequest extends AbstractApiCollectionRequest
         return new TransactionResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

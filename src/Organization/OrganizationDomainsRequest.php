@@ -40,7 +40,7 @@ class OrganizationDomainsRequest extends AbstractApiCollectionRequest
         return new OrganizationDomainsResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

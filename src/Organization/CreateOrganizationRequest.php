@@ -56,7 +56,7 @@ class CreateOrganizationRequest extends AbstractApiRequest
     }
 
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             "unique_id" => $this->unique_id,

@@ -54,7 +54,7 @@ class AddTransactionMetaRequest extends AbstractApiRequest
     /**
      * @throws Exception
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         if (empty($this->transactionId) === true) {
             throw new Exception(

@@ -38,7 +38,7 @@ class SsoTokenRequest extends AbstractApiRequest
         return new SsoTokenResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

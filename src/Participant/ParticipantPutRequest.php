@@ -108,7 +108,7 @@ class ParticipantPutRequest extends AbstractApiRequest
     /**
      * @throws Exception
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         if (empty($this->meta) === false && $this->hasWellFormedMeta($this->meta) === false) {
             throw new Exception(

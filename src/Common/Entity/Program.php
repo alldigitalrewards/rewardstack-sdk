@@ -24,6 +24,7 @@ class Program extends AbstractEntity
     protected $collect_ssn;
     protected $end_date;
     protected $enable_email_login;
+    protected $timezone;
 
     /**
      * @return mixed
@@ -327,5 +328,21 @@ class Program extends AbstractEntity
     public function setEnableEmailLogin($enable_email_login)
     {
         $this->enable_email_login = $enable_email_login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * @param  mixed  $timezone
+     */
+    public function setTimezone($timezone): void
+    {
+        $this->timezone = $timezone;
     }
 }

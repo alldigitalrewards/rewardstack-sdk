@@ -40,7 +40,7 @@ class ParticipantCollectionRequest extends AbstractApiCollectionRequest
         return new ParticipantCollectionResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }
