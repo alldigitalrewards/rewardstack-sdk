@@ -44,7 +44,7 @@ class TransactionSingleRequest extends AbstractApiRequest
         return new Transaction();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

@@ -28,7 +28,7 @@ class MetricsRequest extends AbstractApiRequest
         return new MetricsResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

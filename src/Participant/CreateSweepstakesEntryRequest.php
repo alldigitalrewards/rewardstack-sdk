@@ -44,7 +44,7 @@ class CreateSweepstakesEntryRequest extends AbstractApiRequest
         return new CreateSweepstakesEntryResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             "entryCount" => $this->entryCount

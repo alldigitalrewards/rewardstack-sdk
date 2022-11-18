@@ -19,7 +19,7 @@ class OrganizationListRequest extends AbstractApiCollectionRequest
         return new OrganizationListResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

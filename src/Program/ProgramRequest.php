@@ -73,7 +73,7 @@ class ProgramRequest extends AbstractApiRequest
         return new ProgramResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         $data = [
             "name" => $this->name,

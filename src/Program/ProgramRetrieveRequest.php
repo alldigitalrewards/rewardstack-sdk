@@ -31,7 +31,7 @@ class ProgramRetrieveRequest extends AbstractApiRequest
         return new ProgramRetrieveResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

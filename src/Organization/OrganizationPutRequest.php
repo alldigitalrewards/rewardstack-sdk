@@ -40,8 +40,7 @@ class OrganizationPutRequest extends AbstractApiRequest
         return new OrganizationResponse();
     }
 
-
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             "unique_id" => $this->unique_id,

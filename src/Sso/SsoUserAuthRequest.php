@@ -49,7 +49,7 @@ class SsoUserAuthRequest extends AbstractApiRequest
         return new ParticipantResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

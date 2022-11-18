@@ -17,7 +17,7 @@ class ProgramListRequest extends AbstractApiCollectionRequest
         return new ProgramListResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }

@@ -30,7 +30,7 @@ class OrganizationRetrieveRequest extends AbstractApiRequest
         return new  OrganizationRetreiveResponse();
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [];
     }
