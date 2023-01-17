@@ -4,10 +4,9 @@ namespace AllDigitalRewards\RewardStack\Participant;
 
 use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 use AllDigitalRewards\RewardStack\Common\AbstractApiRequest;
-use AllDigitalRewards\RewardStack\Common\Entity\SuccessResponse;
 use Exception;
 
-class ParticipantPasswordResetRequest extends AbstractApiRequest
+class ParticipantPasswordResetGeneralUrlRequest extends AbstractApiRequest
 {
     /**
      * @var string
@@ -37,12 +36,12 @@ class ParticipantPasswordResetRequest extends AbstractApiRequest
 
     public function getHttpEndpoint(): string
     {
-        return "/api/program/{$this->programId}/participant/recovery";
+        return "/api/program/{$this->programId}/participant/recovery/general_url";
     }
 
     public function getResponseObject(): AbstractEntity
     {
-        return new SuccessResponse();
+        return new ParticipantPasswordResetGeneralUrlResponse();
     }
 
     public function getQueryParams(): string
