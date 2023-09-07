@@ -43,7 +43,7 @@ class JwtToken
 
     public function isExpired(): bool
     {
-        if ($this->expires > (time() - 600)) {
+        if ($this->expires > (time() + 600)) {
             return false;
         }
 
