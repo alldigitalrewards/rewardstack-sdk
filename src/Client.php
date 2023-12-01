@@ -15,13 +15,16 @@ class Client
      */
     private $authProxy;
 
+    private string $service;
+
     /**
      * Client constructor.
      * @param AuthProxy $authProxy
      */
-    public function __construct(AuthProxy $authProxy)
+    public function __construct(AuthProxy $authProxy, string $service = 'service-undefined')
     {
         $this->authProxy = $authProxy;
+        $this->service = $service;
     }
 
     /**
@@ -52,9 +55,21 @@ class Client
             [
                 'cache-control' => 'no-cache',
                 'content-type' => 'application/json',
-                'accept' => 'application/json'
+                'accept' => 'application/json',
+                'user-agent' => 'SmsApiWrapper/' . $this->getClientVersion() .
+                    ' (PHP ' . phpversion() .
+                    '; Service ' . $this->service . ')',
             ],
             json_encode($apiRequest)
         );
+    }
+
+    private function getClientVersion(): string
+    {
+        $composerJsonPath = __DIR__ . '/../composer.json';
+        $composerJsonContents = file_get_contents($composerJsonPath);
+        $composerData = json_decode($composerJsonContents, true);
+
+        return $composerData['version'] ?? "VersionNotFound";
     }
 }
