@@ -36,7 +36,10 @@ class Client
         $httpRequest = $this->generateHttpRequest($apiRequest);
 
         // Pass Request thru AuthProxy
-        $httpResponse = $this->authProxy->request($httpRequest);
+        $httpResponse = $this->authProxy->request(
+            $httpRequest,
+            $apiRequest->getBasicAuthHeaderIfSet()
+        );
 
         // Generate Response
         $responseObject = $apiRequest->getResponseObject();

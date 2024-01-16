@@ -102,7 +102,7 @@ abstract class AbstractCollectionApiResponse extends AbstractApiResponse impleme
      *
      * {@link http://us2.php.net/manual/en/class.countable.php}
      */
-    public function count()
+    public function count(): int
     {
         return count($this->data);
     }

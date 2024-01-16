@@ -77,16 +77,19 @@ class AuthProxy
     /**
      * @throws GuzzleException
      */
-    public function request(RequestInterface $request): ResponseInterface
-    {
-        // Add Auth Header to request.
+    public function request(
+        RequestInterface $request,
+        string $basicAuthHeader = null,
+    ): ResponseInterface {
+        // Add Auth Header Type to request.
         // Submit Request
-        return $this->httpClient->send(
-            $this->addAuthHeaderToRequest($request)
-        );
+        $header = empty($basicAuthHeader)
+            ? $this->addBearerAuthHeaderToRequest($request)
+            : $this->addBasicAuthHeaderToRequest($request, $basicAuthHeader);
+        return $this->httpClient->send($header);
     }
 
-    private function addAuthHeaderToRequest(RequestInterface $request): RequestInterface
+    private function addBearerAuthHeaderToRequest(RequestInterface $request): RequestInterface
     {
         return $request->withHeader(
             'Authorization',
@@ -94,6 +97,16 @@ class AuthProxy
         );
     }
 
+    private function addBasicAuthHeaderToRequest(
+        RequestInterface $request,
+        string $basicAuthHeader,
+    ): RequestInterface {
+        return $request->withHeader(
+            'Authorization',
+            $basicAuthHeader
+        );
+    }
+    
     public function requestJwtToken()
     {
         $httpResponse = $this->httpClient->send(
