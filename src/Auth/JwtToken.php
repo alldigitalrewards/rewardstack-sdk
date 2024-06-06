@@ -2,6 +2,8 @@
 
 namespace AllDigitalRewards\RewardStack\Auth;
 
+use DateTime;
+
 class JwtToken
 {
     /**
@@ -13,6 +15,7 @@ class JwtToken
      * @var int
      */
     protected $expires;
+    private DateTime $currentTime;
 
     /**
      * JwtToken constructor.
@@ -41,12 +44,24 @@ class JwtToken
         return $this->expires;
     }
 
+    public function getCurrentTime(): DateTime
+    {
+        if (!isset($this->currentTime)) {
+            $this->currentTime = new DateTime();
+        }
+        return $this->currentTime;
+    }
+
+    public function setCurrentTime(DateTime $currentTime): void
+    {
+        $this->currentTime = $currentTime;
+    }
+
     public function isExpired(): bool
     {
-        if ($this->expires > (time() - 600)) {
-            return false;
-        }
-
-        return true;
+        $expiry = new DateTime();
+        $expiry->setTimestamp($this->expires);
+        $expiry = $expiry->modify('-10 minutes');
+        return $this->getCurrentTime() > $expiry;
     }
 }
