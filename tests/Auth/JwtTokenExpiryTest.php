@@ -21,10 +21,13 @@ class JwtTokenExpiryTest extends TestCase
     /**
      * @group jwt
      */
-    public function testExpired()
+    public function testIsExpiredWithin10Minutes()
     {
         //time plus 10 minutes
         $time = time() + 600;
+        $jwtToken = new JwtToken('token', $time);
+        $this->assertTrue($jwtToken->isExpired());
+        $time = time() - 60;
         $jwtToken = new JwtToken('token', $time);
         $this->assertTrue($jwtToken->isExpired());
     }
