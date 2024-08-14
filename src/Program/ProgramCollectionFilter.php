@@ -15,6 +15,7 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
             'name' => $this->nameFilter,
             'organization' => $this->organizationFilter,
             'active' => $this->activeFilter,
+            'published' => $this->publishedFilter,
             'end_date' => $this->endDateFilter,
         ];
     }
@@ -32,6 +33,7 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     private $nameFilter = '';
 
     private $activeFilter = '';
+    private $publishedFilter = '';
 
     private $endDateFilter = '';
 
@@ -105,6 +107,16 @@ class ProgramCollectionFilter extends AbstractCollectionFilter
     public function setActiveFilter(string $activeFilter): void
     {
         $this->activeFilter = $activeFilter;
+    }
+
+    public function getPublishedFilter(): string
+    {
+        return $this->publishedFilter;
+    }
+
+    public function setPublishedFilter(string $publishedFilter): void
+    {
+        $this->publishedFilter = $publishedFilter;
     }
 
     /**
