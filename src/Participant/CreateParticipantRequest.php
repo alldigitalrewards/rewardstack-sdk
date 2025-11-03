@@ -50,6 +50,11 @@ class CreateParticipantRequest extends AbstractApiRequest
      */
     private $meta;
 
+    /**
+     * @var string
+     */
+    private $language;
+
     protected $httpMethod = 'POST';
 
     /**
@@ -62,6 +67,7 @@ class CreateParticipantRequest extends AbstractApiRequest
      * @param AddressRequest|null $address
      * @param string|null $birthdate
      * @param array|null $meta
+     * @param string $language
      */
     public function __construct(
         string $programId,
@@ -71,7 +77,8 @@ class CreateParticipantRequest extends AbstractApiRequest
         string $emailAddress,
         AddressRequest $address = null,
         string $birthdate = null,
-        array $meta = null
+        array $meta = null,
+        string $language = "en_US"
     ) {
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
@@ -81,6 +88,7 @@ class CreateParticipantRequest extends AbstractApiRequest
         $this->address = $address;
         $this->birthdate = $birthdate;
         $this->meta = $meta;
+        $this->language = $language;
     }
 
     public function getHttpEndpoint(): string
@@ -111,7 +119,8 @@ class CreateParticipantRequest extends AbstractApiRequest
             "email_address" => $this->emailAddress,
             'address' => $this->address,
             'birthdate' => $this->birthdate,
-            'meta' => $this->meta
+            'meta' => $this->meta,
+            'language' => $this->language
         ];
     }
 }
