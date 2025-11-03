@@ -61,6 +61,7 @@ class CreateParticipantRequestTest extends TestCase
             "address" => null,
             "birthdate" => null,
             "meta" => null,
+            "language" => "en_US",
         ];
 
         $this->assertEquals(

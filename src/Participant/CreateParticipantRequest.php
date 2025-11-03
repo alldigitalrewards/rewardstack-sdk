@@ -51,7 +51,7 @@ class CreateParticipantRequest extends AbstractApiRequest
     private $meta;
 
     /**
-     * @var string|null
+     * @var string
      */
     private $language;
 
@@ -67,7 +67,7 @@ class CreateParticipantRequest extends AbstractApiRequest
      * @param AddressRequest|null $address
      * @param string|null $birthdate
      * @param array|null $meta
-     * @param string|null $language
+     * @param string $language
      */
     public function __construct(
         string $programId,
@@ -78,7 +78,7 @@ class CreateParticipantRequest extends AbstractApiRequest
         AddressRequest $address = null,
         string $birthdate = null,
         array $meta = null,
-        string $language = null
+        string $language = "en_US"
     ) {
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
