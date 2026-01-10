@@ -23,6 +23,7 @@ class Program extends AbstractEntity
     protected $auto_redemption;
     protected $collect_ssn;
     protected $end_date;
+    protected $start_date;
     protected $enable_email_login;
     protected $timezone;
 
@@ -312,6 +313,22 @@ class Program extends AbstractEntity
     public function setEndDate($end_date): void
     {
         $this->end_date = $end_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStartDate()
+    {
+        return $this->start_date;
+    }
+
+    /**
+     * @param mixed $start_date
+     */
+    public function setStartDate($start_date): void
+    {
+        $this->start_date = $start_date;
     }
 
     /**
