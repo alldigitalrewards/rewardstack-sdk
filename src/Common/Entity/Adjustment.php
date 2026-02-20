@@ -13,6 +13,7 @@ class Adjustment extends AbstractEntity
     protected $activity;
     protected $reference;
     protected $description;
+    protected $shareable;
     protected $id;
     protected $created_at;
     protected $updated_at;
@@ -191,5 +192,33 @@ class Adjustment extends AbstractEntity
     public function setActivity($activity)
     {
         $this->activity = $activity;
+    }
+
+    /**
+     * Get whether this adjustment affects shareable points.
+     *
+     * @return mixed
+     */
+    public function getShareable()
+    {
+        return $this->shareable;
+    }
+
+    /**
+     * @param mixed $shareable
+     */
+    public function setShareable($shareable)
+    {
+        $this->shareable = $shareable;
+    }
+
+    /**
+     * Check if this adjustment is for shareable points.
+     *
+     * @return bool
+     */
+    public function isShareable(): bool
+    {
+        return $this->shareable == 1;
     }
 }

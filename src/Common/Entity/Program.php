@@ -26,6 +26,8 @@ class Program extends AbstractEntity
     protected $start_date;
     protected $enable_email_login;
     protected $timezone;
+    protected $point_sharing;
+    protected $hasShareablePoints;
 
     /**
      * @return mixed
@@ -361,5 +363,47 @@ class Program extends AbstractEntity
     public function setTimezone($timezone): void
     {
         $this->timezone = $timezone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPointSharing()
+    {
+        return $this->point_sharing;
+    }
+
+    /**
+     * @param mixed $point_sharing
+     */
+    public function setPointSharing($point_sharing): void
+    {
+        $this->point_sharing = $point_sharing;
+    }
+
+    /**
+     * Check if point sharing is enabled for this program.
+     *
+     * @return bool
+     */
+    public function isPointSharingEnabled(): bool
+    {
+        return $this->point_sharing == 1;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasShareablePoints()
+    {
+        return $this->hasShareablePoints;
+    }
+
+    /**
+     * @param mixed $hasShareablePoints
+     */
+    public function setHasShareablePoints($hasShareablePoints): void
+    {
+        $this->hasShareablePoints = $hasShareablePoints;
     }
 }

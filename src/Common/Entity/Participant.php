@@ -7,6 +7,7 @@ class Participant extends AbstractEntity
     protected $email_address;
     protected $unique_id;
     protected $credit;
+    protected $shared_credit;
     protected $firstname;
     protected $lastname;
     protected $phone;
@@ -65,6 +66,34 @@ class Participant extends AbstractEntity
     public function setCredit($credit)
     {
         $this->credit = $credit;
+    }
+
+    /**
+     * Get the participant's shareable point balance.
+     *
+     * @return mixed
+     */
+    public function getSharedCredit()
+    {
+        return $this->shared_credit;
+    }
+
+    /**
+     * @param mixed $shared_credit
+     */
+    public function setSharedCredit($shared_credit)
+    {
+        $this->shared_credit = $shared_credit;
+    }
+
+    /**
+     * Get the total balance (credit + shared_credit).
+     *
+     * @return float
+     */
+    public function getTotalBalance(): float
+    {
+        return (float)$this->credit + (float)$this->shared_credit;
     }
 
     /**
