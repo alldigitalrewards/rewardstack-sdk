@@ -27,6 +27,7 @@ class Program extends AbstractEntity
     protected $enable_email_login;
     protected $timezone;
     protected $point_sharing;
+    protected $share_link_label;
     protected $hasShareablePoints;
 
     /**
@@ -379,6 +380,22 @@ class Program extends AbstractEntity
     public function setPointSharing($point_sharing): void
     {
         $this->point_sharing = $point_sharing;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShareLinkLabel()
+    {
+        return $this->share_link_label;
+    }
+
+    /**
+     * @param mixed $share_link_label
+     */
+    public function setShareLinkLabel($share_link_label): void
+    {
+        $this->share_link_label = $share_link_label;
     }
 
     /**
