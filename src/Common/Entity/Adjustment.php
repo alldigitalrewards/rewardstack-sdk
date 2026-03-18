@@ -197,7 +197,7 @@ class Adjustment extends AbstractEntity
     /**
      * Get whether this adjustment affects shareable points.
      *
-     * @return mixed
+     * @return int|null
      */
     public function getShareable()
     {
@@ -205,7 +205,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $shareable
+     * @param int|null $shareable
      */
     public function setShareable($shareable)
     {

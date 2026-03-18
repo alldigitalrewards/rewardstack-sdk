@@ -367,7 +367,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
     public function getPointSharing()
     {
@@ -375,7 +375,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @param mixed $point_sharing
+     * @param int|null $point_sharing
      */
     public function setPointSharing($point_sharing): void
     {
@@ -383,7 +383,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getShareLinkLabel()
     {
@@ -391,7 +391,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @param mixed $share_link_label
+     * @param string|null $share_link_label
      */
     public function setShareLinkLabel($share_link_label): void
     {
@@ -409,7 +409,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return bool|null
      */
     public function getHasShareablePoints()
     {
@@ -417,7 +417,7 @@ class Program extends AbstractEntity
     }
 
     /**
-     * @param mixed $hasShareablePoints
+     * @param bool|null $hasShareablePoints
      */
     public function setHasShareablePoints($hasShareablePoints): void
     {

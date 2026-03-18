@@ -71,7 +71,7 @@ class Participant extends AbstractEntity
     /**
      * Get the participant's shareable point balance.
      *
-     * @return mixed
+     * @return float|null
      */
     public function getSharedCredit()
     {
@@ -79,7 +79,7 @@ class Participant extends AbstractEntity
     }
 
     /**
-     * @param mixed $shared_credit
+     * @param float|null $shared_credit
      */
     public function setSharedCredit($shared_credit)
     {
