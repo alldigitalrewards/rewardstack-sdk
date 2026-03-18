@@ -398,11 +398,6 @@ class Program extends AbstractEntity
         $this->share_link_label = $share_link_label;
     }
 
-    /**
-     * Check if point sharing is enabled for this program.
-     *
-     * @return bool
-     */
     public function isPointSharingEnabled(): bool
     {
         return $this->point_sharing == 1;

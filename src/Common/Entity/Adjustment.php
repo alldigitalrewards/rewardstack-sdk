@@ -212,11 +212,6 @@ class Adjustment extends AbstractEntity
         $this->shareable = $shareable;
     }
 
-    /**
-     * Check if this adjustment is for shareable points.
-     *
-     * @return bool
-     */
     public function isShareable(): bool
     {
         return $this->shareable == 1;

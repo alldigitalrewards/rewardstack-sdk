@@ -86,11 +86,6 @@ class Participant extends AbstractEntity
         $this->shared_credit = $shared_credit;
     }
 
-    /**
-     * Get the total balance (credit + shared_credit).
-     *
-     * @return float
-     */
     public function getTotalBalance(): float
     {
         return (float)$this->credit + (float)$this->shared_credit;
