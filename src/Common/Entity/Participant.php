@@ -69,7 +69,7 @@ class Participant extends AbstractEntity
     }
 
     /**
-     * Get the participant's shareable point balance.
+     * Get the participant's shared credit.
      *
      * @return float|null
      */
@@ -86,7 +86,12 @@ class Participant extends AbstractEntity
         $this->shared_credit = $shared_credit;
     }
 
-    public function getTotalBalance(): float
+    /**
+     * Get the participant's total credit.
+     *
+     * @return float
+     */
+    public function getTotalCredit(): float
     {
         return (float)$this->credit + (float)$this->shared_credit;
     }

@@ -21,20 +21,20 @@ class SharePointsResponseTest extends TestCase
         $this->assertEquals(400.50, $response->getSharedCredit());
     }
 
-    public function testGetTotalBalance()
+    public function testGetTotalCredit()
     {
         $response = new SharePointsResponse();
         $response->setCredit(100.00);
         $response->setSharedCredit(250.50);
 
-        $this->assertEquals(350.50, $response->getTotalBalance());
+        $this->assertEquals(350.50, $response->getTotalCredit());
     }
 
-    public function testGetTotalBalanceWithNullValues()
+    public function testGetTotalCreditWithNullValues()
     {
         $response = new SharePointsResponse();
 
-        $this->assertEquals(0.0, $response->getTotalBalance());
+        $this->assertEquals(0.0, $response->getTotalCredit());
     }
 
     public function testSettersAndGetters()

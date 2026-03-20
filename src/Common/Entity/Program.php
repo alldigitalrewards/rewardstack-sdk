@@ -28,7 +28,7 @@ class Program extends AbstractEntity
     protected $timezone;
     protected $point_sharing;
     protected $share_link_label;
-    protected $hasShareablePoints;
+    protected $has_shareable_points;
 
     /**
      * @return mixed
@@ -408,14 +408,14 @@ class Program extends AbstractEntity
      */
     public function getHasShareablePoints()
     {
-        return $this->hasShareablePoints;
+        return $this->has_shareable_points;
     }
 
     /**
-     * @param bool|null $hasShareablePoints
+     * @param bool|null $has_shareable_points
      */
-    public function setHasShareablePoints($hasShareablePoints): void
+    public function setHasShareablePoints($has_shareable_points): void
     {
-        $this->hasShareablePoints = $hasShareablePoints;
+        $this->has_shareable_points = $has_shareable_points;
     }
 }

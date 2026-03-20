@@ -7,7 +7,7 @@ use AllDigitalRewards\RewardStack\Common\Entity\AbstractEntity;
 /**
  * Response from a successful point sharing operation.
  *
- * Contains the sharer's updated point balances after the transfer.
+ * Contains the sharer's updated credit after the transfer.
  */
 class SharePointsResponse extends AbstractEntity
 {
@@ -22,7 +22,7 @@ class SharePointsResponse extends AbstractEntity
     protected $shared_credit;
 
     /**
-     * Get the sharer's remaining earned (non-shareable) point balance.
+     * Get the sharer's remaining earned (non-shareable) credit.
      *
      * @return float
      */
@@ -40,7 +40,7 @@ class SharePointsResponse extends AbstractEntity
     }
 
     /**
-     * Get the sharer's remaining shareable point balance.
+     * Get the sharer's remaining shared credit.
      *
      * @return float
      */
@@ -58,11 +58,11 @@ class SharePointsResponse extends AbstractEntity
     }
 
     /**
-     * Get the total remaining balance (credit + shared_credit).
+     * Get the total remaining credit (credit + shared_credit).
      *
      * @return float
      */
-    public function getTotalBalance(): float
+    public function getTotalCredit(): float
     {
         return (float)$this->credit + (float)$this->shared_credit;
     }
