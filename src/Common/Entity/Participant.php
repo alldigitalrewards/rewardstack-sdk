@@ -278,8 +278,8 @@ class Participant extends AbstractEntity
         return $this->share_usage;
     }
 
-    public function setShareUsage(?array $share_usage): void
+    public function setShareUsage($share_usage): void
     {
-        $this->share_usage = $share_usage;
+        $this->share_usage = $share_usage !== null ? (array) $share_usage : null;
     }
 }
