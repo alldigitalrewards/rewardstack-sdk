@@ -19,6 +19,7 @@ class Participant extends AbstractEntity
     protected $program;
     protected $organization;
     protected $meta;
+    protected ?array $share_usage = null;
 
     /**
      * @return mixed
@@ -270,5 +271,15 @@ class Participant extends AbstractEntity
     public function setMeta($meta)
     {
         $this->meta = $meta;
+    }
+
+    public function getShareUsage(): ?array
+    {
+        return $this->share_usage;
+    }
+
+    public function setShareUsage(?array $share_usage): void
+    {
+        $this->share_usage = $share_usage;
     }
 }
