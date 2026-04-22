@@ -33,6 +33,11 @@ class SharePointsRequest extends AbstractApiRequest
      */
     private $amount;
 
+    /**
+     * @var string
+     */
+    private $message;
+
     protected $httpMethod = 'POST';
 
     /**
@@ -42,17 +47,20 @@ class SharePointsRequest extends AbstractApiRequest
      * @param string $sharerUniqueId The unique ID of the participant sharing points
      * @param string $recipientEmail The email address of the recipient participant
      * @param float $amount The amount of shareable points to transfer
+     * @param string $message Optional message to include with the share
      */
     public function __construct(
         string $programId,
         string $sharerUniqueId,
         string $recipientEmail,
-        float $amount
+        float $amount,
+        string $message = ''
     ) {
         $this->programId = $programId;
         $this->sharerUniqueId = $sharerUniqueId;
         $this->recipientEmail = $recipientEmail;
         $this->amount = $amount;
+        $this->message = $message;
     }
 
     public function getHttpEndpoint(): string
@@ -67,9 +75,15 @@ class SharePointsRequest extends AbstractApiRequest
 
     public function jsonSerialize(): array
     {
-        return [
+        $data = [
             'recipient_email' => $this->recipientEmail,
             'amount' => $this->amount,
         ];
+
+        if ($this->message !== '') {
+            $data['message'] = $this->message;
+        }
+
+        return $data;
     }
 }
