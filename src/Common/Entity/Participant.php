@@ -7,6 +7,7 @@ class Participant extends AbstractEntity
     protected $email_address;
     protected $unique_id;
     protected $credit;
+    protected $shared_credit;
     protected $firstname;
     protected $lastname;
     protected $phone;
@@ -18,6 +19,7 @@ class Participant extends AbstractEntity
     protected $program;
     protected $organization;
     protected $meta;
+    protected ?array $share_usage = null;
 
     /**
      * @return mixed
@@ -65,6 +67,34 @@ class Participant extends AbstractEntity
     public function setCredit($credit)
     {
         $this->credit = $credit;
+    }
+
+    /**
+     * Get the participant's shared credit.
+     *
+     * @return float|null
+     */
+    public function getSharedCredit()
+    {
+        return $this->shared_credit;
+    }
+
+    /**
+     * @param float|null $shared_credit
+     */
+    public function setSharedCredit($shared_credit)
+    {
+        $this->shared_credit = $shared_credit;
+    }
+
+    /**
+     * Get the participant's total credit.
+     *
+     * @return float
+     */
+    public function getTotalCredit(): float
+    {
+        return (float)$this->credit + (float)$this->shared_credit;
     }
 
     /**
@@ -241,5 +271,15 @@ class Participant extends AbstractEntity
     public function setMeta($meta)
     {
         $this->meta = $meta;
+    }
+
+    public function getShareUsage(): ?array
+    {
+        return $this->share_usage;
+    }
+
+    public function setShareUsage($share_usage): void
+    {
+        $this->share_usage = $share_usage !== null ? (array) $share_usage : null;
     }
 }

@@ -73,4 +73,41 @@ class CreateAdjustmentRequestTest extends TestCase
             $this->createAdjustmentRequest->jsonSerialize()
         );
     }
+
+    public function testJsonSerializeWithShareable()
+    {
+        $shareableRequest = new Adjustment\CreateAdjustmentRequest(
+            $this->program,
+            $this->uniqueId,
+            $this->type,
+            $this->amount,
+            $this->referenceId,
+            $this->description,
+            $this->activity,
+            $this->completedAt,
+            1 // shareable
+        );
+
+        $expectedArray = [
+            "type" => $this->type,
+            "amount" => $this->amount,
+            "reference" => $this->referenceId,
+            "description" => $this->description,
+            "activity" => $this->activity,
+            "completed_at" => $this->completedAt,
+            "shareable" => 1,
+        ];
+
+        $this->assertEquals(
+            $expectedArray,
+            $shareableRequest->jsonSerialize()
+        );
+    }
+
+    public function testJsonSerializeWithoutShareable()
+    {
+        // When shareable is null, it should not be included in the output
+        $serialized = $this->createAdjustmentRequest->jsonSerialize();
+        $this->assertArrayNotHasKey('shareable', $serialized);
+    }
 }

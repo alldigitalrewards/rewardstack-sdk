@@ -26,6 +26,14 @@ class Program extends AbstractEntity
     protected $start_date;
     protected $enable_email_login;
     protected $timezone;
+    protected $point_sharing;
+    protected $share_link_label;
+    protected $has_shareable_points;
+    protected $share_total_max;
+    protected $share_per_transaction_max;
+    protected $share_daily_max;
+    protected $share_weekly_max;
+    protected $share_monthly_max;
 
     /**
      * @return mixed
@@ -361,5 +369,108 @@ class Program extends AbstractEntity
     public function setTimezone($timezone): void
     {
         $this->timezone = $timezone;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPointSharing()
+    {
+        return $this->point_sharing;
+    }
+
+    /**
+     * @param int|null $point_sharing
+     */
+    public function setPointSharing($point_sharing): void
+    {
+        $this->point_sharing = $point_sharing;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShareLinkLabel()
+    {
+        return $this->share_link_label;
+    }
+
+    /**
+     * @param string|null $share_link_label
+     */
+    public function setShareLinkLabel($share_link_label): void
+    {
+        $this->share_link_label = $share_link_label;
+    }
+
+    public function isPointSharingEnabled(): bool
+    {
+        return $this->point_sharing == 1;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getHasShareablePoints()
+    {
+        return $this->has_shareable_points;
+    }
+
+    /**
+     * @param bool|null $has_shareable_points
+     */
+    public function setHasShareablePoints($has_shareable_points): void
+    {
+        $this->has_shareable_points = $has_shareable_points;
+    }
+
+    public function getShareTotalMax(): ?float
+    {
+        return $this->share_total_max;
+    }
+
+    public function setShareTotalMax(?float $share_total_max): void
+    {
+        $this->share_total_max = $share_total_max;
+    }
+
+    public function getSharePerTransactionMax(): ?float
+    {
+        return $this->share_per_transaction_max;
+    }
+
+    public function setSharePerTransactionMax(?float $share_per_transaction_max): void
+    {
+        $this->share_per_transaction_max = $share_per_transaction_max;
+    }
+
+    public function getShareDailyMax(): ?float
+    {
+        return $this->share_daily_max;
+    }
+
+    public function setShareDailyMax(?float $share_daily_max): void
+    {
+        $this->share_daily_max = $share_daily_max;
+    }
+
+    public function getShareWeeklyMax(): ?float
+    {
+        return $this->share_weekly_max;
+    }
+
+    public function setShareWeeklyMax(?float $share_weekly_max): void
+    {
+        $this->share_weekly_max = $share_weekly_max;
+    }
+
+    public function getShareMonthlyMax(): ?float
+    {
+        return $this->share_monthly_max;
+    }
+
+    public function setShareMonthlyMax(?float $share_monthly_max): void
+    {
+        $this->share_monthly_max = $share_monthly_max;
     }
 }

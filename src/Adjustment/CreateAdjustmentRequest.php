@@ -47,6 +47,11 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      */
     private $completedAt;
 
+    /**
+     * @var int|null
+     */
+    private $shareable;
+
     protected $httpMethod = 'POST';
 
     /**
@@ -57,6 +62,9 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      * @param string $pointAmount
      * @param string|null $referenceId
      * @param string|null $description
+     * @param string|null $activity
+     * @param string|null $completedAt
+     * @param int|null $shareable Set to 1 for shareable points, 0 for earned points
      */
     public function __construct(
         string $programId,
@@ -66,9 +74,9 @@ class CreateAdjustmentRequest extends AbstractApiRequest
         string $referenceId = null,
         string $description = null,
         string $activity = null,
-        string $complatedAt = null
+        string $completedAt = null,
+        int $shareable = null
     ) {
-    
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
         $this->type = $type;
@@ -76,7 +84,8 @@ class CreateAdjustmentRequest extends AbstractApiRequest
         $this->referenceId = $referenceId;
         $this->description = $description;
         $this->activity = $activity;
-        $this->completedAt = $complatedAt;
+        $this->completedAt = $completedAt;
+        $this->shareable = $shareable;
     }
 
     public function getHttpEndpoint(): string
@@ -91,7 +100,7 @@ class CreateAdjustmentRequest extends AbstractApiRequest
 
     public function jsonSerialize(): array
     {
-        return [
+        $data = [
             "type" => $this->type,
             "amount" => $this->pointAmount,
             "reference" => $this->referenceId,
@@ -99,5 +108,11 @@ class CreateAdjustmentRequest extends AbstractApiRequest
             'activity' => $this->activity,
             'completed_at' => $this->completedAt,
         ];
+
+        if ($this->shareable !== null) {
+            $data['shareable'] = $this->shareable;
+        }
+
+        return $data;
     }
 }

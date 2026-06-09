@@ -13,12 +13,13 @@ class Adjustment extends AbstractEntity
     protected $activity;
     protected $reference;
     protected $description;
+    protected $shareable;
     protected $id;
     protected $created_at;
     protected $updated_at;
 
     /**
-     * @return mixed
+     * @return float|null
      */
     public function getAmount()
     {
@@ -26,7 +27,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $amount
+     * @param float|null $amount
      */
     public function setAmount($amount)
     {
@@ -34,7 +35,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getType()
     {
@@ -42,7 +43,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $type
+     * @param string|null $type
      */
     public function setType($type)
     {
@@ -50,7 +51,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getTransactionId()
     {
@@ -58,7 +59,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $transaction_id
+     * @param string|null $transaction_id
      */
     public function setTransactionId($transaction_id)
     {
@@ -66,7 +67,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getReference()
     {
@@ -74,7 +75,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $reference
+     * @param string|null $reference
      */
     public function setReference($reference)
     {
@@ -82,7 +83,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getDescription()
     {
@@ -90,7 +91,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $description
+     * @param string|null $description
      */
     public function setDescription($description)
     {
@@ -98,7 +99,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return int|null
      */
     public function getId()
     {
@@ -106,7 +107,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $id
+     * @param int|null $id
      */
     public function setId($id)
     {
@@ -114,7 +115,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getCreatedAt()
     {
@@ -122,7 +123,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $created_at
+     * @param string|null $created_at
      */
     public function setCreatedAt($created_at)
     {
@@ -130,7 +131,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getUpdatedAt()
     {
@@ -138,7 +139,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $updated_at
+     * @param string|null $updated_at
      */
     public function setUpdatedAt($updated_at)
     {
@@ -146,7 +147,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getTransactionItemId()
     {
@@ -154,7 +155,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $transaction_item_id
+     * @param string|null $transaction_item_id
      */
     public function setTransactionItemId($transaction_item_id)
     {
@@ -162,7 +163,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getCompletedAt()
     {
@@ -170,7 +171,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $completed_at
+     * @param string|null $completed_at
      */
     public function setCompletedAt($completed_at)
     {
@@ -178,7 +179,7 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @return mixed
+     * @return string|null
      */
     public function getActivity()
     {
@@ -186,10 +187,33 @@ class Adjustment extends AbstractEntity
     }
 
     /**
-     * @param mixed $activity
+     * @param string|null $activity
      */
     public function setActivity($activity)
     {
         $this->activity = $activity;
+    }
+
+    /**
+     * Get whether this adjustment affects shareable points.
+     *
+     * @return int|null
+     */
+    public function getShareable()
+    {
+        return $this->shareable;
+    }
+
+    /**
+     * @param int|null $shareable
+     */
+    public function setShareable($shareable)
+    {
+        $this->shareable = $shareable;
+    }
+
+    public function isShareable(): bool
+    {
+        return $this->shareable == 1;
     }
 }
