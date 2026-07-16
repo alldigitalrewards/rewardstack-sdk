@@ -66,6 +66,7 @@ class CreateAdjustmentRequestTest extends TestCase
             "description" => $this->description,
             "activity" => $this->activity,
             "completed_at" => $this->completedAt,
+            "shareable" => false,
         ];
 
         $this->assertEquals(
@@ -74,7 +75,7 @@ class CreateAdjustmentRequestTest extends TestCase
         );
     }
 
-    public function testJsonSerializeWithShareable()
+    public function testJsonSerializeWithShareableTrue()
     {
         $shareableRequest = new Adjustment\CreateAdjustmentRequest(
             $this->program,
@@ -85,8 +86,10 @@ class CreateAdjustmentRequestTest extends TestCase
             $this->description,
             $this->activity,
             $this->completedAt,
-            1 // shareable
+            true // shareable
         );
+
+        $serialized = $shareableRequest->jsonSerialize();
 
         $expectedArray = [
             "type" => $this->type,
@@ -95,19 +98,36 @@ class CreateAdjustmentRequestTest extends TestCase
             "description" => $this->description,
             "activity" => $this->activity,
             "completed_at" => $this->completedAt,
-            "shareable" => 1,
+            "shareable" => true,
         ];
 
-        $this->assertEquals(
-            $expectedArray,
-            $shareableRequest->jsonSerialize()
-        );
+        $this->assertEquals($expectedArray, $serialized);
+        // Must be a genuine JSON boolean, not 1/"true" — see ADR-0002 coercion trap.
+        $this->assertArrayHasKey('shareable', $serialized);
+        $this->assertSame(true, $serialized['shareable']);
     }
 
-    public function testJsonSerializeWithoutShareable()
+    public function testJsonSerializeDefaultsShareableToFalse()
     {
-        // When shareable is null, it should not be included in the output
+        // shareable is always present and defaults to a genuine boolean false.
         $serialized = $this->createAdjustmentRequest->jsonSerialize();
-        $this->assertArrayNotHasKey('shareable', $serialized);
+        $this->assertArrayHasKey('shareable', $serialized);
+        $this->assertSame(false, $serialized['shareable']);
+    }
+
+    public function testJsonSerializeKeepsExistingKeysUnchanged()
+    {
+        // The six pre-existing keys must be untouched by the shareable addition.
+        $serialized = $this->createAdjustmentRequest->jsonSerialize();
+        $this->assertSame(
+            ['type', 'amount', 'reference', 'description', 'activity', 'completed_at', 'shareable'],
+            array_keys($serialized)
+        );
+        $this->assertEquals($this->type, $serialized['type']);
+        $this->assertEquals($this->amount, $serialized['amount']);
+        $this->assertEquals($this->referenceId, $serialized['reference']);
+        $this->assertEquals($this->description, $serialized['description']);
+        $this->assertEquals($this->activity, $serialized['activity']);
+        $this->assertEquals($this->completedAt, $serialized['completed_at']);
     }
 }

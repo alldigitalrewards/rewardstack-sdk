@@ -48,7 +48,7 @@ class CreateAdjustmentRequest extends AbstractApiRequest
     private $completedAt;
 
     /**
-     * @var int|null
+     * @var bool
      */
     private $shareable;
 
@@ -64,18 +64,18 @@ class CreateAdjustmentRequest extends AbstractApiRequest
      * @param string|null $description
      * @param string|null $activity
      * @param string|null $completedAt
-     * @param int|null $shareable Set to 1 for shareable points, 0 for earned points
+     * @param bool $shareable True routes the amount to the participant's shareable balance
      */
     public function __construct(
         string $programId,
         string $uniqueId,
         string $type,
         string $pointAmount,
-        string $referenceId = null,
-        string $description = null,
-        string $activity = null,
-        string $completedAt = null,
-        int $shareable = null
+        ?string $referenceId = null,
+        ?string $description = null,
+        ?string $activity = null,
+        ?string $completedAt = null,
+        bool $shareable = false
     ) {
         $this->programId = $programId;
         $this->uniqueId = $uniqueId;
@@ -100,19 +100,14 @@ class CreateAdjustmentRequest extends AbstractApiRequest
 
     public function jsonSerialize(): array
     {
-        $data = [
+        return [
             "type" => $this->type,
             "amount" => $this->pointAmount,
             "reference" => $this->referenceId,
             'description' => $this->description,
             'activity' => $this->activity,
             'completed_at' => $this->completedAt,
+            'shareable' => $this->shareable,
         ];
-
-        if ($this->shareable !== null) {
-            $data['shareable'] = $this->shareable;
-        }
-
-        return $data;
     }
 }
