@@ -14,6 +14,9 @@ class Adjustment extends AbstractEntity
     protected $reference;
     protected $description;
     protected $shareable;
+    protected $share_direction;
+    protected $counterparty_name;
+    protected $share_message;
     protected $id;
     protected $created_at;
     protected $updated_at;
@@ -215,5 +218,53 @@ class Adjustment extends AbstractEntity
     public function isShareable(): bool
     {
         return $this->shareable == 1;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShareDirection()
+    {
+        return $this->share_direction;
+    }
+
+    /**
+     * @param string|null $share_direction
+     */
+    public function setShareDirection($share_direction)
+    {
+        $this->share_direction = $share_direction;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCounterpartyName()
+    {
+        return $this->counterparty_name;
+    }
+
+    /**
+     * @param string|null $counterparty_name
+     */
+    public function setCounterpartyName($counterparty_name)
+    {
+        $this->counterparty_name = $counterparty_name;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShareMessage()
+    {
+        return $this->share_message;
+    }
+
+    /**
+     * @param string|null $share_message
+     */
+    public function setShareMessage($share_message)
+    {
+        $this->share_message = $share_message;
     }
 }
