@@ -11,6 +11,7 @@ class ParticipantCollection extends AbstractEntity
     protected $email_address;
     protected $unique_id;
     protected $credit;
+    protected $shared_credit;
     protected $firstname;
     protected $lastname;
     protected $phone;
@@ -69,6 +70,24 @@ class ParticipantCollection extends AbstractEntity
     public function setCredit($credit)
     {
         $this->credit = $credit;
+    }
+
+    /**
+     * Get the participant's shared credit.
+     *
+     * @return float|null
+     */
+    public function getSharedCredit()
+    {
+        return $this->shared_credit;
+    }
+
+    /**
+     * @param float|null $shared_credit
+     */
+    public function setSharedCredit($shared_credit)
+    {
+        $this->shared_credit = $shared_credit;
     }
 
     /**

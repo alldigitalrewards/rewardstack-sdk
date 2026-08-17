@@ -60,6 +60,10 @@ class ParticipantCollectionResponseTest extends TestCase
             $response->getItem(3)->getCredit()
         );
         $this->assertEquals(
+            '4500.00',
+            $response->getItem(0)->getSharedCredit()
+        );
+        $this->assertEquals(
             $expectedResponse->getItem(4)->getFirstname(),
             $response->getItem(4)->getFirstname()
         );
