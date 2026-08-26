@@ -4,71 +4,50 @@ namespace AllDigitalRewards\RewardStack\Common\Entity;
 
 class ProgramProduct extends AbstractEntity
 {
-    protected $sku;
-    protected $name;
-    protected $active;
-    protected $vendor;
+    protected ?string $sku = null;
 
-    /**
-     * @return mixed
-     */
-    public function getSku()
+    protected ?string $name = null;
+
+    protected ?int $active = null;
+
+    protected ?string $vendor = null;
+
+    public function getSku(): ?string
     {
         return $this->sku;
     }
 
-    /**
-     * @param mixed $sku
-     */
-    public function setSku($sku): void
+    public function setSku(?string $sku): void
     {
         $this->sku = $sku;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActive()
+    public function getActive(): ?int
     {
         return $this->active;
     }
 
-    /**
-     * @param mixed $active
-     */
-    public function setActive($active): void
+    public function setActive(?int $active): void
     {
         $this->active = $active;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getVendor()
+    public function getVendor(): ?string
     {
         return $this->vendor;
     }
 
-    /**
-     * @param mixed $vendor
-     */
-    public function setVendor($vendor): void
+    public function setVendor(?string $vendor): void
     {
         $this->vendor = $vendor;
     }

@@ -9,13 +9,13 @@ class ProgramProductRetrieveRequest extends AbstractApiRequest
 {
     protected $httpMethod = 'GET';
 
-    protected $program;
+    protected string $program;
 
-    protected $skus;
+    protected array $skus;
 
-    protected $limit;
+    protected int $limit;
 
-    public function __construct($program, array $skus, int $limit = 1)
+    public function __construct(string $program, array $skus, int $limit = 1)
     {
         $this->program = $program;
         $this->skus = $skus;
