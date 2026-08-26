@@ -67,7 +67,7 @@ abstract class AbstractCollectionApiResponse extends AbstractApiResponse impleme
      *
      * {@link http://us2.php.net/manual/en/class.iteratoraggregate.php}
      */
-    public function getIterator()
+    public function getIterator(): \ArrayIterator
     {
         return new \ArrayIterator($this->data);
     }
@@ -77,22 +77,22 @@ abstract class AbstractCollectionApiResponse extends AbstractApiResponse impleme
      *
      * {@link http://us2.php.net/manual/en/class.arrayaccess.php}
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->data[$offset]);
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->data[$offset];
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         trigger_error("You can't set collection data");
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         trigger_error("You can't unset collection data");
     }
@@ -102,7 +102,7 @@ abstract class AbstractCollectionApiResponse extends AbstractApiResponse impleme
      *
      * {@link http://us2.php.net/manual/en/class.countable.php}
      */
-    public function count()
+    public function count(): int
     {
         return count($this->data);
     }
