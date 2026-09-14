@@ -72,5 +72,6 @@
     "updated_at": "2018-04-09 17:58:39",
     "active": 1,
     "program_id": 1
-  }
+  },
+  "grace_period": 30
 }

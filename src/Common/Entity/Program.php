@@ -24,6 +24,7 @@ class Program extends AbstractEntity
     protected $collect_ssn;
     protected $end_date;
     protected $start_date;
+    protected $grace_period;
     protected $enable_email_login;
     protected $timezone;
     protected $point_sharing;
@@ -337,6 +338,22 @@ class Program extends AbstractEntity
     public function setStartDate($start_date): void
     {
         $this->start_date = $start_date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGracePeriod()
+    {
+        return $this->grace_period;
+    }
+
+    /**
+     * @param mixed $grace_period
+     */
+    public function setGracePeriod($grace_period): void
+    {
+        $this->grace_period = $grace_period;
     }
 
     /**

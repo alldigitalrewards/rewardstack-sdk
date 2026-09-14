@@ -130,5 +130,10 @@ class ProgramResponseTest extends TestCase
             $expectedResponse->getAutoRedemption(),
             $response->getAutoRedemption()
         );
+
+        $this->assertEquals(
+            30,
+            $response->getGracePeriod()
+        );
     }
 }
